@@ -4,12 +4,15 @@
   "description": "Blog personal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server"
   },
   "author": "Antonio Sánchez",
   "license": "MIT",
   "devDependencies": {
+    "path": "^0.12.7",
     "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3"
   }
 }
