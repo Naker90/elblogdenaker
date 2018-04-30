@@ -1,12 +1,23 @@
 * {
     padding:0;
     margin:0;
+    height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+.main-container {
+    display: flex;
+    text-align: center;
+}
+
 .nav {
     background-color: #006a71;
-    width: 35%;
+    flex: 1;
+    bottom: 0;
+}
+
+#app {
+    flex: 3;
 }
