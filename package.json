@@ -9,7 +9,9 @@
     "copy:styles": "cp -a ./src/styles dist",
     "copy:images": "cp -a ./src/images dist",
     "watch:build": "watch 'npm run copy:index && npm run copy:styles && npm run copy:images && webpack' src",
-    "dev": "npm run build && webpack-dev-server"
+    "dev": "npm run build && webpack-dev-server",
+    "deploy:fast": "gh-pages -d dist -b gh-pages",
+    "deploy": "npm run build && npm run deploy:fast"
   },
   "repository": {
     "type": "git",
