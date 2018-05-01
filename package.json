@@ -8,14 +8,14 @@
     "copy:index": "cp ./src/index.html dist",
     "copy:styles": "cp -a ./src/styles dist",
     "copy:images": "cp -a ./src/images dist",
-    "build": "npm run copy:index && npm run copy:styles && npm run copy:images && webpack",
+    "watch:build": "watch 'npm run copy:index && npm run copy:styles && npm run copy:images && webpack' src",
     "dev": "npm run build && webpack-dev-server"
   },
   "author": "Antonio Sánchez",
   "license": "MIT",
   "devDependencies": {
-    "npm-watch": "^0.3.0",
     "path": "^0.12.7",
+    "watch": "^1.0.2",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3"
