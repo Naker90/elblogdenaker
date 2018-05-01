@@ -11,6 +11,10 @@
     "watch:build": "watch 'npm run copy:index && npm run copy:styles && npm run copy:images && webpack' src",
     "dev": "npm run build && webpack-dev-server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naker90/elblogdenaker.git"
+  },
   "author": "Antonio Sánchez",
   "license": "MIT",
   "devDependencies": {
