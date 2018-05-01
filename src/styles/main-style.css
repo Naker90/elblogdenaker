@@ -12,10 +12,22 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 768px){
+    .main-container {
+        flex-direction: column;
+    }
+}
+
 .nav {
     background-color: #006a71;
     flex: 1;
-    bottom: 0;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: solid 3px #ffffff;
 }
 
 #app {
