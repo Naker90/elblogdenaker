@@ -21,6 +21,9 @@
 .nav {
     background-color: #006a71;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .avatar {
