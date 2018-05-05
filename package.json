@@ -8,7 +8,8 @@
     "copy:index": "cp ./src/index.html dist",
     "copy:styles": "cp -a ./src/styles dist",
     "copy:images": "cp -a ./src/images dist",
-    "watch:build": "watch 'npm run copy:index && npm run copy:styles && npm run copy:images && webpack' src",
+    "build": "npm run copy:index && npm run copy:styles && npm run copy:images && webpack",
+    "watch:build": "watch 'npm run build' src",
     "dev": "npm run build && webpack-dev-server",
     "deploy:fast": "gh-pages -d dist -b gh-pages",
     "deploy": "npm run build && npm run deploy:fast"
