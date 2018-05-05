@@ -12,12 +12,6 @@
     text-align: center;
 }
 
-@media only screen and (max-width: 768px){
-    .main-container {
-        flex-direction: column;
-    }
-}
-
 .nav {
     background-color: #006a71;
     flex: 1;
@@ -35,7 +29,7 @@
 }
 
 .title {
-    height: 50px;
+    height: 25px;
     margin-top: 10px;
     font-family: 'Crete Round', serif;
 }
@@ -49,4 +43,15 @@
 #app {
     flex: 3;
     overflow: auto;
+}
+
+@media only screen and (max-width: 768px){
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .nav {
+        flex: 2;
+    }
 }
