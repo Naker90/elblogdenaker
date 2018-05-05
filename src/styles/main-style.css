@@ -44,14 +44,3 @@
     flex: 3;
     overflow: auto;
 }
-
-@media only screen and (max-width: 768px){
-
-    .main-container {
-        flex-direction: column;
-    }
-
-    .nav {
-        flex: 2;
-    }
-}
