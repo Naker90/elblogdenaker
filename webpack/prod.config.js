@@ -1,17 +1,9 @@
-const path = require('path');
+const Merge = require('webpack-merge');
+const BaseConfig = require('./base.config.js');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
-    entry: path.resolve('./src/index.js'),
-    output: {
-        filename: 'bundle.js'
-    },
-    mode: 'development',
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        port: 8000
-    },
+module.exports = Merge(BaseConfig, {
+    mode: 'production',
     module: {
         rules: [
             {
@@ -31,4 +23,4 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("style/style.min.css")
     ]
-};
+});
