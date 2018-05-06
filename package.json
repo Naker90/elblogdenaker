@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy:index": "cp ./src/index.html dist",
-    "copy:styles": "cp -a ./src/styles dist",
     "copy:images": "cp -a ./src/images dist",
-    "build": "npm run copy:index && npm run copy:styles && npm run copy:images && webpack",
+    "build": "npm run copy:index && npm run copy:images && webpack",
     "watch:build": "watch 'npm run build' src",
     "dev": "npm run build && webpack-dev-server",
     "deploy:fast": "gh-pages -d dist -b gh-pages",
@@ -21,8 +20,11 @@
   "author": "Antonio Sánchez",
   "license": "MIT",
   "devDependencies": {
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "gh-pages": "^1.1.0",
     "path": "^0.12.7",
+    "style-loader": "^0.21.0",
     "watch": "^1.0.2",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
