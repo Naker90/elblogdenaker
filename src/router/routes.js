@@ -1,7 +1,7 @@
 var TestController = require("../controllers/testController");
 var HomeController = require("../controllers/homeController");
 
-window.namespace = window.namespace || {};
+window.NakerNoventa = window.NakerNoventa|| {};
 
 (function(namespace){
 
@@ -23,4 +23,4 @@ window.namespace = window.namespace || {};
             }
         })
     }
-})(window.namespace);
+})(window.NakerNoventa);
