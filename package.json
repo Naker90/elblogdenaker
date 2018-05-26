@@ -6,13 +6,11 @@
   "scripts": {
     "copy:index": "cp ./src/index.html dist",
     "copy:images": "cp -a ./src/images dist",
-    "build": "npm run copy:index && npm run copy:images",
-    "build:dev":"npm run build && webpack --config webpack/dev.config.js",
-    "build:prod":"npm run build && webpack --config webpack/prod.config.js",
-    "watch:build": "watch 'npm run build:dev' src",
-    "dev": "npm run build && webpack-dev-server --config webpack/dev.config.js",
+    "build": "npm run copy:index && npm run copy:images && webpack",
+    "watch:build": "watch 'npm run build' src",
+    "dev": "npm run build && webpack-dev-server",
     "deploy:fast": "gh-pages -d dist -b gh-pages",
-    "deploy": "npm run build:prod && npm run deploy:fast"
+    "deploy": "npm run build && npm run deploy:fast"
   },
   "repository": {
     "type": "git",
@@ -29,7 +27,6 @@
     "watch": "^1.0.2",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
-    "webpack-dev-server": "^3.1.3",
-    "webpack-merge": "^4.1.2"
+    "webpack-dev-server": "^3.1.3"
   }
 }
