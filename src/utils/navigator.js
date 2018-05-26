@@ -1,6 +1,6 @@
 window.NakerNoventa = window.NakerNoventa || {};
 
-(() => {
+((NakerNoventa) => {
 
     function NavigatorContract(){
         return {

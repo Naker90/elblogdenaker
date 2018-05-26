@@ -1,26 +1,31 @@
-var TestController = require("../controllers/testController");
-var HomeController = require("../controllers/homeController");
+const HomeController = require("../controllers/homeController");
 
-window.NakerNoventa = window.NakerNoventa|| {};
+window.NakerNoventa = window.NakerNoventa || {};
 
-(function(namespace){
+(function(NakerNoventa){
 
-    var routes = [
+    const routes = [
         {
-            route: "test",
-            controller: TestController
-        },
-        {
-            route: "home",
-            controller: HomeController
+            route: 'home',
+            solve: HomeController
         }
     ];
 
-    namespace.getRoute = function(route){
-        routes.map(function(x) {
-            if(x.route === route){
-                x.controller();
-            }
-        })
+    function Routes(){
+
+        function getRouteSolver(route, successCallback){
+            routes.map(function(x) {
+                if(x.route === route){
+                    successCallback(x);
+                }
+            })
+        }
+
+        return {
+            getRouteSolver: getRouteSolver
+        }
     }
+
+    NakerNoventa.Routes = Routes();
+
 })(window.NakerNoventa);
