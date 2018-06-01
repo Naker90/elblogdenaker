@@ -5,7 +5,8 @@ window.NakerNoventa = window.NakerNoventa || {};
     function NavigatorContract(){
         return {
             getLocationHash: function(){},
-            render: function(){}
+            render: function(){},
+            setHashLocation: function() {}
         }
     }
 
@@ -21,8 +22,13 @@ window.NakerNoventa = window.NakerNoventa || {};
             document.getElementById('app').innerHTML = content;
         }
 
+        function setHashLocation(location) {
+            window.location.hash = location
+        }
+
         contract.getLocationHash = getLocationHash;
         contract.render = render;
+        contract.setHashLocation = setHashLocation;
         return contract;
     }
 
