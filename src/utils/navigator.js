@@ -6,7 +6,8 @@ window.NakerNoventa = window.NakerNoventa || {};
         return {
             getLocationHash: function(){},
             render: function(){},
-            setHashLocation: function() {}
+            setHashLocation: function() {},
+            addWindowEventLister: function() {}
         }
     }
 
@@ -26,9 +27,14 @@ window.NakerNoventa = window.NakerNoventa || {};
             window.location.hash = location
         }
 
+        function addWindowEventLister(event, func) {
+            window.addEventListener(event, func);
+        }
+
         contract.getLocationHash = getLocationHash;
         contract.render = render;
         contract.setHashLocation = setHashLocation;
+        contract.addWindowEventLister = addWindowEventLister;
         return contract;
     }
 
