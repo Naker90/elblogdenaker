@@ -4,11 +4,9 @@ window.NakerNoventa = window.NakerNoventa || {};
 
     function Router(){
 
-        function initialize(){
-            setInterval(() => {
-                let route = NakerNoventa.Navigator.getLocationHash();
-                NakerNoventa.Routes.getRouteSolver(route, successCallback);
-            }, 500);
+        function router(){
+            let route = NakerNoventa.Navigator.getLocationHash();
+            NakerNoventa.Routes.getRouteSolver(route, successCallback);
 
             function successCallback(solver){
                 solver.solve();
@@ -16,7 +14,7 @@ window.NakerNoventa = window.NakerNoventa || {};
         }
 
         return {
-            initialize: initialize
+            router: router
         };
     }
 
