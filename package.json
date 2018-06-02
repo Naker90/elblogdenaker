@@ -4,7 +4,8 @@
   "description": "Blog personal",
   "main": "index.js",
   "scripts": {
-    "tests" : "jasmine",
+    "test" : "jasmine",
+    "watch:test" : "watch 'npm run test' spec",
     "copy:index": "cp ./src/index.html dist",
     "copy:images": "cp -a ./src/images dist",
     "build": "npm run copy:index && npm run copy:images && webpack",
