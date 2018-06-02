@@ -38,6 +38,6 @@ window.NakerNoventa = window.NakerNoventa || {};
         return contract;
     }
 
-    NakerNoventa.Navigator = Navigator();
+    NakerNoventa.Navigator = Navigator;
 
 })(window.NakerNoventa);

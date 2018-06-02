@@ -1,31 +1,12 @@
-const HomeController = require("../controllers/homeController");
-
 window.NakerNoventa = window.NakerNoventa || {};
 
 ((NakerNoventa) => {
 
-    function router(navigator){
-
-        const routes = [
-            {
-                route: 'home',
-                solve: HomeController
-            }
-        ];
+    function router(navigator, routes){
 
         async function resolveRoute(){
             let path = navigator.getLocationHash();
-            return await getRouteSolver(path);
-        }
-
-        function getRouteSolver(route){
-            return new Promise(resolve => {
-                routes.map(x => {
-                    if(x.route === route){
-                        resolve(x)
-                    }
-                });
-            });
+            return await routes.getRouteSolver(path);
         }
 
         return {
@@ -33,11 +14,11 @@ window.NakerNoventa = window.NakerNoventa || {};
         };
     }
 
-    function createRouter(navigator){
-        return router(navigator)
+    function createRouter(navigator, routes){
+        return router(navigator, routes)
     }
 
+    NakerNoventa.Router = router;
     NakerNoventa.CreateRouter = createRouter;
-
 
 })(window.NakerNoventa);
