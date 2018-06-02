@@ -23,7 +23,7 @@ window.NakerNoventa = window.NakerNoventa || {};
         }
 
         function getRouteSolver(route, successCallback){
-            routes.map(function(x) {
+            routes.map(x => {
                 if(x.route === route){
                     successCallback(x);
                 }
