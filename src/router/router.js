@@ -2,11 +2,11 @@ window.NakerNoventa = window.NakerNoventa || {};
 
 ((NakerNoventa) => {
 
-    function Router(){
+    function router(navigator, routes){
 
         function router(){
-            let route = NakerNoventa.Navigator.getLocationHash();
-            NakerNoventa.Routes.getRouteSolver(route, successCallback);
+            let route = navigator.getLocationHash();
+            routes.getRouteSolver(route, successCallback);
 
             function successCallback(solver){
                 solver.solve();
@@ -18,6 +18,11 @@ window.NakerNoventa = window.NakerNoventa || {};
         };
     }
 
-    NakerNoventa.Router = Router();
+    function createRouter(navigator, routes){
+        return router(navigator, routes)
+    }
+
+    NakerNoventa.CreateRouter = createRouter;
+
 
 })(window.NakerNoventa);
