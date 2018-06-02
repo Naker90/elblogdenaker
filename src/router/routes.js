@@ -18,7 +18,7 @@ window.NakerNoventa = window.NakerNoventa || {};
                 if(x.route === route){
                     successCallback(x);
                 }
-            })
+            });
         }
 
         return {

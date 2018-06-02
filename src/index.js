@@ -5,5 +5,7 @@ require("./router/routes");
 require("./router/router");
 
 window.NakerNoventa = window.NakerNoventa || {};
-window.addEventListener("hashchange", NakerNoventa.Router.router);
-window.location.hash = '#home';
+
+setInterval(() => {
+    NakerNoventa.Router.router();
+}, 200);
