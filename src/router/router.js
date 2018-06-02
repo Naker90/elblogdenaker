@@ -13,20 +13,18 @@ window.NakerNoventa = window.NakerNoventa || {};
             }
         ];
 
-        function resolveRoute(){
+        async function resolveRoute(){
             let path = navigator.getLocationHash();
-            getRouteSolver(path, successCallback);
-
-            function successCallback(solver){
-                solver.solve();
-            }
+            return await getRouteSolver(path);
         }
 
-        function getRouteSolver(route, successCallback){
-            routes.map(x => {
-                if(x.route === route){
-                    successCallback(x);
-                }
+        function getRouteSolver(route){
+            return new Promise(resolve => {
+                routes.map(x => {
+                    if(x.route === route){
+                        resolve(x)
+                    }
+                });
             });
         }
 

@@ -7,5 +7,6 @@ window.NakerNoventa = window.NakerNoventa || {};
 let router = NakerNoventa.CreateRouter(NakerNoventa.Navigator);
 
 setInterval(() => {
-    router.resolveRoute();
+    router.resolveRoute()
+        .then(x => x.solve());
 }, 200);
