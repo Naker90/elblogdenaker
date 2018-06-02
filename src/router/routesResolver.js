@@ -1,17 +1,8 @@
-const HomeController = require("../controllers/homeController");
-
 window.NakerNoventa = window.NakerNoventa || {};
 
 (NakerNoventa => {
 
-    function routes(){
-
-        const routes = [
-            {
-                route: 'home',
-                solve: HomeController
-            }
-        ];
+    function routesResolver(routes){
 
         function getRouteSolver(route){
             return new Promise(resolve => {
@@ -28,6 +19,11 @@ window.NakerNoventa = window.NakerNoventa || {};
         }
     }
 
-    NakerNoventa.Routes = routes;
+    function createRoutesResolver(routes){
+        return routesResolver(routes)
+    }
+
+    NakerNoventa.RoutesResolver = routesResolver;
+    NakerNoventa.CreateRoutesResolver = createRoutesResolver;
 
 })(window.NakerNoventa);
