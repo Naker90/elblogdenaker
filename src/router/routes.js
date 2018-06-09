@@ -5,6 +5,7 @@ window.NakerNoventa = window.NakerNoventa || {};
 NakerNoventa.Routes = [
     {
         route: 'home',
-        solve: HomeController
+        solve: HomeController,
+        byDefault: true
     }
 ];
