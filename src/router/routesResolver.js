@@ -11,6 +11,7 @@ window.NakerNoventa = window.NakerNoventa || {};
                         resolve(x)
                     }
                 });
+                resolve(routes.filter(x => x.byDefault));
             });
         }
 
