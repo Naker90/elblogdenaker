@@ -1,5 +1,3 @@
-require("../../src/router/routesResolver");
-
 describe("routesResolver", () => {
 
     let routesResolver;
