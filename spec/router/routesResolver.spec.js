@@ -31,5 +31,6 @@ describe("routesResolver", () => {
         let solver = await routesResolver.getRouteSolver(receivedPath);
 
         expect(solver.route).toBe("default");
+        expect(solver.routeByDefault).toBe(true);
     });
 });
