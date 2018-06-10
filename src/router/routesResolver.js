@@ -6,11 +6,11 @@ window.NakerNoventa = window.NakerNoventa || {};
 
         function getRouteSolverHandler(route){
             return new Promise(resolve => {
-                resolve(getRoute(route));
+                resolve(getRouteSolver(route));
             });
         }
 
-        function getRoute(route){
+        function getRouteSolver(route){
             let defaultRoute = routes.filter(x => x.routeByDefault)[0];
 
             routes.map(x => {
