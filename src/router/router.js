@@ -6,7 +6,7 @@ window.NakerNoventa = window.NakerNoventa || {};
 
         async function resolveRoute(){
             let path = navigator.getLocationHash();
-            return await routes.getRouteSolver(path);
+            return await routes.getRouteSolverHandler(path);
         }
 
         return {

@@ -20,7 +20,7 @@ describe("routesResolver", () => {
     it("returns route solver when routes match", async () => {
         let receivedPath = "test";
 
-        let solver = await routesResolver.getRouteSolver(receivedPath);
+        let solver = await routesResolver.getRouteSolverHandler(receivedPath);
 
         expect(solver.route).toBe("test");
     });
@@ -28,7 +28,7 @@ describe("routesResolver", () => {
     it("returns default route solver when routes not match", async () => {
         let receivedPath = "notMatchRoute";
 
-        let solver = await routesResolver.getRouteSolver(receivedPath);
+        let solver = await routesResolver.getRouteSolverHandler(receivedPath);
 
         expect(solver.route).toBe("default");
         expect(solver.routeByDefault).toBe(true);

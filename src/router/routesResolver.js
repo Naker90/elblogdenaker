@@ -4,7 +4,7 @@ window.NakerNoventa = window.NakerNoventa || {};
 
     function routesResolver(routes){
 
-        function getRouteSolver(route){
+        function getRouteSolverHandler(route){
             return new Promise(resolve => {
                 resolve(getRoute(route));
             });
@@ -23,7 +23,7 @@ window.NakerNoventa = window.NakerNoventa || {};
         }
 
         return {
-            getRouteSolver: getRouteSolver
+            getRouteSolverHandler: getRouteSolverHandler
         }
     }
 
