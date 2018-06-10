@@ -11,7 +11,8 @@ window.NakerNoventa = window.NakerNoventa || {};
                         resolve(x)
                     }
                 });
-                resolve(routes.filter(x => x.byDefault));
+                let defaultRoute = (routes.filter(x => x.byDefault));
+                resolve(defaultRoute[0]);
             });
         }
 
