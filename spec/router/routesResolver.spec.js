@@ -7,12 +7,11 @@ describe("routesResolver", () => {
             {
                 route: "test",
                 solve: function(){},
-                byDefault: false
             },
             {
                 route: "default",
                 solve: function(){},
-                byDefault: true
+                routeByDefault: true
             }
         ];
         routesResolver = NakerNoventa.RoutesResolver(routes);

@@ -6,6 +6,6 @@ NakerNoventa.Routes = [
     {
         route: 'home',
         solve: HomeController,
-        byDefault: true
+        routeByDefault: true
     }
 ];
