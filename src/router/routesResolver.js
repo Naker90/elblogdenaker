@@ -5,13 +5,8 @@ window.NakerNoventa = window.NakerNoventa || {};
     function routesResolver(routes){
 
         function getRouteSolver(route){
-            return new Promise(resolve => {
-                let routeSolver = getRouteSolverIfThereIsAMatch(route);
-                if(!routeSolver){
-                    routeSolver = getRouteSolverByDefault();
-                }
-                resolve(routeSolver);
-            });
+            return getRouteSolverIfThereIsAMatch(route)
+                || getRouteSolverByDefault();
         }
 
         function getRouteSolverIfThereIsAMatch(route) {

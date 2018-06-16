@@ -16,7 +16,4 @@ let router = NakerNoventa.Router(
     NakerNoventa.Navigator(),
     routerResolver);
 
-setInterval(() => {
-    router.resolveRoute()
-        .then(x => x.solve());
-}, 200);
+setInterval(() => router.resolveRoute().solve(), 200);
