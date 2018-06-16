@@ -2,6 +2,12 @@ window.NakerNoventa = window.NakerNoventa || {};
 
 (NakerNoventa => {
 
+    function routesResolverContract(){
+        return {
+            getRouteSolver: function(){}
+        }
+    }
+
     function routesResolver(routes){
 
         function getRouteSolver(route){
@@ -23,5 +29,6 @@ window.NakerNoventa = window.NakerNoventa || {};
     }
 
     NakerNoventa.RoutesResolver = routesResolver;
+    NakerNoventa.RoutesResolverContract = routesResolverContract;
 
 })(window.NakerNoventa);

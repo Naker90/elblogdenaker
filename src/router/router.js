@@ -2,11 +2,11 @@ window.NakerNoventa = window.NakerNoventa || {};
 
 (NakerNoventa => {
 
-    function router(navigator, routes){
+    function router(navigator, routeSolver){
 
         function resolveRoute(){
             let path = navigator.getLocationHash();
-            return routes.getRouteSolver(path);
+            return routeSolver.getRouteSolver(path);
         }
 
         return {

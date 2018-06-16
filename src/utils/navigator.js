@@ -39,5 +39,6 @@ window.NakerNoventa = window.NakerNoventa || {};
     }
 
     NakerNoventa.Navigator = Navigator;
+    NakerNoventa.NavigatorContract = NavigatorContract;
 
 })(window.NakerNoventa);
