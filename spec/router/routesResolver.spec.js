@@ -17,18 +17,18 @@ describe("routesResolver", () => {
         routesResolver = NakerNoventa.RoutesResolver(routes);
     });
 
-    it("returns route solver when routes match", async () => {
+    it("returns route solver when routes match", () => {
         let receivedPath = "test";
 
-        let solver = await routesResolver.getRouteSolver(receivedPath);
+        let solver = routesResolver.getRouteSolver(receivedPath);
 
         expect(solver.route).toBe("test");
     });
 
-    it("returns default route solver when routes not match", async () => {
+    it("returns default route solver when routes not match", () => {
         let receivedPath = "notMatchRoute";
 
-        let solver = await routesResolver.getRouteSolver(receivedPath);
+        let solver = routesResolver.getRouteSolver(receivedPath);
 
         expect(solver.route).toBe("default");
         expect(solver.routeByDefault).toBe(true);
