@@ -8,5 +8,12 @@ require("./router/routes");
 
 window.NakerNoventa = window.NakerNoventa || {};
 
-let router = NakerNoventa.Router(NakerNoventa.Navigator(), NakerNoventa.Routes);
-setInterval(() => router.resolveRoute().solve(), 200);
+setInterval(() => resolveRoutes(), 200);
+
+function resolveRoutes(){
+    const router = NakerNoventa.Router(
+        NakerNoventa.Navigator(),
+        NakerNoventa.Routes);
+    let resolver = router.resolveRoute();
+    resolver.solve();
+}

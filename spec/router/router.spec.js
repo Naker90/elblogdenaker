@@ -19,7 +19,9 @@ describe("router", () => {
     });
 
     it("returns route solver when routes match", () => {
-        spyOn(navigator, "getLocationHash").and.returnValue("test");
+        spyOn(navigator, "getLocationHash")
+            .and
+            .returnValue("test");
 
         let resolver = router.resolveRoute();
 
@@ -27,7 +29,9 @@ describe("router", () => {
     });
 
     it("returns default route solver when routes not match", () => {
-        spyOn(navigator, "getLocationHash").and.returnValue("notMatchRoute");
+        spyOn(navigator, "getLocationHash")
+            .and
+            .returnValue("notMatchRoute");
 
         let resolver = router.resolveRoute();
 
