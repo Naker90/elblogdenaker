@@ -10,16 +10,16 @@ window.NakerNoventa = window.NakerNoventa || {};
         }
 
         function getRouteSolver(route){
-            return getRouteSolverIfThereIsAMatch(route)
+            return getRouteSolverIfThereIsAMatch()
                 || getRouteSolverByDefault();
-        }
 
-        function getRouteSolverIfThereIsAMatch(route) {
-            return routes.filter(x => x.route === route)[0];
-        }
+            function getRouteSolverIfThereIsAMatch() {
+                return routes.filter(x => x.route === route)[0];
+            }
 
-        function getRouteSolverByDefault () {
-            return routes.filter(x => x.routeByDefault)[0];
+            function getRouteSolverByDefault () {
+                return routes.filter(x => x.routeByDefault)[0];
+            }
         }
 
         return {
