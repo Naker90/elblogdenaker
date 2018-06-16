@@ -13,7 +13,7 @@ window.NakerNoventa = window.NakerNoventa || {};
         function getRouteSolver(route){
             let defaultRoute = routes.filter(x => x.routeByDefault)[0];
 
-            routes.map(x => {
+            routes.forEach(x => {
                 if(x.route === route){
                     defaultRoute = x;
                 }
