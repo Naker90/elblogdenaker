@@ -27,11 +27,6 @@ window.NakerNoventa = window.NakerNoventa || {};
         }
     }
 
-    function createRoutesResolver(routes){
-        return routesResolver(routes)
-    }
-
     NakerNoventa.RoutesResolver = routesResolver;
-    NakerNoventa.CreateRoutesResolver = createRoutesResolver;
 
 })(window.NakerNoventa);

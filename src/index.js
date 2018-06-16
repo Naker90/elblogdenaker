@@ -9,10 +9,10 @@ require("./router/router");
 
 window.NakerNoventa = window.NakerNoventa || {};
 
-let routerResolver = NakerNoventa.CreateRoutesResolver(
+let routerResolver = NakerNoventa.RoutesResolver(
     NakerNoventa.Routes);
 
-let router = NakerNoventa.CreateRouter(
+let router = NakerNoventa.Router(
     NakerNoventa.Navigator(),
     routerResolver);
 

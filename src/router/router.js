@@ -14,11 +14,6 @@ window.NakerNoventa = window.NakerNoventa || {};
         };
     }
 
-    function createRouter(navigator, routes){
-        return router(navigator, routes)
-    }
-
     NakerNoventa.Router = router;
-    NakerNoventa.CreateRouter = createRouter;
 
 })(window.NakerNoventa);
