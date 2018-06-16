@@ -4,18 +4,26 @@ window.NakerNoventa = window.NakerNoventa || {};
 
     function routesResolver(routes){
 
-        function getRouteSolverHandler(route){
+        function getRouteSolver(route){
             return new Promise(resolve => {
-                let routeSolver = routes.filter(x => x.route === route)[0];
+                let routeSolver = getRouteSolverIfThereIsAMatch(route);
                 if(!routeSolver){
-                    routeSolver = routes.filter(x => x.routeByDefault)[0];
+                    routeSolver = getRouteSolverByDefault();
                 }
                 resolve(routeSolver);
             });
         }
 
+        function getRouteSolverIfThereIsAMatch(route) {
+            return routes.filter(x => x.route === route)[0];
+        }
+
+        function getRouteSolverByDefault () {
+            return routes.filter(x => x.routeByDefault)[0];
+        }
+
         return {
-            getRouteSolverHandler: getRouteSolverHandler
+            getRouteSolver: getRouteSolver
         }
     }
 
