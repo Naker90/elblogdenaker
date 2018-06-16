@@ -6,20 +6,12 @@ window.NakerNoventa = window.NakerNoventa || {};
 
         function getRouteSolverHandler(route){
             return new Promise(resolve => {
-                resolve(getRouteSolver(route));
-            });
-        }
-
-        function getRouteSolver(route){
-            let defaultRoute = routes.filter(x => x.routeByDefault)[0];
-
-            routes.forEach(x => {
-                if(x.route === route){
-                    defaultRoute = x;
+                let routeSolver = routes.filter(x => x.route === route)[0];
+                if(!routeSolver){
+                    routeSolver = routes.filter(x => x.routeByDefault)[0];
                 }
+                resolve(routeSolver);
             });
-
-            return defaultRoute;
         }
 
         return {
