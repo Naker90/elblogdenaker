@@ -2,11 +2,24 @@ window.NakerNoventa = window.NakerNoventa || {};
 
 (NakerNoventa => {
 
-    function router(navigator, routeSolver){
+    function router(navigator, routes){
 
         function resolveRoute(){
-            let path = navigator.getLocationHash();
-            return routeSolver.getRouteSolver(path);
+            let route = navigator.getLocationHash();
+            return getRouteSolver(route);
+        }
+
+        function getRouteSolver(route){
+            return getRouteSolverIfThereIsAMatch(route)
+                || getRouteSolverByDefault();
+        }
+
+        function getRouteSolverIfThereIsAMatch(route) {
+            return routes.filter(x => x.route === route)[0];
+        }
+
+        function getRouteSolverByDefault () {
+            return routes.filter(x => x.routeByDefault)[0];
         }
 
         return {

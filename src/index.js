@@ -3,16 +3,10 @@ require("./styles/responsive-style.css");
 
 require("./utils/navigator");
 
-require("./router/routes");
-require("./router/routesResolver");
 require("./router/router");
+require("./router/routes");
 
 window.NakerNoventa = window.NakerNoventa || {};
 
-let routerResolver = NakerNoventa.RoutesResolver(NakerNoventa.Routes);
-
-let router = NakerNoventa.Router(
-    NakerNoventa.Navigator(),
-    routerResolver);
-
+let router = NakerNoventa.Router(NakerNoventa.Navigator(), NakerNoventa.Routes);
 setInterval(() => router.resolveRoute().solve(), 200);

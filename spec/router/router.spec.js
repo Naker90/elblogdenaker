@@ -1,24 +1,38 @@
 describe("router", () => {
 
-    let router, navigator, routeSolver;
+    let router, navigator;
 
     beforeEach(() => {
+        const routes = [
+            {
+                route: "test",
+                solve: function(){},
+            },
+            {
+                route: "default",
+                solve: function(){},
+                routeByDefault: true
+            }
+        ];
         navigator = NakerNoventa.NavigatorContract();
-        routeSolver = NakerNoventa.RoutesResolverContract();
-        router = NakerNoventa.Router(navigator, routeSolver);
+        router = NakerNoventa.Router(navigator, routes);
     });
 
-    it("returns route solver", () => {
-        const route = {
-            route: "test",
-            solve: function(){},
-        };
+    it("returns route solver when routes match", () => {
         spyOn(navigator, "getLocationHash").and.returnValue("test");
-        spyOn(routeSolver, "getRouteSolver").and.returnValue(route);
 
-        let routeResolver = router.resolveRoute();
+        let resolver = router.resolveRoute();
 
-        expect(routeResolver.route).toBe("test");
+        expect(resolver.route).toBe("test");
+    });
+
+    it("returns default route solver when routes not match", () => {
+        spyOn(navigator, "getLocationHash").and.returnValue("notMatchRoute");
+
+        let resolver = router.resolveRoute();
+
+        expect(resolver.route).toBe("default");
+        expect(resolver.routeByDefault).toBe(true);
     });
 
 });
