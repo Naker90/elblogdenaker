@@ -15,5 +15,5 @@ function resolveRoutes(){
         NakerNoventa.Navigator(),
         NakerNoventa.Routes);
     let resolver = router.resolveRoute();
-    resolver.solve();
+    resolver.resolve();
 }

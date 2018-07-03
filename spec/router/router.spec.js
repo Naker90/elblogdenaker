@@ -6,11 +6,11 @@ describe("router", () => {
         const routes = [
             {
                 route: "test",
-                solve: function(){},
+                resolve: function(){},
             },
             {
                 route: "default",
-                solve: function(){},
+                resolve: function(){},
                 routeByDefault: true
             }
         ];
