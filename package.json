@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
+    "watch:test": "watch 'npm run test' src spec",
     "copy:index": "cp ./src/index.html dist",
     "copy:images": "cp -a ./src/images dist",
     "build": "npm run copy:index && npm run copy:images && webpack",
