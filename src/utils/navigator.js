@@ -1,8 +1,7 @@
 function navigator(){
-    const HOME_ROUTE = 'home';
 
     function getLocationHash(){
-        return location.hash.slice(1) || HOME_ROUTE;
+        return location.hash.slice(1);
     }
 
     function render(content){
