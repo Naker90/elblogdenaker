@@ -1,12 +1,10 @@
 require("./styles/main-style.css");
 require("./styles/responsive-style.css");
 
-require("./utils/navigator");
+const Navigator = require("./utils/navigator");
 
-require("./router/router");
-require("./router/routes");
-
-window.NakerNoventa = window.NakerNoventa || {};
+const Router = require("./router/router");
+const Routes = require("./router/routes");
 
 setInterval(() => resolveRoutes(), 200);
 

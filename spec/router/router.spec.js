@@ -1,3 +1,6 @@
+const Navigator = require("../../src/utils/navigator");
+const Router = require("../../src/router/router");
+
 describe("router", () => {
 
     let router, navigator;
@@ -14,8 +17,8 @@ describe("router", () => {
                 routeByDefault: true
             }
         ];
-        navigator = NakerNoventa.NavigatorContract();
-        router = NakerNoventa.Router(navigator, routes);
+        navigator = Navigator();
+        router = Router(navigator, routes);
     });
 
     it("returns route solver when routes match", () => {

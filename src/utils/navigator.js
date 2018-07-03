@@ -1,44 +1,28 @@
-window.NakerNoventa = window.NakerNoventa || {};
+function navigator(){
+    const HOME_ROUTE = 'home';
 
-(NakerNoventa => {
-
-    function NavigatorContract(){
-        return {
-            getLocationHash: function(){},
-            render: function(){},
-            setHashLocation: function() {},
-            addWindowEventLister: function() {}
-        }
+    function getLocationHash(){
+        return location.hash.slice(1) || HOME_ROUTE;
     }
 
-    function Navigator(){
-        const HOME_ROUTE = 'home';
-        let contract = NavigatorContract();
-
-        function getLocationHash(){
-            return location.hash.slice(1) || HOME_ROUTE;
-        }
-
-        function render(content){
-            document.getElementById('app').innerHTML = content;
-        }
-
-        function setHashLocation(location) {
-            window.location.hash = location
-        }
-
-        function addWindowEventLister(event, func) {
-            window.addEventListener(event, func);
-        }
-
-        contract.getLocationHash = getLocationHash;
-        contract.render = render;
-        contract.setHashLocation = setHashLocation;
-        contract.addWindowEventLister = addWindowEventLister;
-        return contract;
+    function render(content){
+        document.getElementById('app').innerHTML = content;
     }
 
-    NakerNoventa.Navigator = Navigator;
-    NakerNoventa.NavigatorContract = NavigatorContract;
+    function setHashLocation(location) {
+        window.location.hash = location
+    }
 
-})(window.NakerNoventa);
+    function addWindowEventLister(event, func) {
+        window.addEventListener(event, func);
+    }
+
+    return {
+        getLocationHash: getLocationHash,
+        render: render,
+        setHashLocation: setHashLocation,
+        addWindowEventLister: addWindowEventLister
+    };
+}
+
+module.exports = navigator;
