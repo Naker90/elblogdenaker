@@ -12,15 +12,10 @@ function navigator(){
         window.location.hash = location
     }
 
-    function addWindowEventLister(event, func) {
-        window.addEventListener(event, func);
-    }
-
     return {
         getLocationHash: getLocationHash,
         render: render,
-        setHashLocation: setHashLocation,
-        addWindowEventLister: addWindowEventLister
+        setHashLocation: setHashLocation
     };
 }
 
