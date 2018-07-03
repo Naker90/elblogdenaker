@@ -1,5 +1,8 @@
+const Navigator = require("../utils/navigator");
+
 function test(){
-    NakerNoventa.Navigator().render("Estás en la home");
+    let navigator = Navigator();
+    navigator.render("Estás en la home");
 }
 
 module.exports = test;

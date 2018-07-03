@@ -9,9 +9,7 @@ const Routes = require("./router/routes");
 setInterval(() => resolveRoutes(), 200);
 
 function resolveRoutes(){
-    const router = NakerNoventa.Router(
-        NakerNoventa.Navigator(),
-        NakerNoventa.Routes);
+    let router = Router(Navigator(), Routes);
     let resolver = router.resolveRoute();
     resolver.resolve();
 }
