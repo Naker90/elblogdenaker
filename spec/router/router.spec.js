@@ -22,7 +22,7 @@ describe("router", () => {
             .and
             .returnValue("test");
 
-        router.initialize();
+        router.resolveCurrentRoute();
 
         expect(wasCalled).toBeTruthy();
     });
@@ -41,7 +41,7 @@ describe("router", () => {
             .and
             .returnValue("notMatchRoute");
 
-        router.initialize();
+        router.resolveCurrentRoute();
 
         expect(wasCalled).toBeTruthy();
     });

@@ -1,14 +1,10 @@
 function router(navigator, routes){
 
-    function initialize(){
-        let resolver = getResolverForCurrentRoute();
+    function resolveCurrentRoute(){
+        let route = navigator.getLocationHash();
+        let resolver = getRouteSolver(route);
         resolver.resolve();
         //navigator.setHashLocation(resolver.route);
-    }
-
-    function getResolverForCurrentRoute(){
-        let route = navigator.getLocationHash();
-        return getRouteSolver(route);
     }
 
     function getRouteSolver(route){
@@ -25,8 +21,7 @@ function router(navigator, routes){
     }
 
     return {
-        initialize: initialize,
-        resolveRoute: getResolverForCurrentRoute
+        resolveCurrentRoute: resolveCurrentRoute
     };
 }
 
