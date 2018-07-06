@@ -3,43 +3,47 @@ const Router = require("../../src/router/router");
 
 describe("router", () => {
 
-    let router, navigator;
+    let navigator;
 
     beforeEach(() => {
+        navigator = Navigator();
+    });
+
+    it("resolves route when routes match", () => {
+        let wasCalled = false;
         const routes = [
             {
                 route: "test",
-                resolve: function(){},
-            },
-            {
-                route: "default",
-                resolve: function(){},
-                routeByDefault: true
+                resolve: function(){wasCalled = true},
             }
         ];
-        navigator = Navigator();
-        router = Router(navigator, routes);
-    });
-
-    it("returns route solver when routes match", () => {
+        let router = Router(navigator, routes);
         spyOn(navigator, "getLocationHash")
             .and
             .returnValue("test");
 
-        let resolver = router.resolveRoute();
+        router.initialize();
 
-        expect(resolver.route).toBe("test");
+        expect(wasCalled).toBeTruthy();
     });
 
-    it("returns default route solver when routes not match", () => {
+    it("resolves route when routes not match", () => {
+        let wasCalled = false;
+        const routes = [
+            {
+                route: "default",
+                resolve: function(){wasCalled = true},
+                routeByDefault: true
+            }
+        ];
+        let router = Router(navigator, routes);
         spyOn(navigator, "getLocationHash")
             .and
             .returnValue("notMatchRoute");
 
-        let resolver = router.resolveRoute();
+        router.initialize();
 
-        expect(resolver.route).toBe("default");
-        expect(resolver.routeByDefault).toBe(true);
+        expect(wasCalled).toBeTruthy();
     });
 
 });
