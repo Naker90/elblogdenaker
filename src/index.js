@@ -6,12 +6,7 @@ const Navigator = require("./utils/navigator");
 const Router = require("./router/router");
 const Routes = require("./router/routes");
 
-setInterval(() => initializeRouter(), 200);
+let navigator = Navigator.navigator();
+let router = Router(navigator, Routes);
 
-function initializeRouter(){
-    let navigator = Navigator.navigator();
-    let router = Router(navigator, Routes);
-    let resolver = router.resolveRoute();
-    resolver.resolve();
-    navigator.setHashLocation(resolver.route);
-}
+setInterval(() => router.resolveCurrentRoute(), 200);
