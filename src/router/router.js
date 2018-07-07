@@ -2,12 +2,12 @@ function router(navigator, routes){
 
     function resolveCurrentRoute(){
         let route = navigator.getLocationHash();
-        let resolver = getRouteSolver(route);
+        let resolver = getRouteResolver(route);
         resolver.resolve();
         //navigator.setHashLocation(resolver.route);
     }
 
-    function getRouteSolver(route){
+    function getRouteResolver(route){
         return getRouteSolverIfThereIsAMatch()
             || getRouteSolverByDefault();
 
