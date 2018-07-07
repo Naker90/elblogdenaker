@@ -13,4 +13,4 @@ function factory(){
     }
 }
 
-module.export = factory;
+module.exports = factory();
