@@ -1,12 +1,8 @@
 require("./styles/main-style.css");
 require("./styles/responsive-style.css");
 
-const Navigator = require("./utils/navigator");
+const RouterFactory = require("./router/factory");
 
-const Router = require("./router/router");
-const Routes = require("./router/routes");
-
-let navigator = Navigator.navigator();
-let router = Router(navigator, Routes);
+let router = RouterFactory.router();
 
 setInterval(() => router.resolveCurrentRoute(), 200);
