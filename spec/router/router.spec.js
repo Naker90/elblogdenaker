@@ -6,7 +6,8 @@ describe("router", () => {
     let navigator;
 
     beforeEach(() => {
-        navigator = Navigator();
+        navigator = Navigator.navigatorContract();
+        spyOn(navigator, "setHashLocation");
     });
 
     it("resolves route when routes match", () => {
@@ -25,6 +26,7 @@ describe("router", () => {
         router.resolveCurrentRoute();
 
         expect(wasCalled).toBeTruthy();
+        expect(navigator.setHashLocation).toHaveBeenCalled();
     });
 
     it("resolves route when routes not match", () => {
@@ -44,6 +46,7 @@ describe("router", () => {
         router.resolveCurrentRoute();
 
         expect(wasCalled).toBeTruthy();
+        expect(navigator.setHashLocation).toHaveBeenCalled();
     });
 
 });

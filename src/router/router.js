@@ -4,7 +4,7 @@ function router(navigator, routes){
         let route = navigator.getLocationHash();
         let resolver = getRouteResolver(route);
         resolver.resolve();
-        //navigator.setHashLocation(resolver.route);
+        navigator.setHashLocation(resolver.route);
     }
 
     function getRouteResolver(route){

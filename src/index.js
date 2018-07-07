@@ -9,7 +9,7 @@ const Routes = require("./router/routes");
 setInterval(() => initializeRouter(), 200);
 
 function initializeRouter(){
-    let navigator = Navigator();
+    let navigator = Navigator.navigator();
     let router = Router(navigator, Routes);
     let resolver = router.resolveRoute();
     resolver.resolve();
