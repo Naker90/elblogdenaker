@@ -1,15 +1,15 @@
 const page = require("page");
 const homeController = require("./homeController");
 
-function router(){
+function routesResolver(){
 
-    function registerRoutes(){
+    function init(){
         page("/", homeController())
     }
 
     return {
-        registerRoutes: registerRoutes
+        init: init
     }
 }
 
-module.exports = router();
+module.exports = routesResolver();
