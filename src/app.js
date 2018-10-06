@@ -1,9 +1,9 @@
 require("./styles/main-style.css");
 require("./styles/responsive-style.css");
+const router = require("./controllers/router");
 
-const RouterFactory = require("./router/factory");
+function start(){
+    router.registerRoutes();
+}
 
-let router = RouterFactory.router();
-let routeResolver = router.resolveCurrentRoute();
-
-setInterval(() => routeResolver(), 200);
+start();
