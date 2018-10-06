@@ -1,9 +1,8 @@
-const Navigator = require("../utils/navigator");
+const navigator = require("../utils/navigator");
 
 function homeController(){
 
     function execute(){
-        let navigator = Navigator.navigator();
         navigator.render("Home");
     }
 
