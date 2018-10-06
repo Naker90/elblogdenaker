@@ -1,10 +1,10 @@
 const page = require("page");
-const HomeController = require("./homeController");
+const homeController = require("./homeController");
 
 function router(){
 
     function registerRoutes(){
-        page("/", HomeController())
+        page("/", homeController())
     }
 
     return {
