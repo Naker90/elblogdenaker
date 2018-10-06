@@ -1,8 +1,9 @@
 require("./styles/main-style.css");
 require("./styles/responsive-style.css");
-const routesResolver = require("./controllers/router");
+const routerFactory = require("./router/routerFactory");
 
 function start(){
+    let routesResolver = routerFactory.createRoutesResolver();
     routesResolver.init();
 }
 
