@@ -6,9 +6,8 @@
   "scripts": {
     "test": "jasmine",
     "watch:test": "watch 'npm run test' src spec",
-    "copy:index": "cp ./src/index.html dist",
     "copy:images": "cp -a ./src/images dist",
-    "build": "npm run copy:index && npm run copy:images && webpack",
+    "build": "npm run copy:images && webpack",
     "watch:build": "watch 'npm run build' src",
     "dev": "npm run build && webpack-dev-server",
     "deploy:fast": "gh-pages -d dist -b gh-pages",
