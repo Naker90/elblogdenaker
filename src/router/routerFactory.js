@@ -1,5 +1,5 @@
 const router = require("./router");
-const routesResolver = require("./routesResover");
+const routesResolver = require("./routesResolver");
 
 function routerFactory(){
 
