@@ -2,7 +2,7 @@
   "name": "elblogdenaker",
   "version": "0.0.1",
   "description": "Blog personal",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "jasmine",
     "watch:test": "watch 'npm run test' src spec",
