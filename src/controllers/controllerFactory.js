@@ -1,9 +1,10 @@
+const navigator = require("../utils/navigator");
 const homeController = require("./homeController");
 
 function controllerFactory(){
 
     function createHomeController(){
-        return homeController();
+        return homeController(navigator());
     }
 
     return {

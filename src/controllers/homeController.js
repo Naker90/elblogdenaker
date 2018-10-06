@@ -1,6 +1,4 @@
-const navigator = require("../utils/navigator");
-
-function homeController(){
+function homeController(navigator){
 
     function execute(){
         navigator.render("Home");
