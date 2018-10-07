@@ -8,6 +8,7 @@ function routesResolver(router){
     function init(){
         router.registerRoute("/", homeController.execute());
         router.registerRoute("*", notFoundController.execute());
+        router.finish();
     }
 
     return {

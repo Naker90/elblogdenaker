@@ -6,8 +6,13 @@ function router(){
         page(route, resolver);
     }
 
+    function finish(){
+        page();
+    }
+
     return {
-        registerRoute: registerRoute
+        registerRoute: registerRoute,
+        finish: finish
     }
 }
 
