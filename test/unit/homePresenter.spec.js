@@ -27,5 +27,4 @@ describe("home presenter tests", () => {
     it("shows all articles", () => {
         expect(homeView.render).toHaveBeenCalledWith(articles);
     });
-
 });
