@@ -9,7 +9,7 @@
     "build": "webpack",
     "watch:build": "watch 'npm run build' src",
     "dev": "npm run build && webpack-dev-server",
-    "deploy:fast": "gh-pages -d dist -b gh-pages",
+    "deploy:fast": "node deploy.js",
     "deploy": "npm run build && npm run deploy:fast"
   },
   "repository": {
