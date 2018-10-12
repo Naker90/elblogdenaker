@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+article {
+    height: 50px;
+}
+
 .main-container {
     display: flex;
     text-align: center;
