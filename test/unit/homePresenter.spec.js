@@ -9,8 +9,10 @@ const homeView = require("../../src/domain/home/homeView");
 
 describe("home presenter tests", () => {
 
-    it("shows all articles", () => {
-        let articles = [
+    let articles;
+
+    beforeEach(() => {
+        articles = [
             {
                 "name": "anyName",
                 "description": "anyDescription",
@@ -20,7 +22,9 @@ describe("home presenter tests", () => {
             }
         ];
         homePresenter(homeView, articles);
+    });
 
+    it("shows all articles", () => {
         expect(homeView.render).toHaveBeenCalledWith(articles);
     });
 
