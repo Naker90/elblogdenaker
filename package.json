@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "watch:test": "watch 'npm run test' src spec",
+    "watch:test": "watch 'npm run test' src test",
     "build": "webpack",
     "watch:build": "watch 'npm run build' src",
     "dev": "npm run build && webpack-dev-server",
