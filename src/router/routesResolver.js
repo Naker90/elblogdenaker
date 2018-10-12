@@ -6,8 +6,8 @@ function routesResolver(router){
     const notFoundController = controllerFactory.createNotFoundController();
 
     function init(){
-        router.registerRoute("/", homeController.execute());
-        router.registerRoute("*", notFoundController.execute());
+        router.registerRoute("/", homeController.execute);
+        router.registerRoute("*", notFoundController.execute);
         router.finish();
     }
 

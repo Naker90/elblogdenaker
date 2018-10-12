@@ -1,7 +1,7 @@
-function homeView(){
+function homeView(articlesListView){
 
     function render(articles){
-        throw new Error("not implemented");
+        articlesListView.render(articles);
     }
 
     return {
