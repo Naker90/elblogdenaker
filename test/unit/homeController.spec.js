@@ -1,15 +1,15 @@
-jest.mock("../../src/domain/home/homeView", () => {
+jest.mock("../../src/Home/Views/homeView", () => {
    return {
        render: jest.fn()
    }
 });
 
-const homePresenter = require("../../src/domain/home/homePresenter");
+const homeController = require("../../src/Home/Controllers/homeController");
 const homeView = require("../../src/Home/Views/homeView");
 
-describe("home presenter tests", () => {
+describe("home controller tests", () => {
 
-    let articles;
+    let controller, articles;
 
     beforeEach(() => {
         articles = [
@@ -21,10 +21,12 @@ describe("home presenter tests", () => {
                 "route": "anyRoute"
             }
         ];
-        homePresenter(homeView, articles);
+        controller = homeController(homeView, articles);
     });
 
     it("shows all Articles", () => {
+        controller.execute();
+
         expect(homeView.render).toHaveBeenCalledWith(articles);
     });
 });
