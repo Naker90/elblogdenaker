@@ -4,11 +4,10 @@ class Article extends React.Component{
     render(){
         return (
             <article>
-                <h2>{this.props.article.name}</h2>
-                <h3>{this.props.article.description}</h3>
-                <div>
-                    <p>{this.props.article.author}</p>
-                    <p>{this.props.article.date}</p>
+                <h2 className="article-title">{this.props.article.name}</h2>
+                <h3 className="article-description">{this.props.article.description}</h3>
+                <div className="article-info">
+                    <p>Publicado por {this.props.article.author} el dia {this.props.article.date}</p>
                 </div>
             </article>
         )
@@ -18,7 +17,7 @@ class Article extends React.Component{
 class ArticlesList extends React.Component{
     render(){
         return (
-            <div>
+            <div className="articles-container">
                 {this.props.articles.map((article, key) => {
                     return <Article key={key} article={article}/>
                 })}

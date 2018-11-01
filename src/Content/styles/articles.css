@@ -1,0 +1,32 @@
+article{
+    display: flex;
+    flex-direction: column;
+    height: 35%;
+    width: 75%;
+    text-align: left;
+}
+
+.articles-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.article-title{
+    font-size: xx-large;
+    font-family: 'Crete Round', serif;
+    flex: 1;
+}
+
+.article-description{
+    font-size: large;
+    font-family: 'Crete Round', serif;
+    flex: 2;
+}
+
+.article-info{
+    font-size: medium;
+    font-family: 'Crete Round', serif;
+    flex: 1;
+}

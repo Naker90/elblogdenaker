@@ -7,13 +7,10 @@
     box-sizing: border-box;
 }
 
-article {
-    height: 50px;
-}
-
 .main-container {
     display: flex;
     text-align: center;
+    overflow: auto;
     background-color: #E8E8E8;
 }
 
@@ -46,12 +43,6 @@ article {
     color: white;
 }
 
-.post {
-    width: 350px;
-    height: 250px;
-}
-
 #app {
     flex: 3;
-    overflow: auto;
 }
