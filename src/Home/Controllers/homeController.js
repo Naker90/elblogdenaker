@@ -1,9 +1,7 @@
-const domainFactory = require("../../Factories/domainFactory");
-
-function homeController(){
+function homeController(view, articles){
 
     function execute(){
-        domainFactory.createHomePresenter();
+        view.render(articles);
     }
 
     return {
