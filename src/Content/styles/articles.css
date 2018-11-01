@@ -1,16 +1,18 @@
-article{
-    display: flex;
-    flex-direction: column;
-    height: 35%;
-    width: 75%;
-    text-align: left;
-}
-
 .articles-container {
     display: flex;
     align-items: center;
     flex-direction: column;
+
     overflow: auto;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    height: 35%;
+    justify-content: space-between;
+    width: 75%;
+    text-align: left;
 }
 
 .article-title{
@@ -22,7 +24,7 @@ article{
 .article-description{
     font-size: large;
     font-family: 'Crete Round', serif;
-    flex: 2;
+    flex: 1;
 }
 
 .article-info{

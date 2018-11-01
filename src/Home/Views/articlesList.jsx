@@ -6,9 +6,7 @@ class Article extends React.Component{
             <article>
                 <h2 className="article-title">{this.props.article.name}</h2>
                 <h3 className="article-description">{this.props.article.description}</h3>
-                <div className="article-info">
-                    <p>Publicado por {this.props.article.author} el dia {this.props.article.date}</p>
-                </div>
+                <h4 className="article-info">Publicado por {this.props.article.author} el dia {this.props.article.date}</h4>
             </article>
         )
     }
