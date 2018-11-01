@@ -1,6 +1,6 @@
-const articleList = require("./home/articlesList.jsx");
-const homeView = require("./home/homeView");
-const homePresenter = require("./home/homePresenter");
+const articleList = require("./../Home/Views/articlesList.jsx");
+const homeView = require("./../Home/Views/homeView");
+const homePresenter = require("./../domain/home/homePresenter");
 const articlesList = require("../articles/articles");
 
 export const createHomePresenter = () => {

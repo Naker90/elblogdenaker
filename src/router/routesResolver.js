@@ -1,4 +1,4 @@
-const controllerFactory = require("../controllers/controllerFactory");
+const controllerFactory = require("../Factories/controllerFactory");
 
 function routesResolver(router){
 

@@ -1,4 +1,4 @@
-const domainFactory = require("../domain/domainFactory");
+const domainFactory = require("../../Factories/domainFactory");
 
 function homeController(){
 

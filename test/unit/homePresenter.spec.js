@@ -5,7 +5,7 @@ jest.mock("../../src/domain/home/homeView", () => {
 });
 
 const homePresenter = require("../../src/domain/home/homePresenter");
-const homeView = require("../../src/domain/home/homeView");
+const homeView = require("../../src/Home/Views/homeView");
 
 describe("home presenter tests", () => {
 
