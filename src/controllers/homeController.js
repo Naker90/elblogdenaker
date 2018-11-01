@@ -1,6 +1,6 @@
 const domainFactory = require("../domain/domainFactory");
 
-function homeController(navigator){
+function homeController(){
 
     function execute(){
         domainFactory.createHomePresenter();
