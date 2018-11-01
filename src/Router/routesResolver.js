@@ -1,9 +1,10 @@
-const controllerFactory = require("../Factories/controllerFactory");
+const homeFactory = require("../Home/factory");
+const notFoundFactory = require("../NotFound/factory");
 
 function routesResolver(router){
 
-    const homeController = controllerFactory.createHomeController();
-    const notFoundController = controllerFactory.createNotFoundController();
+    const homeController = homeFactory.createHomeController();
+    const notFoundController = notFoundFactory.createNotFoundController();
 
     function init(){
         router.registerRoute("/", homeController.execute);
