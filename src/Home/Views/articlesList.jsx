@@ -1,5 +1,4 @@
 const React = require("react");
-const ReactDom = require("react-dom");
 
 class Article extends React.Component{
     render(){
@@ -20,7 +19,7 @@ class ArticlesList extends React.Component{
     render(){
         return (
             <div>
-                {this.props.articles.map(function(article, key){
+                {this.props.articles.map((article, key) => {
                     return <Article key={key} article={article}/>
                 })}
             </div>
@@ -28,12 +27,10 @@ class ArticlesList extends React.Component{
     }
 }
 
-function articleList(){
+function articleList(navigator){
 
     function render(articles){
-        ReactDom.render(
-            <ArticlesList articles={articles}/>,
-            document.getElementById('app'))
+        navigator.reactRender(<ArticlesList articles={articles}/>);
     }
 
     return {

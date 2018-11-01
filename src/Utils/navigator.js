@@ -1,11 +1,22 @@
+const ReactDom = require("react-dom");
+
 function navigator(){
 
+    const APP_CONTAINER = "app";
+
     function render(content){
-        document.getElementById('app').innerHTML = content;
+        document.getElementById(APP_CONTAINER).innerHTML = content;
+    }
+
+    function reactRender(component){
+        ReactDom.render(
+            component,
+            document.getElementById(APP_CONTAINER))
     }
 
     return {
-        render: render
+        render: render,
+        reactRender: reactRender
     };
 }
 
