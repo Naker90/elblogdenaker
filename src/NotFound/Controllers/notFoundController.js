@@ -1,13 +1,12 @@
-function notFoundController(navigator){
+function notFoundController(view){
 
     function execute(){
-        navigator.render("Not found");
+        view.render();
     }
 
     return {
         execute: execute
     }
-
 }
 
 module.exports = notFoundController;
