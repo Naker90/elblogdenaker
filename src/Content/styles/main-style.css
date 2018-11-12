@@ -2,9 +2,6 @@
     padding:0;
     margin:0;
     height: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .main-container {
@@ -16,12 +13,13 @@
 
 .nav {
     background-color: #006a71;
-    flex: 1;
+    flex: 0 1 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     box-shadow: 5px 0 20px 0px #575757;
+    padding: 5px;
 }
 
 .avatar {
@@ -43,6 +41,9 @@
     color: white;
 }
 
-#app {
-    flex: 3;
+#app{
+    flex: 0 1 75%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

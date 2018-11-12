@@ -1,17 +1,13 @@
-.articles-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    overflow: auto;
-}
-
 article{
     display: flex;
     flex-direction: column;
-    height: 35%;
-    justify-content: space-between;
     width: 75%;
     text-align: left;
+    border: 1px solid;
+    padding: 10px 10px 0px 10px;
+    box-shadow: 5px 5px 10px 0px #575757;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .article-title{

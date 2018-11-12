@@ -15,11 +15,9 @@ class Article extends React.Component{
 class ArticlesList extends React.Component{
     render(){
         return (
-            <div className="articles-container">
-                {this.props.articles.map((article, key) => {
-                    return <Article key={key} article={article}/>
-                })}
-            </div>
+            this.props.articles.map((article, key) => {
+                return <Article key={key} article={article}/>
+            })
         )
     }
 }
