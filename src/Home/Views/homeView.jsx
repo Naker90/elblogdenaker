@@ -12,7 +12,7 @@ class Article extends React.Component{
     }
 }
 
-class ArticlesList extends React.Component{
+class HomeView extends React.Component{
     render(){
         return (
             this.props.articles.map((article, key) => {
@@ -22,10 +22,10 @@ class ArticlesList extends React.Component{
     }
 }
 
-function articleList(navigator){
+function homeView(navigator) {
 
     function render(articles){
-        navigator.reactRender(<ArticlesList articles={articles}/>);
+        navigator.reactRender(<HomeView articles={articles}/>);
     }
 
     return {
@@ -33,4 +33,4 @@ function articleList(navigator){
     }
 }
 
-module.exports = articleList;
+module.exports = homeView;
