@@ -9,7 +9,7 @@ const homeView = require("../../src/Home/Views/homeView");
 
 describe("home controller tests", () => {
 
-    let controller, articles;
+    let controller, view, articles;
 
     beforeEach(() => {
         articles = [
@@ -21,12 +21,13 @@ describe("home controller tests", () => {
                 "route": "anyRoute"
             }
         ];
-        controller = homeController(homeView, articles);
+        view = homeView;
+        controller = homeController(view, articles);
     });
 
     it("shows all Articles", () => {
         controller.execute();
 
-        expect(homeView.render).toHaveBeenCalledWith(articles);
+        expect(view.render).toHaveBeenCalledWith(articles);
     });
 });
