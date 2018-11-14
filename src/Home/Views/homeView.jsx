@@ -4,9 +4,9 @@ class Article extends React.Component{
     render(){
         return (
             <article>
-                <h2 className="article-title">{this.props.article.name}</h2>
-                <h3 className="article-description">{this.props.article.description}</h3>
-                <h4 className="article-info">Publicado por {this.props.article.author} el dia {this.props.article.date}</h4>
+                <h2>{this.props.article.name}</h2>
+                <p>{this.props.article.description}</p>
+                <p>Publicado por {this.props.article.author} el dia {this.props.article.date}</p>
             </article>
         )
     }
