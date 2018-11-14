@@ -12,6 +12,7 @@
     .personal-information-container{
         flex-direction: row;
         height: 150px;
+        margin-bottom: 20px;
     }
 
     .icon-container{
