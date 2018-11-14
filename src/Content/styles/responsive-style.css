@@ -11,6 +11,20 @@
 
     .personal-information-container{
         flex-direction: row;
+        height: 150px;
+    }
+
+    .icon-container{
+        padding: 0;
+    }
+
+    .personal-information-data{
+        font-size: 1em;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
     }
 
     .icon{

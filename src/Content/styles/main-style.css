@@ -1,5 +1,6 @@
 body{
     background-color: #E8E8E8;
+    color: white;
 }
 
 nav {
@@ -24,9 +25,30 @@ nav {
     box-shadow: 0 5px 20px 0px #575757;
 }
 
+.personal-information-data-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+    text-align: center;
+}
+
+.personal-information-avatar-container{
+    padding: 20px;
+}
+
+.personal-information-data{
+    font-family: "Crete Round", serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
 .icon-container{
     display: flex;
     justify-content: space-around;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    width: 100%;
 }
 
 .avatar {
@@ -39,12 +61,15 @@ nav {
 .blog-title {
     font-family: "Crete Round", serif;
     font-size: 2.5em;
-    color: white;
 }
 
 .link {
     text-decoration: none;
     color: white;
+}
+
+.link-color-blue{
+    color: #009EE0;
 }
 
 .icon{
