@@ -1,6 +1,7 @@
 body{
     background-color: #E8E8E8;
     color: white;
+    font-family: "Crete Round", serif;
 }
 
 nav {
@@ -39,7 +40,6 @@ nav {
 }
 
 .personal-information-data{
-    font-family: "Crete Round", serif;
     font-size: 1.3em;
     font-weight: bold;
 }

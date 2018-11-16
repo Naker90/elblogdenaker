@@ -15,7 +15,7 @@ class Article extends React.Component{
 class HomeView extends React.Component{
     render(){
         return (
-            <div className="articles-container">
+            <div>
                 {
                     this.props.articles.map((article, key) => {
                         return <Article key={key} article={article}/>
