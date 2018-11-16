@@ -19,5 +19,26 @@ export const articles = [
         date: "25/10/2017",
         author: "Antonio Sánchez",
         route: "/implementando-nuestro-propio-motor-de-reglas"
+    },
+    {
+        name: "Implementando nuestro propio motor de reglas — Java.",
+        description: "Introducción a un simple motor de reglas y como podemos implementar uno en java.",
+        date: "25/10/2017",
+        author: "Antonio Sánchez",
+        route: "/implementando-nuestro-propio-motor-de-reglas"
+    },
+    {
+        name: "Implementando nuestro propio motor de reglas — Java.",
+        description: "Introducción a un simple motor de reglas y como podemos implementar uno en java.",
+        date: "25/10/2017",
+        author: "Antonio Sánchez",
+        route: "/implementando-nuestro-propio-motor-de-reglas"
+    },
+    {
+        name: "Implementando nuestro propio motor de reglas — Java.",
+        description: "Introducción a un simple motor de reglas y como podemos implementar uno en java.",
+        date: "25/10/2017",
+        author: "Antonio Sánchez",
+        route: "/implementando-nuestro-propio-motor-de-reglas"
     }
 ];
