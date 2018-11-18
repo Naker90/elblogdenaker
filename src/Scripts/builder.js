@@ -1,10 +1,11 @@
-function builder(articles, dirCreator){
+function builder(articles, dirCreator, markdownConverter){
 
     function build() {
 
         articles.forEach((article) => {
             let date = getDate(article.date);
             createArticleDirectory(date);
+            markdownConverter.convertToHtml(article.markdownPath, "/" + date.year + "/" + date.month + "/" + date.day + "/")
         });
 
         return;
