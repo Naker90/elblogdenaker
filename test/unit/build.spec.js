@@ -9,19 +9,25 @@ const dirCreator = require("../../src/Scripts/Utils/dirCreator");
 
 describe('build', () => {
 
-    it("creates path by article date", () => {
+    let builder2;
+
+    beforeEach(() => {
         let articles = [
             {
                 date: "05/10/2018",
             }
         ];
-        let builder2 = builder(articles, dirCreator);
+        builder2 = builder(articles, dirCreator);
+    });
 
+    it("creates path by article date", () => {
         builder2.build();
 
         expect(dirCreator.mkdir).toHaveBeenCalledWith("2018");
         expect(dirCreator.mkdir).toHaveBeenCalledWith("2018/10");
         expect(dirCreator.mkdir).toHaveBeenCalledWith("2018/10/05");
     })
+
+    
 
 });

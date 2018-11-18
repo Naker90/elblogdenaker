@@ -1,4 +1,4 @@
-function dirCreator(){
+function dirCreator(basePath){
 
     function mkdir(path){
         throw new Error("not implemented");
