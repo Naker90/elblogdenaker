@@ -15,14 +15,10 @@ footer{
     background-color: #006a71;
     display: flex;
     justify-content: center;
-}
-
-.clearfix::after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .main-container{
