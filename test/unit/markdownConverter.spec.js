@@ -33,7 +33,7 @@ describe("markdown converter", () => {
                 return "some html";
             });
 
-        markdownConverter2.convertToHtml("markdownPath", "/out/path");
+        markdownConverter2.convertToHtml("markdownPath", "out/path");
 
         expect(fileSystemWrapper.createFile).toHaveBeenCalledWith(
             "some html",

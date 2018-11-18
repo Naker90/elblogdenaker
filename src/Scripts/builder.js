@@ -4,19 +4,16 @@ function builder(articles, dirCreator, markdownConverter){
 
         articles.forEach((article) => {
             let date = getDate(article.date);
-            let createdPath = createArticleDirectory(date);
+            createArticleDirectory(date);
             markdownConverter.convertToHtml(
                 article.markdownPath,
-                createdPath)
+                date.year + "/" + date.month + "/" + date.day)
         });
-
-        return;
 
         function createArticleDirectory(date){
             dirCreator.mkdir(date.year);
             dirCreator.mkdir(date.year + "/" + date.month);
             dirCreator.mkdir(date.year + "/" + date.month + "/" + date.day);
-            return date.year + "/" + date.month + "/" + date.day;
         }
 
         function getDate(date){
