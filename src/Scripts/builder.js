@@ -29,8 +29,6 @@ function builder(articles, dirCreator, markdownConverter){
         }
     }
 
-
-
     return {
         build: build
     }

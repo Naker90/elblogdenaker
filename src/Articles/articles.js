@@ -1,4 +1,4 @@
-export const articles = [
+const articles = [
     {
         name: "Patrón Modelo-Vista-Presentador con vista pasiva.",
         description: "Una derivación del patrón arquitectónico MVC, y es utilizado mayoritariamente para construir interfaces de usuario.",
@@ -22,3 +22,5 @@ export const articles = [
         route: "/implementando-nuestro-propio-motor-de-reglas"
     }
 ];
+
+module.exports = articles;
