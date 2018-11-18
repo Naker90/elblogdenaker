@@ -19,9 +19,9 @@ describe('build', () => {
 
         builder2.build();
 
-        expect(dirCreator.mkdir).toHaveBeenCalledWith("/dist/articles/2018");
-        expect(dirCreator.mkdir).toHaveBeenCalledWith("/dist/articles/2018/10");
-        expect(dirCreator.mkdir).toHaveBeenCalledWith("/dist/articles/2018/10/05");
+        expect(dirCreator.mkdir).toHaveBeenCalledWith("2018");
+        expect(dirCreator.mkdir).toHaveBeenCalledWith("2018/10");
+        expect(dirCreator.mkdir).toHaveBeenCalledWith("2018/10/05");
     })
 
 });

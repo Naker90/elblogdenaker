@@ -1,7 +1,5 @@
 function builder(articles, dirCreator){
 
-    const distPath = "/dist/articles/";
-
     function build() {
 
         articles.forEach((article) => {
@@ -12,9 +10,9 @@ function builder(articles, dirCreator){
         return;
 
         function createArticleDirectory(date){
-            dirCreator.mkdir(distPath + date.year);
-            dirCreator.mkdir(distPath + date.year + "/" + date.month);
-            dirCreator.mkdir(distPath + date.year + "/" + date.month + "/" + date.day);
+            dirCreator.mkdir(date.year);
+            dirCreator.mkdir(date.year + "/" + date.month);
+            dirCreator.mkdir(date.year + "/" + date.month + "/" + date.day);
         }
 
         function getDate(date){
