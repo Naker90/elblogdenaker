@@ -1,7 +1,9 @@
-function markdownConverter(basePath){
+function markdownConverter(basePath, showdownWrapper, fsWrapper){
 
     function convertToHtml(markdownPath, outPath){
-        throw new Error("not implemented");
+        let markdown = fsWrapper.read(markdownPath);
+        let html = showdownWrapper.convertToHtml(markdown);
+        fsWrapper.createFile(html, basePath + outPath)
     }
 
     return {

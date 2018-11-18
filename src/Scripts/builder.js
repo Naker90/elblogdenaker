@@ -4,8 +4,10 @@ function builder(articles, dirCreator, markdownConverter){
 
         articles.forEach((article) => {
             let date = getDate(article.date);
-            createArticleDirectory(date);
-            markdownConverter.convertToHtml(article.markdownPath, "/" + date.year + "/" + date.month + "/" + date.day + "/")
+            let createdPath = createArticleDirectory(date);
+            markdownConverter.convertToHtml(
+                article.markdownPath,
+                createdPath)
         });
 
         return;
@@ -14,16 +16,15 @@ function builder(articles, dirCreator, markdownConverter){
             dirCreator.mkdir(date.year);
             dirCreator.mkdir(date.year + "/" + date.month);
             dirCreator.mkdir(date.year + "/" + date.month + "/" + date.day);
+            return date.year + "/" + date.month + "/" + date.day;
         }
 
         function getDate(date){
-            let year = date.split("/")[2];
-            let month = date.split("/")[1];
-            let day = date.split("/")[0];
+            let splitDate = date.split("/");
             return {
-                year: year,
-                month: month,
-                day: day
+                year: splitDate[2],
+                month: splitDate[1],
+                day: splitDate[0]
             }
         }
     }

@@ -22,7 +22,7 @@ describe('build', () => {
         articles = [
             {
                 date: "05/10/2018",
-                markdown: "~/anyRoute/markdown.md"
+                markdownPath: "~/anyRoute/markdown.md"
             }
         ];
         builder2 = builder(articles, dirCreator, markdownConverter);
@@ -40,8 +40,8 @@ describe('build', () => {
         builder2.build();
 
         expect(markdownConverter.convertToHtml).toHaveBeenCalledWith(
-            articles.markdownPath,
-            "/2018/10/05/"
+            articles[0].markdownPath,
+            "2018/10/05"
         );
     });
 
