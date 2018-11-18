@@ -7,10 +7,8 @@
     "test": "jest",
     "watch:test": "watch 'npm run test' src test",
     "build": "webpack",
-    "watch:build": "watch 'npm run build' src",
     "dev": "npm run build && webpack-dev-server",
-    "deploy:fast": "node deploy.js",
-    "deploy": "npm run build && npm run deploy:fast"
+    "deploy": "npm run build && node ./src/Scripts/deploy.js"
   },
   "repository": {
     "type": "git",

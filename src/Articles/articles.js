@@ -4,7 +4,8 @@ export const articles = [
         description: "Una derivación del patrón arquitectónico MVC, y es utilizado mayoritariamente para construir interfaces de usuario.",
         date: "05/10/2018",
         author: "Antonio Sánchez",
-        route: "/patron-modelo-vista-presentador"
+        route: "/patron-modelo-vista-presentador",
+        markdown: "./test.md"
     },
     {
         name: "Patrón Command.",
