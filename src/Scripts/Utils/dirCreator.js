@@ -1,6 +1,8 @@
 function dirCreator(basePath, fileSystemWrapper){
 
-    function createDirStructureByDate({articleDate}){
+    let self = this;
+
+    self.createDirStructureByDate = ({articleDate}) => {
         let date = splitDate({date: articleDate});
         createDirIfNotExist(basePath + "/" + date.year);
         createDirIfNotExist(basePath + "/" + date.year + "/" + date.month);
@@ -21,11 +23,7 @@ function dirCreator(basePath, fileSystemWrapper){
                 day: splitDate[0]
             }
         }
-    }
-
-    return {
-        createDirStructureByDate: createDirStructureByDate
-    }
+    };
 }
 
 module.exports = dirCreator;
