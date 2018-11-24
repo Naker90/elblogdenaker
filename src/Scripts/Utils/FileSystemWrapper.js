@@ -12,12 +12,12 @@ function FileSystemWrapper(){
         throw new Error("not implemented");
     };
 
-    self.createDir = () => {
-        throw new Error("not implemented");
+    self.createPath = ({path}) => {
+        fs.mkdirSync(path)
     };
 
-    self.existDir = () => {
-        throw new Error("not implemented");
+    self.existPath = ({path}) => {
+        return fs.existsSync(path);
     };
 }
 

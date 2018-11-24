@@ -10,8 +10,8 @@ function FolderService(basePath, fileSystemWrapper){
         return basePath + "/" + date.year + "/" + date.month + "/" + date.day;
 
         function createDirIfNotExist(path){
-            if(!fileSystemWrapper.existDir(path)){
-                fileSystemWrapper.createDir(path);
+            if(!fileSystemWrapper.existPath(path)){
+                fileSystemWrapper.createPath(path);
             }
         }
 
