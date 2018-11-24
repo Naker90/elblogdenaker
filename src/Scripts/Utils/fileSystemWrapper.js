@@ -7,12 +7,17 @@ function fileSystemWrapper(){
     }
 
     function createFile() {
-        throw new Error("not implemented";
+        throw new Error("not implemented");
+    }
+
+    function createDir(){
+        throw new Error("not implemented");
     }
 
     return {
         read: read,
-        createFile: createFile
+        createFile: createFile,
+        createDir: createDir
     }
 }
 

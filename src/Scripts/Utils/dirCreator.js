@@ -1,12 +1,25 @@
-function dirCreator(basePath){
+function dirCreator(basePath, fileSystemWrapper){
 
-    function mkdir(path){
-        throw new Error("not implemented");
+    function createDirStructureByDate({articleDate}){
+        let date = getDate(articleDate);
+        fileSystemWrapper.createDir(basePath + "/" + date.year);
+        fileSystemWrapper.createDir(basePath + "/" + date.year + "/" + date.month);
+        fileSystemWrapper.createDir(basePath + "/" + date.year + "/" + date.month + "/" + date.day);
+        return basePath + "/" + date.year + "/" + date.month + "/" + date.day;
+
+        function getDate(date) {
+            let splitDate = date.split("/");
+            return {
+                year: splitDate[2],
+                month: splitDate[1],
+                day: splitDate[0]
+            }
+        }
     }
 
     return {
-        mkdir: mkdir
+        createDirStructureByDate: createDirStructureByDate
     }
 }
 
-module.exports = dirCreator();
+module.exports = dirCreator;

@@ -45,4 +45,8 @@ describe('build', () => {
         );
     });
 
+    it("creates html file", () => {
+
+    })
+
 });
