@@ -1,4 +1,4 @@
-function Builder(articles, folderService, markdownService, fileSystemWrapper){
+function Builder({articles, folderService, markdownService, fileSystemWrapper}){
 
     let self = this;
 

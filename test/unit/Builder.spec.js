@@ -33,7 +33,12 @@ describe('builder', () => {
                 markdownFilePath: "~/anyRoute/markdown.md"
             }
         ];
-        builder = new Builder(articles, FolderService, MarkdownService, FileSystemWrapper);
+        builder = new Builder({
+            articles: articles,
+            folderService: FolderService,
+            markdownService: MarkdownService,
+            fileSystemWrapper: FileSystemWrapper
+        });
     });
 
     it("creates dir structure by date", () => {
