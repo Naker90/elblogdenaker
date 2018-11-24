@@ -1,6 +1,7 @@
 jest.mock("../../src/Scripts/Utils/fileSystemWrapper", () => {
     return {
-        createDir: jest.fn()
+        createDir: jest.fn(),
+        existDir: jest.fn()
     }
 });
 
@@ -15,6 +16,22 @@ describe("dir creator", () => {
         dirCreator2 = dirCreator("/any/Base/Path", fileSystemWrapper);
     });
 
+    afterEach(() => {
+        jest.resetAllMocks()
+    });
+
+    it("does not create dir if already exist", () => {
+        fileSystemWrapper.existDir
+            .mockImplementation(() => {
+                return true;
+            });
+
+        let finalPath = dirCreator2.createDirStructureByDate({articleDate: "10/12/2018"});
+
+        expect(fileSystemWrapper.createDir).not.toHaveBeenCalled();
+        expect(finalPath).toBe("/any/Base/Path/2018/12/10")
+    })
+
     it("creates dir structure by date", () => {
         let finalPath = dirCreator2.createDirStructureByDate({articleDate: "10/12/2018"});
 
@@ -22,6 +39,5 @@ describe("dir creator", () => {
         expect(fileSystemWrapper.createDir).toHaveBeenCalledWith("/any/Base/Path/2018/12");
         expect(fileSystemWrapper.createDir).toHaveBeenCalledWith("/any/Base/Path/2018/12/10");
         expect(finalPath).toBe("/any/Base/Path/2018/12/10")
-    })
-
+    });
 });

@@ -1,13 +1,19 @@
 function dirCreator(basePath, fileSystemWrapper){
 
     function createDirStructureByDate({articleDate}){
-        let date = getDate(articleDate);
-        fileSystemWrapper.createDir(basePath + "/" + date.year);
-        fileSystemWrapper.createDir(basePath + "/" + date.year + "/" + date.month);
-        fileSystemWrapper.createDir(basePath + "/" + date.year + "/" + date.month + "/" + date.day);
+        let date = splitDate({date: articleDate});
+        createDirIfNotExist(basePath + "/" + date.year);
+        createDirIfNotExist(basePath + "/" + date.year + "/" + date.month);
+        createDirIfNotExist(basePath + "/" + date.year + "/" + date.month + "/" + date.day);
         return basePath + "/" + date.year + "/" + date.month + "/" + date.day;
 
-        function getDate(date) {
+        function createDirIfNotExist(path){
+            if(!fileSystemWrapper.existDir(path)){
+                fileSystemWrapper.createDir(path);
+            }
+        }
+
+        function splitDate({date}) {
             let splitDate = date.split("/");
             return {
                 year: splitDate[2],

@@ -14,10 +14,15 @@ function fileSystemWrapper(){
         throw new Error("not implemented");
     }
 
+    function existDir(){
+        throw new Error("not implemented");
+    }
+
     return {
         read: read,
         createFile: createFile,
-        createDir: createDir
+        createDir: createDir,
+        existDir: existDir
     }
 }
 
