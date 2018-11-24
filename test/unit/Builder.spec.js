@@ -40,14 +40,7 @@ describe('builder', () => {
             fileSystemWrapper: FileSystemWrapper
         });
     });
-
-    it("creates dir structure by date", () => {
-        builder.build();
-
-        expect(FolderService.createDirStructureByDate)
-            .toHaveBeenCalledWith(articles[0].date);
-    });
-
+    
     it("creates html file from markdown file in dir structure created by date", () => {
         FolderService.createDirStructureByDate
             .mockImplementation((articleDate) => {
