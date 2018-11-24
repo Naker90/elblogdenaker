@@ -1,10 +1,12 @@
-function Builder(articles, folderService){
+function Builder(articles, folderService, markdownService, fileSystemWrapper){
 
     let self = this;
 
     self.build = () => {
         articles.forEach((article) => {
-            folderService.createDirStructureByDate(article.date);
+            let finalPath = folderService.createDirStructureByDate(article.date);
+            let html = markdownService.convertToHtmlFromMarkdownFile(article.markdownFilePath);
+            fileSystemWrapper.write(html, finalPath + "/" + article.htmlFileName);
         });
     };
 }
