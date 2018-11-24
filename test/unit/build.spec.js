@@ -1,18 +1,11 @@
 jest.mock("../../src/Scripts/Utils/FolderService", () => {
     return {
-        mkdir: jest.fn()
-    }
-});
-
-jest.mock("../../src/Scripts/Utils/markdownConverter", () => {
-    return {
-        convertToHtml: jest.fn()
+        createDirStructureByDate: jest.fn()
     }
 });
 
 const builder = require("../../src/Scripts/builder");
-const dirCreator = require("../../src/Scripts/Utils/FolderService");
-const markdownConverter = require("../../src/Scripts/Utils/markdownConverter");
+const FolderService = require("../../src/Scripts/Utils/FolderService");
 
 describe('build', () => {
 
@@ -25,28 +18,12 @@ describe('build', () => {
                 markdownPath: "~/anyRoute/markdown.md"
             }
         ];
-        builder2 = builder(articles, dirCreator, markdownConverter);
+        builder2 = builder(articles, FolderService);
     });
 
-    it("creates path by article date", () => {
+    it("creates dir structure by date", () => {
         builder2.build();
 
-        expect(dirCreator.mkdir).toHaveBeenCalledWith("2018");
-        expect(dirCreator.mkdir).toHaveBeenCalledWith("2018/10");
-        expect(dirCreator.mkdir).toHaveBeenCalledWith("2018/10/05");
+        expect(FolderService.createDirStructureByDate).toHaveBeenCalledWith(articles[0].date);
     });
-
-    it("converts article markdown to html", () => {
-        builder2.build();
-
-        expect(markdownConverter.convertToHtml).toHaveBeenCalledWith(
-            articles[0].markdownPath,
-            "2018/10/05"
-        );
-    });
-
-    it("creates html file", () => {
-
-    })
-
 });
