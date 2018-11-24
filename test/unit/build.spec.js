@@ -4,12 +4,12 @@ jest.mock("../../src/Scripts/Utils/FolderService", () => {
     }
 });
 
-const builder = require("../../src/Scripts/builder");
+const Builder = require("../../src/Scripts/Builder");
 const FolderService = require("../../src/Scripts/Utils/FolderService");
 
 describe('build', () => {
 
-    let articles, builder2;
+    let articles, builder;
 
     beforeEach(() => {
         articles = [
@@ -18,11 +18,11 @@ describe('build', () => {
                 markdownPath: "~/anyRoute/markdown.md"
             }
         ];
-        builder2 = builder(articles, FolderService);
+        builder = new Builder(articles, FolderService);
     });
 
     it("creates dir structure by date", () => {
-        builder2.build();
+        builder.build();
 
         expect(FolderService.createDirStructureByDate).toHaveBeenCalledWith(articles[0].date);
     });
