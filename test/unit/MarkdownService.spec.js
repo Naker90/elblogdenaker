@@ -26,7 +26,7 @@ describe("markdown service", () => {
         });
     });
 
-    it("create html file from markdown file", () => {
+    it("return html from markdown file", () => {
         FileSystemWrapper.read
             .mockImplementation((markdownPath) => {
                 expect(markdownPath).toBe("markdownFilePath");
@@ -38,7 +38,7 @@ describe("markdown service", () => {
                 return "some html";
             });
 
-        let html = markdownService.convertToHtml("markdownFilePath");
+        let html = markdownService.convertToHtmlFromMarkdownFile("markdownFilePath");
 
         expect(html).toBe("some html");
     })

@@ -9,7 +9,7 @@ function showdownWrapper(){
     }
 
     return {
-        converterToHtml: convertToHtml
+        convertToHtml: convertToHtml
     }
 }
 
