@@ -1,4 +1,4 @@
-jest.mock("../../src/Scripts/Utils/dirCreator", () => {
+jest.mock("../../src/Scripts/Utils/FolderService", () => {
     return {
         mkdir: jest.fn()
     }
@@ -11,7 +11,7 @@ jest.mock("../../src/Scripts/Utils/markdownConverter", () => {
 });
 
 const builder = require("../../src/Scripts/builder");
-const dirCreator = require("../../src/Scripts/Utils/dirCreator");
+const dirCreator = require("../../src/Scripts/Utils/FolderService");
 const markdownConverter = require("../../src/Scripts/Utils/markdownConverter");
 
 describe('build', () => {

@@ -5,15 +5,15 @@ jest.mock("../../src/Scripts/Utils/fileSystemWrapper", () => {
     }
 });
 
-const DirCreator = require("../../src/Scripts/Utils/dirCreator");
+const FolderService = require("../../src/Scripts/Utils/FolderService");
 const fileSystemWrapper = require("../../src/Scripts/Utils/fileSystemWrapper");
 
-describe("dir creator", () => {
+describe("folder service", () => {
 
     let dirCreator;
 
     beforeEach(() => {
-        dirCreator = new DirCreator("/any/Base/Path", fileSystemWrapper);
+        dirCreator = new FolderService("/any/Base/Path", fileSystemWrapper);
     });
 
     afterEach(() => {

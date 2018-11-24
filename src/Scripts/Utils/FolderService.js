@@ -1,4 +1,4 @@
-function dirCreator(basePath, fileSystemWrapper){
+function FolderService(basePath, fileSystemWrapper){
 
     let self = this;
 
@@ -26,4 +26,4 @@ function dirCreator(basePath, fileSystemWrapper){
     };
 }
 
-module.exports = dirCreator;
+module.exports = FolderService;
