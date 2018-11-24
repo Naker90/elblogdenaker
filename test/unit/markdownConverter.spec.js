@@ -4,7 +4,7 @@ jest.mock("../../src/Scripts/Utils/showdownWrapper", () => {
     }
 });
 
-jest.mock("../../src/Scripts/Utils/fileSystemWrapper", () => {
+jest.mock("../../src/Scripts/Utils/FileSystemWrapper", () => {
     return {
         read: jest.fn(),
         createFile: jest.fn()
@@ -13,7 +13,7 @@ jest.mock("../../src/Scripts/Utils/fileSystemWrapper", () => {
 
 const markdownConverter = require("../../src/Scripts/Utils/markdownConverter");
 const showdownWrapper = require("../../src/Scripts/Utils/showdownWrapper");
-const fileSystemWrapper = require("../../src/Scripts/Utils/fileSystemWrapper");
+const FileSystemWrapper = require("../../src/Scripts/Utils/FileSystemWrapper");
 
 describe("markdown converter", () => {
 
@@ -21,8 +21,8 @@ describe("markdown converter", () => {
         let markdownConverter2 = markdownConverter(
             "/base/path/",
             showdownWrapper,
-            fileSystemWrapper);
-        fileSystemWrapper.read
+            FileSystemWrapper);
+        FileSystemWrapper.read
             .mockImplementation((markdownPath) => {
                 expect(markdownPath).toBe("markdownPath");
                 return "some markdown";
@@ -35,7 +35,7 @@ describe("markdown converter", () => {
 
         markdownConverter2.convertToHtml("markdownPath", "out/path");
 
-        expect(fileSystemWrapper.createFile).toHaveBeenCalledWith(
+        expect(FileSystemWrapper.createFile).toHaveBeenCalledWith(
             "some html",
             "/base/path/" + "/out/path"
         )
