@@ -4,7 +4,7 @@ function FileSystemWrapper(){
 
     let self = this;
 
-    self.read = () => {
+    self.read = ({filePath}) => {
         throw new Error("not implemented");
     };
 
