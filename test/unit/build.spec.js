@@ -15,7 +15,7 @@ describe('build', () => {
         articles = [
             {
                 date: "05/10/2018",
-                markdownPath: "~/anyRoute/markdown.md"
+                markdownFilePath: "~/anyRoute/markdown.md"
             }
         ];
         builder = new Builder(articles, FolderService);

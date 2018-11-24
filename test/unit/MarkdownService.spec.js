@@ -11,20 +11,25 @@ jest.mock("../../src/Scripts/Utils/FileSystemWrapper", () => {
     }
 });
 
-const markdownConverter = require("../../src/Scripts/Utils/markdownConverter");
+const MarkdownService = require("../../src/Scripts/Utils/MarkdownService");
 const showdownWrapper = require("../../src/Scripts/Utils/showdownWrapper");
 const FileSystemWrapper = require("../../src/Scripts/Utils/FileSystemWrapper");
 
-describe("markdown converter", () => {
+describe("markdown service", () => {
+
+    let markdownService;
+
+    beforeEach(() => {
+        markdownService = new MarkdownService({
+            showdownWrapper: showdownWrapper,
+            fileSystemWrapper: FileSystemWrapper
+        });
+    });
 
     it("create html file from markdown file", () => {
-        let markdownConverter2 = markdownConverter(
-            "/base/path/",
-            showdownWrapper,
-            FileSystemWrapper);
         FileSystemWrapper.read
             .mockImplementation((markdownPath) => {
-                expect(markdownPath).toBe("markdownPath");
+                expect(markdownPath).toBe("markdownFilePath");
                 return "some markdown";
             });
         showdownWrapper.convertToHtml
@@ -33,12 +38,9 @@ describe("markdown converter", () => {
                 return "some html";
             });
 
-        markdownConverter2.convertToHtml("markdownPath", "out/path");
+        let html = markdownService.convertToHtml("markdownFilePath");
 
-        expect(FileSystemWrapper.createFile).toHaveBeenCalledWith(
-            "some html",
-            "/base/path/" + "/out/path"
-        )
+        expect(html).toBe("some html");
     })
 
 });
