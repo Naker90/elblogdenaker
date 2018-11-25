@@ -10,10 +10,13 @@ const FileSystemWrapper = require("../../src/Scripts/Utils/FileSystemWrapper");
 
 describe("folder service", () => {
 
-    let dirCreator;
+    let folderService;
 
     beforeEach(() => {
-        dirCreator = new FolderService("/any/Base/Path", FileSystemWrapper);
+        folderService = new FolderService({
+            basePath: "/any/Base/Path",
+            fileSystemWrapper: FileSystemWrapper
+        });
     });
 
     afterEach(() => {
@@ -26,14 +29,14 @@ describe("folder service", () => {
                 return true;
             });
 
-        let finalPath = dirCreator.createDirStructureByDate({articleDate: "10/12/2018"});
+        let finalPath = folderService.createDirStructureByDate({articleDate: "10/12/2018"});
 
         expect(FileSystemWrapper.createPath).not.toHaveBeenCalled();
         expect(finalPath).toBe("/any/Base/Path/2018/12/10")
     });
 
     it("creates dir structure by date", () => {
-        let finalPath = dirCreator.createDirStructureByDate({articleDate: "10/12/2018"});
+        let finalPath = folderService.createDirStructureByDate({articleDate: "10/12/2018"});
 
         expect(FileSystemWrapper.createPath).toHaveBeenCalledWith("/any/Base/Path/2018");
         expect(FileSystemWrapper.createPath).toHaveBeenCalledWith("/any/Base/Path/2018/12");

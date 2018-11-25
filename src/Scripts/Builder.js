@@ -9,6 +9,8 @@ function Builder({articles, folderService, markdownService, fileSystemWrapper}){
             fileSystemWrapper.write(html, finalPath + "/" + article.htmlFileName);
         });
     };
+
+    return self;
 }
 
 module.exports = Builder;

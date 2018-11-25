@@ -8,6 +8,8 @@ function ShowdownWrapper(){
     self.convertToHtml = ({markdown}) => {
         return converter.makeHtml(markdown);
     };
+
+    return self;
 }
 
 module.exports = ShowdownWrapper;

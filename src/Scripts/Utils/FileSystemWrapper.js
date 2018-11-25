@@ -19,6 +19,8 @@ function FileSystemWrapper(){
     self.existPath = ({path}) => {
         return fs.existsSync(path);
     };
+
+    return self;
 }
 
 module.exports = FileSystemWrapper;

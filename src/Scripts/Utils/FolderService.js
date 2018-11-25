@@ -1,15 +1,15 @@
-function FolderService(basePath, fileSystemWrapper){
+function FolderService({basePath, fileSystemWrapper}){
 
     let self = this;
 
     self.createDirStructureByDate = ({articleDate}) => {
         let date = splitDate({date: articleDate});
-        createDirIfNotExist(basePath + "/" + date.year);
-        createDirIfNotExist(basePath + "/" + date.year + "/" + date.month);
-        createDirIfNotExist(basePath + "/" + date.year + "/" + date.month + "/" + date.day);
+        createDirIfNotExist({path: basePath + "/" + date.year});
+        createDirIfNotExist({path: basePath + "/" + date.year + "/" + date.month});
+        createDirIfNotExist({path: basePath + "/" + date.year + "/" + date.month + "/" + date.day});
         return basePath + "/" + date.year + "/" + date.month + "/" + date.day;
 
-        function createDirIfNotExist(path){
+        function createDirIfNotExist({path}){
             if(!fileSystemWrapper.existPath(path)){
                 fileSystemWrapper.createPath(path);
             }
@@ -24,6 +24,8 @@ function FolderService(basePath, fileSystemWrapper){
             }
         }
     };
+    
+    return self;
 }
 
 module.exports = FolderService;

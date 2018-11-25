@@ -6,6 +6,8 @@ function MarkdownService({showdownWrapper, fileSystemWrapper}){
         let markdown = fileSystemWrapper.read({filePath: markdownFilePath});
         return showdownWrapper.convertToHtml({markdown: markdown});
     };
+
+    return self;
 }
 
 module.exports = MarkdownService;
