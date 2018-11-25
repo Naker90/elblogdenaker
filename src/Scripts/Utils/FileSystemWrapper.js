@@ -5,11 +5,21 @@ function FileSystemWrapper(){
     let self = this;
 
     self.read = ({filePath}) => {
-        throw new Error("not implemented");
+        fs.readFile(filePath, {encoding: "utf-8"}, (error, data) => {
+            if(!error) {
+                return data;
+            } else {
+                console.log("[+] Can not read " + filePath);
+            }
+        });
     };
 
     self.write = ({content, outputPath}) => {
-        throw new Error("not implemented");
+        fs.writeFile(outputPath, content, (err) => {
+            if(err) {
+                return console.log("[X] Can not write file " + outputPath + " | error: " + err);
+            }
+        });
     };
 
     self.createPath = ({path}) => {
