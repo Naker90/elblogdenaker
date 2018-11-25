@@ -3,12 +3,14 @@ const fs = require("fs");
 function FileSystemWrapper(){
 
     function read({filePath}){
-        fs.readFile(filePath, {encoding: "utf-8"}, (error, data) => {
-            if(!error) {
-                return data;
-            } else {
-                console.log("[+] Can not read " + filePath);
-            }
+        return new Promise((resolve) => {
+            fs.readFile(filePath, {encoding: "utf-8"}, (error, data) => {
+                if(!error) {
+                    resolve(data);
+                } else {
+                    console.log("[+] Can not read " + filePath);
+                }
+            });
         });
     }
 

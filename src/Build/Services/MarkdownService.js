@@ -1,8 +1,11 @@
 function MarkdownService({showdownWrapper, fileSystemWrapper}){
 
     function convertToHtmlFromMarkdownFile({markdownFilePath}){
-        let markdown = fileSystemWrapper.read({filePath: markdownFilePath});
-        return showdownWrapper.convertToHtml({markdown: markdown});
+        fileSystemWrapper.read({filePath: markdownFilePath})
+            .then((markdown) => {
+                console.log(markdown);
+                return showdownWrapper.convertToHtml({markdown: markdown})
+            });
     }
 
     return {
