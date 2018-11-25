@@ -29,7 +29,7 @@ describe("markdown service", () => {
         FileSystemWrapper.read
             .mockImplementation((filePath) => {
                 expect(filePath).toEqual({filePath: "markdownFilePath"});
-                return "some markdown";
+                return new Promise((resolve) => resolve("some markdown"));
             });
         ShowdownWrapper.convertToHtml
             .mockImplementation((markdown) => {

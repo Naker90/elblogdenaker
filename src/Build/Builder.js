@@ -1,11 +1,11 @@
 function Builder({articles, folderService, markdownService, fileSystemWrapper}){
 
     function build(){
-        articles.forEach((article) => {
+        articles.forEach(async (article) => {
             let path = folderService.createDirStructureByDate({
                 articleDate : article.date
             });
-            let htmlContent = markdownService.convertToHtmlFromMarkdownFile({
+            let htmlContent = await markdownService.convertToHtmlFromMarkdownFile({
                 markdownFilePath: article.markdownFilePath
             });
             fileSystemWrapper.write({

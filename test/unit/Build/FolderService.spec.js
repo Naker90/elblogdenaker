@@ -38,9 +38,9 @@ describe("folder service", () => {
     it("creates dir structure by date", () => {
         let finalPath = folderService.createDirStructureByDate({articleDate: "10/12/2018"});
 
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith("/any/Base/Path/2018");
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith("/any/Base/Path/2018/12");
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith("/any/Base/Path/2018/12/10");
-        expect(finalPath).toBe("/any/Base/Path/2018/12/10")
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path/2018"});
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path/2018/12"});
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path/2018/12/10"});
+        expect(finalPath).toBe("/any/Base/Path/2018/12/10");
     });
 });
