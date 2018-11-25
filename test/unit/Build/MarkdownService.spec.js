@@ -1,10 +1,10 @@
-jest.mock("../../src/Build/LibsWrappers/ShowdownWrapper", () => {
+jest.mock("../../../src/Build/LibsWrappers/ShowdownWrapper", () => {
     return {
         convertToHtml: jest.fn()
     }
 });
 
-jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
+jest.mock("../../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     return {
         read: jest.fn()
     }
@@ -19,7 +19,7 @@ describe("markdown service", () => {
     let markdownService;
 
     beforeEach(() => {
-        markdownService = new MarkdownService({
+        markdownService = MarkdownService({
             showdownWrapper: ShowdownWrapper,
             fileSystemWrapper: FileSystemWrapper
         });

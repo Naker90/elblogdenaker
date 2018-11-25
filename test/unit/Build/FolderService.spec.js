@@ -1,4 +1,4 @@
-jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
+jest.mock("../../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     return {
         createPath: jest.fn(),
         existPath: jest.fn()
@@ -13,7 +13,7 @@ describe("folder service", () => {
     let folderService;
 
     beforeEach(() => {
-        folderService = new FolderService({
+        folderService = FolderService({
             basePath: "/any/Base/Path",
             fileSystemWrapper: FileSystemWrapper
         });

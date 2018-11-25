@@ -1,16 +1,16 @@
-jest.mock("../../src/Build/Services/FolderService", () => {
+jest.mock("../../../src/Build/Services/FolderService", () => {
     return {
         createDirStructureByDate: jest.fn()
     }
 });
 
-jest.mock("../../src/Build/Services/MarkdownService", () => {
+jest.mock("../../../src/Build/Services/MarkdownService", () => {
     return {
         convertToHtmlFromMarkdownFile: jest.fn()
     }
 });
 
-jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
+jest.mock("../../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     return {
         write: jest.fn()
     }
@@ -33,7 +33,7 @@ describe('builder', () => {
                 markdownFilePath: "~/anyRoute/markdown.md"
             }
         ];
-        builder = new Builder({
+        builder = Builder({
             articles: articles,
             folderService: FolderService,
             markdownService: MarkdownService,

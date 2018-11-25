@@ -1,13 +1,13 @@
 function MarkdownService({showdownWrapper, fileSystemWrapper}){
 
-    let self = this;
-
-    self.convertToHtmlFromMarkdownFile = ({markdownFilePath}) => {
+    function convertToHtmlFromMarkdownFile({markdownFilePath}){
         let markdown = fileSystemWrapper.read({filePath: markdownFilePath});
         return showdownWrapper.convertToHtml({markdown: markdown});
-    };
+    }
 
-    return self;
+    return {
+        convertToHtmlFromMarkdownFile: convertToHtmlFromMarkdownFile
+    };
 }
 
 module.exports = MarkdownService;

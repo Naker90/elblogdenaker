@@ -1,8 +1,6 @@
 function FolderService({basePath, fileSystemWrapper}){
 
-    let self = this;
-
-    self.createDirStructureByDate = ({articleDate}) => {
+    function createDirStructureByDate({articleDate}){
         let date = splitDate({date: articleDate});
         createDirIfNotExist({path: basePath + "/" + date.year});
         createDirIfNotExist({path: basePath + "/" + date.year + "/" + date.month});
@@ -23,9 +21,11 @@ function FolderService({basePath, fileSystemWrapper}){
                 day: splitDate[0]
             }
         }
-    };
+    }
     
-    return self;
+    return {
+        createDirStructureByDate: createDirStructureByDate
+    };
 }
 
 module.exports = FolderService;

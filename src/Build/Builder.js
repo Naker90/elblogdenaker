@@ -1,8 +1,6 @@
 function Builder({articles, folderService, markdownService, fileSystemWrapper}){
 
-    let self = this;
-
-    self.build = () => {
+    function build(){
         articles.forEach((article) => {
             let path = folderService.createDirStructureByDate({
                 articleDate : article.date
@@ -15,9 +13,11 @@ function Builder({articles, folderService, markdownService, fileSystemWrapper}){
                 outputPath: path + "/" + article.htmlFileName
             });
         });
-    };
+    }
 
-    return self;
+    return {
+        build: build
+    };
 }
 
 module.exports = Builder;
