@@ -4,9 +4,16 @@ function Builder({articles, folderService, markdownService, fileSystemWrapper}){
 
     self.build = () => {
         articles.forEach((article) => {
-            let finalPath = folderService.createDirStructureByDate(article.date);
-            let html = markdownService.convertToHtmlFromMarkdownFile(article.markdownFilePath);
-            fileSystemWrapper.write(html, finalPath + "/" + article.htmlFileName);
+            let finalPath = folderService.createDirStructureByDate({
+                articleDate : article.date
+            });
+            let html = markdownService.convertToHtmlFromMarkdownFile({
+                markdownFilePath: article.markdownFilePath
+            });
+            fileSystemWrapper.write({
+                content: html,
+                outputPath: finalPath + "/" + article.htmlFileName
+            });
         });
     };
 

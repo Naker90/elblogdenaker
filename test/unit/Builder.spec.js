@@ -44,20 +44,20 @@ describe('builder', () => {
     it("creates html file from markdown file in dir structure created by date", () => {
         FolderService.createDirStructureByDate
             .mockImplementation((articleDate) => {
-                expect(articleDate).toEqual(articles[0].date);
+                expect(articleDate).toEqual({articleDate: articles[0].date});
                 return "/dir/structure/by/date"
             });
         MarkdownService.convertToHtmlFromMarkdownFile
             .mockImplementation((markdownFilePath) => {
-                expect(markdownFilePath).toEqual(markdownFilePath);
+                expect(markdownFilePath).toEqual({markdownFilePath: articles[0].markdownFilePath});
                 return "some html";
             });
 
         builder.build();
 
-        expect(FileSystemWrapper.write).toHaveBeenCalledWith(
-            "some html",
-            "/dir/structure/by/date/" + articles[0].htmlFileName
-        )
+        expect(FileSystemWrapper.write).toHaveBeenCalledWith({
+            content: "some html",
+            outputPath: "/dir/structure/by/date/" + articles[0].htmlFileName
+        })
     })
 });

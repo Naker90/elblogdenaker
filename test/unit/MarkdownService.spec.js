@@ -6,8 +6,7 @@ jest.mock("../../src/Scripts/Utils/ShowdownWrapper", () => {
 
 jest.mock("../../src/Scripts/Utils/FileSystemWrapper", () => {
     return {
-        read: jest.fn(),
-        createFile: jest.fn()
+        read: jest.fn()
     }
 });
 

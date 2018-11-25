@@ -8,7 +8,7 @@ function FileSystemWrapper(){
         throw new Error("not implemented");
     };
 
-    self.createFile = () => {
+    self.write = ({content, outputPath}) => {
         throw new Error("not implemented");
     };
 
