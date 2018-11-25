@@ -1,25 +1,25 @@
-jest.mock("../../src/Scripts/Utils/FolderService", () => {
+jest.mock("../../src/Build/Services/FolderService", () => {
     return {
         createDirStructureByDate: jest.fn()
     }
 });
 
-jest.mock("../../src/Scripts/Utils/MarkdownService", () => {
+jest.mock("../../src/Build/Services/MarkdownService", () => {
     return {
         convertToHtmlFromMarkdownFile: jest.fn()
     }
 });
 
-jest.mock("../../src/Scripts/Utils/FileSystemWrapper", () => {
+jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     return {
         write: jest.fn()
     }
 });
 
-const Builder = require("../../src/Scripts/Builder");
-const FolderService = require("../../src/Scripts/Utils/FolderService");
-const MarkdownService = require("../../src/Scripts/Utils/MarkdownService");
-const FileSystemWrapper = require("../../src/Scripts/Utils/FileSystemWrapper");
+const Builder = require("../../src/Build/Builder");
+const FolderService = require("../../src/Build/Services/FolderService");
+const MarkdownService = require("../../src/Build/Services/MarkdownService");
+const FileSystemWrapper = require("../../src/Build/LibsWrappers/FileSystemWrapper");
 
 describe('builder', () => {
 

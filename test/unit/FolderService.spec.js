@@ -1,12 +1,12 @@
-jest.mock("../../src/Scripts/Utils/FileSystemWrapper", () => {
+jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     return {
         createPath: jest.fn(),
         existPath: jest.fn()
     }
 });
 
-const FolderService = require("../../src/Scripts/Utils/FolderService");
-const FileSystemWrapper = require("../../src/Scripts/Utils/FileSystemWrapper");
+const FolderService = require("../../src/Build/Services/FolderService");
+const FileSystemWrapper = require("../../src/Build/LibsWrappers/FileSystemWrapper");
 
 describe("folder service", () => {
 

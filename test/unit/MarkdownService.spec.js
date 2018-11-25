@@ -1,18 +1,18 @@
-jest.mock("../../src/Scripts/Utils/ShowdownWrapper", () => {
+jest.mock("../../src/Build/LibsWrappers/ShowdownWrapper", () => {
     return {
         convertToHtml: jest.fn()
     }
 });
 
-jest.mock("../../src/Scripts/Utils/FileSystemWrapper", () => {
+jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     return {
         read: jest.fn()
     }
 });
 
-const MarkdownService = require("../../src/Scripts/Utils/MarkdownService");
-const ShowdownWrapper = require("../../src/Scripts/Utils/ShowdownWrapper");
-const FileSystemWrapper = require("../../src/Scripts/Utils/FileSystemWrapper");
+const MarkdownService = require("../../src/Build/Services/MarkdownService");
+const ShowdownWrapper = require("../../src/Build/LibsWrappers/ShowdownWrapper");
+const FileSystemWrapper = require("../../src/Build/LibsWrappers/FileSystemWrapper");
 
 describe("markdown service", () => {
 
