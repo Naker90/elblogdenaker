@@ -25,7 +25,6 @@ function FileSystemWrapper(){
     }
 
     function existPath({path}) {
-        console.log(path);
         return fs.existsSync(path);
     }
 

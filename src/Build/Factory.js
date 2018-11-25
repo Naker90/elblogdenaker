@@ -17,7 +17,7 @@ function BuilderFactory(){
 
         function createFolderService(){
             return FolderService({
-                basePath: "/home/naker90/Desktop/Porjects/elblogdenaker/dist/articles",
+                basePath: "/home/naker90/Desktop/Projects/elblogdenaker/dist/articles",
                 fileSystemWrapper: FileSystemWrapper()
             })
         }
