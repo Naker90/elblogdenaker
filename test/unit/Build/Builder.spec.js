@@ -16,10 +16,10 @@ jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     }
 });
 
-const Builder = require("../../src/Build/Builder");
-const FolderService = require("../../src/Build/Services/FolderService");
-const MarkdownService = require("../../src/Build/Services/MarkdownService");
-const FileSystemWrapper = require("../../src/Build/LibsWrappers/FileSystemWrapper");
+const Builder = require("../../../src/Build/Builder");
+const FolderService = require("../../../src/Build/Services/FolderService");
+const MarkdownService = require("../../../src/Build/Services/MarkdownService");
+const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
 
 describe('builder', () => {
 

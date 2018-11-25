@@ -10,9 +10,9 @@ jest.mock("../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     }
 });
 
-const MarkdownService = require("../../src/Build/Services/MarkdownService");
-const ShowdownWrapper = require("../../src/Build/LibsWrappers/ShowdownWrapper");
-const FileSystemWrapper = require("../../src/Build/LibsWrappers/FileSystemWrapper");
+const MarkdownService = require("../../../src/Build/Services/MarkdownService");
+const ShowdownWrapper = require("../../../src/Build/LibsWrappers/ShowdownWrapper");
+const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
 
 describe("markdown service", () => {
 
