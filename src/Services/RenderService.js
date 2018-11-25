@@ -1,6 +1,6 @@
 const ReactDom = require("react-dom");
 
-function navigator(){
+function RenderService(){
 
     const APP_CONTAINER = "app";
 
@@ -20,4 +20,4 @@ function navigator(){
     };
 }
 
-module.exports = navigator;
+module.exports = RenderService;

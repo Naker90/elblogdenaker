@@ -1,8 +1,8 @@
-const navigator = require("../Utils/navigator");
+const RenderService = require("../Services/RenderService");
 const notFoundController = require("./Controllers/notFoundController");
 const notFoundView = require("./Views/notFoundView");
 
 export const createNotFoundController = () => {
-    let view = notFoundView(navigator());
+    let view = notFoundView(RenderService());
     return notFoundController(view);
 };

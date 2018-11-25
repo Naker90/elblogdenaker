@@ -1,7 +1,7 @@
-function homeView(navigator){
+function homeView(renderService){
 
     function render(){
-        navigator.render("Not found");
+        renderService.render("Not found");
     }
 
     return {

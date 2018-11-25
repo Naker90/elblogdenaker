@@ -26,10 +26,10 @@ class HomeView extends React.Component{
     }
 }
 
-function homeView(navigator) {
+function homeView(renderService) {
 
     function render(articles){
-        navigator.reactRender(<HomeView articles={articles}/>);
+        renderService.reactRender(<HomeView articles={articles}/>);
     }
 
     return {
