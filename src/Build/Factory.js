@@ -5,22 +5,33 @@ const FolderService = require("./Services/FolderService");
 const Builder = require("./Builder");
 const articles = require("../Articles/articles");
 
-export const createBuilder = () => Builder({
-    articles: articles,
-    folderService: createFolderService(),
-    markdownService: createMarkdownService(),
-    fileSystemWrapper: FileSystemWrapper()
-});
+function BuilderFactory(){
 
-function createFolderService(){
-    return FolderService({
-        basePath: "/home/naker90/Desktop/Porjects/elblogdenaker/dist/articles",
-        fileSystemWrapper: FileSystemWrapper()
-    })
+    function createBuilder(){
+        return Builder({
+            articles: articles,
+            folderService: createFolderService(),
+            markdownService: createMarkdownService(),
+            fileSystemWrapper: FileSystemWrapper()
+        });
+
+        function createFolderService(){
+            return FolderService({
+                basePath: "/home/naker90/Desktop/Porjects/elblogdenaker/dist/articles",
+                fileSystemWrapper: FileSystemWrapper()
+            })
+        }
+
+        function createMarkdownService(){
+            return MarkdownService({
+                fileSystemWrapper: FileSystemWrapper(),
+                showdownWrapper: ShowdownWrapper()})
+        }
+    }
+
+    return {
+        createBuilder: createBuilder
+    }
 }
 
-function createMarkdownService(){
-    return MarkdownService({
-        fileSystemWrapper: FileSystemWrapper(),
-        showdownWrapper: ShowdownWrapper()})
-}
+module.exports = BuilderFactory();
