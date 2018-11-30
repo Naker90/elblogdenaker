@@ -2,9 +2,7 @@ function MarkdownService({showdownWrapper, fileSystemWrapper}){
 
     function convertToHtmlFromMarkdownFile({markdownFilePath}){
         return fileSystemWrapper.read({filePath: markdownFilePath})
-            .then((markdown) => {
-                showdownWrapper.convertToHtml({markdown: markdown})
-            });
+            .then(markdown => showdownWrapper.convertToHtml({markdown: markdown}));
     }
 
     return {

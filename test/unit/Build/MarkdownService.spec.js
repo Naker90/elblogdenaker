@@ -25,11 +25,11 @@ describe("markdown service", () => {
         });
     });
 
-    it("return html from markdown file", () => {
+    it("return html from markdown file", async () => {
         FileSystemWrapper.read
             .mockImplementation((filePath) => {
                 expect(filePath).toEqual({filePath: "markdownFilePath"});
-                return new Promise((resolve) => resolve("some markdown"));
+                return Promise.resolve("some markdown");
             });
         ShowdownWrapper.convertToHtml
             .mockImplementation((markdown) => {
@@ -37,7 +37,7 @@ describe("markdown service", () => {
                 return "some html";
             });
 
-        let html = markdownService.convertToHtmlFromMarkdownFile({
+        let html = await markdownService.convertToHtmlFromMarkdownFile({
             markdownFilePath: "markdownFilePath"
         });
 
