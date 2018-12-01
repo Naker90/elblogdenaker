@@ -29,7 +29,7 @@ class ArticlesList extends React.Component{
 function HomeView({renderService}) {
 
     function render({articles}){
-        renderService.reactRender(<ArticlesList articles={articles}/>);
+        renderService.reactRender({component: <ArticlesList articles={articles}/>});
     }
 
     return {

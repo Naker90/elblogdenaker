@@ -4,11 +4,11 @@ function RenderService(){
 
     const APP_CONTAINER = "app";
 
-    function render(content){
+    function render({content}){
         document.getElementById(APP_CONTAINER).innerHTML = content;
     }
 
-    function reactRender(component){
+    function reactRender({component}){
         ReactDom.render(
             component,
             document.getElementById(APP_CONTAINER))

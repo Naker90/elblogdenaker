@@ -1,4 +1,4 @@
-function notFoundController(view){
+function NotFoundController({view}){
 
     function execute(){
         view.render();
@@ -9,4 +9,4 @@ function notFoundController(view){
     }
 }
 
-module.exports = notFoundController;
+module.exports = NotFoundController;

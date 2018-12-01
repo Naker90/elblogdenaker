@@ -1,8 +1,8 @@
 const page = require("page");
 
-function router(){
+function Router(){
 
-    function registerRoute(route, resolver){
+    function registerRoute({route, resolver}){
         page(route, resolver);
     }
 
@@ -16,4 +16,4 @@ function router(){
     }
 }
 
-module.exports = router;
+module.exports = Router;
