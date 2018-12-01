@@ -1,11 +1,11 @@
-jest.mock("../../src/Home/Views/homeView", () => {
+jest.mock("../../src/Home/Views/HomeView", () => {
    return {
        render: jest.fn()
    }
 });
 
-const HomeController = require("../../src/Home/Controllers/homeController");
-const HomeView = require("../../src/Home/Views/homeView");
+const HomeController = require("../../src/Home/Controllers/HomeController");
+const HomeView = require("../../src/Home/Views/HomeView");
 
 describe("home controller tests", () => {
 
@@ -22,7 +22,7 @@ describe("home controller tests", () => {
             }
         ];
         view = HomeView;
-        controller = HomeController(view, articles);
+        controller = HomeController({view: view, articles: articles});
     });
 
     it("shows all Articles", () => {

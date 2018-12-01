@@ -12,7 +12,7 @@ class Article extends React.Component{
     }
 }
 
-class HomeView extends React.Component{
+class ArticlesList extends React.Component{
     render(){
         return (
             <div>
@@ -26,10 +26,10 @@ class HomeView extends React.Component{
     }
 }
 
-function homeView(renderService) {
+function HomeView({renderService}) {
 
-    function render(articles){
-        renderService.reactRender(<HomeView articles={articles}/>);
+    function render({articles}){
+        renderService.reactRender(<ArticlesList articles={articles}/>);
     }
 
     return {
@@ -37,4 +37,4 @@ function homeView(renderService) {
     }
 }
 
-module.exports = homeView;
+module.exports = HomeView;

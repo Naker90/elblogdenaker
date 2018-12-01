@@ -1,4 +1,4 @@
-const homeFactory = require("../Home/factory");
+const homeFactory = require("../Home/Factory");
 const notFoundFactory = require("../NotFound/factory");
 
 function routesResolver(router){

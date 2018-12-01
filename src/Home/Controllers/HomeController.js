@@ -1,4 +1,4 @@
-function homeController(view, articles){
+function HomeController({view, articles}){
 
     function execute(){
         view.render(articles);
@@ -10,4 +10,4 @@ function homeController(view, articles){
 
 }
 
-module.exports = homeController;
+module.exports = HomeController;
