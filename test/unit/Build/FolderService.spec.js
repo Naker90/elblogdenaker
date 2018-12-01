@@ -10,11 +10,12 @@ const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWra
 
 describe("folder service", () => {
 
+    const BASE_PATH = "/any/Base/Path";
     let folderService;
 
     beforeEach(() => {
         folderService = FolderService({
-            basePath: "/any/Base/Path",
+            basePath: BASE_PATH,
             fileSystemWrapper: FileSystemWrapper
         });
     });
@@ -32,16 +33,16 @@ describe("folder service", () => {
         let finalPath = folderService.createDirStructureByDate({articleDate: "10/12/2018"});
 
         expect(FileSystemWrapper.createPath).not.toHaveBeenCalled();
-        expect(finalPath).toBe("/any/Base/Path/2018/12/10")
+        expect(finalPath).toBe(`${BASE_PATH}/2018/12/10`)
     });
 
     it("creates dir structure by date", () => {
         let finalPath = folderService.createDirStructureByDate({articleDate: "10/12/2018"});
 
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path"});
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path/2018"});
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path/2018/12"});
-        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: "/any/Base/Path/2018/12/10"});
-        expect(finalPath).toBe("/any/Base/Path/2018/12/10");
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: BASE_PATH});
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: `${BASE_PATH}/2018`});
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: `${BASE_PATH}/2018/12`});
+        expect(FileSystemWrapper.createPath).toHaveBeenCalledWith({path: `${BASE_PATH}/2018/12/10`});
+        expect(finalPath).toBe(`${BASE_PATH}/2018/12/10`);
     });
 });
