@@ -41,7 +41,7 @@ describe('builder', () => {
         });
     });
     
-    it("creates html file from markdown file in dir structure created by date", () => {
+    it("creates html file from markdown file in dir structure created by date", async () => {
         FolderService.createDirStructureByDate
             .mockImplementation((articleDate) => {
                 expect(articleDate).toEqual({articleDate: articles[0].date});
@@ -53,7 +53,7 @@ describe('builder', () => {
                 return "some html";
             });
 
-        builder.build();
+        await builder.build();
 
         expect(FileSystemWrapper.write).toHaveBeenCalledWith({
             content: "some html",
