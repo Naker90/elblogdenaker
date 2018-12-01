@@ -10,9 +10,16 @@ jest.mock("../../../src/Build/LibsWrappers/FileSystemWrapper", () => {
     }
 });
 
+jest.mock("../../../src/Build/Services/PrinterService", () => {
+    return {
+        printLog: jest.fn()
+    }
+});
+
 const MarkdownService = require("../../../src/Build/Services/MarkdownService");
 const ShowdownWrapper = require("../../../src/Build/LibsWrappers/ShowdownWrapper");
 const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
+const PinterService = require("../../../src/Build/Services/PrinterService");
 
 describe("markdown service", () => {
 
@@ -21,8 +28,24 @@ describe("markdown service", () => {
     beforeEach(() => {
         markdownService = MarkdownService({
             showdownWrapper: ShowdownWrapper,
-            fileSystemWrapper: FileSystemWrapper
+            fileSystemWrapper: FileSystemWrapper,
+            printerService: PinterService
         });
+    });
+
+    it("logs error when can not read markdown file", async () => {
+        FileSystemWrapper.read
+            .mockImplementation((filePath) => {
+                expect(filePath).toEqual({filePath: "markdownFilePath"});
+                return Promise.reject("error");
+            });
+
+        await markdownService.convertToHtmlFromMarkdownFile({
+            markdownFilePath: "markdownFilePath"
+        });
+
+        expect(PinterService.printLog).toHaveBeenCalled();
+        expect(ShowdownWrapper.convertToHtml).not.toHaveBeenCalled();
     });
 
     it("return html from markdown file", async () => {
@@ -42,5 +65,5 @@ describe("markdown service", () => {
         });
 
         expect(html).toBe("some html");
-    })
+    });
 });
