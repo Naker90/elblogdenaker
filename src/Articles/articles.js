@@ -1,3 +1,4 @@
+const path = require("path");
 const articles = [
     {
         name: "Patrón Modelo-Vista-Presentador con vista pasiva.",
@@ -6,7 +7,7 @@ const articles = [
         htmlFileName: "html-file-name.html",
         author: "Antonio Sánchez",
         route: "/patron-modelo-vista-presentador",
-        markdownFilePath: "/home/naker90/Desktop/Projects/elblogdenaker/src/Articles/test.md"
+        markdownFilePath: path.join(__dirname, "test.md")
     },
     {
         name: "Patrón Command.",
@@ -15,7 +16,7 @@ const articles = [
         author: "Antonio Sánchez",
         route: "/patron-command",
         htmlFileName: "html-file-name.html",
-        markdownFilePath: "/home/naker90/Desktop/Projects/elblogdenaker/src/Articles/test.md"
+        markdownFilePath: path.join(__dirname, "test.md")
     },
     {
         name: "Implementando nuestro propio motor de reglas — Java.",
@@ -24,7 +25,7 @@ const articles = [
         author: "Antonio Sánchez",
         route: "/implementando-nuestro-propio-motor-de-reglas",
         htmlFileName: "html-file-name.html",
-        markdownFilePath: "/home/naker90/Desktop/Projects/elblogdenaker/src/Articles/test.md"
+        markdownFilePath: path.join(__dirname, "test.md")
     }
 ];
 
