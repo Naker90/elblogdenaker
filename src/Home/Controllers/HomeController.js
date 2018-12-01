@@ -1,7 +1,7 @@
 function HomeController({view, articles}){
 
     function execute(){
-        view.render(articles);
+        view.render({articles: articles});
     }
 
     return {
