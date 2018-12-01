@@ -2,12 +2,8 @@ function MarkdownService({showdownWrapper, fileSystemWrapper, printerService}){
 
     function convertToHtmlFromMarkdownFile({markdownFilePath}){
         return fileSystemWrapper.read({filePath: markdownFilePath})
-            .then(markdown => {
-                return showdownWrapper.convertToHtml({markdown: markdown})
-            })
-            .catch(error => {
-                printerService.printLog({message: error})
-            });
+            .then(markdown => showdownWrapper.convertToHtml({markdown: markdown}))
+            .catch(error => printerService.printLog({message: `[+] Can not read file: ${error}`}));
     }
 
     return {
