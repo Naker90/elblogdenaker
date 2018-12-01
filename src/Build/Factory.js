@@ -7,17 +7,17 @@ const articles = require("../Articles/articles");
 
 function BuilderFactory(){
 
-    function createBuilder(){
+    function createBuilder({articlesDistPath}){
         return Builder({
             articles: articles,
-            folderService: createFolderService(),
+            folderService: createFolderService({articlesDistPath: articlesDistPath}),
             markdownService: createMarkdownService(),
             fileSystemWrapper: FileSystemWrapper()
         });
 
-        function createFolderService(){
+        function createFolderService({articlesDistPath}){
             return FolderService({
-                basePath: "/home/naker90/Desktop/Projects/elblogdenaker/dist/articles",
+                articlesDistPath: articlesDistPath,
                 fileSystemWrapper: FileSystemWrapper()
             })
         }

@@ -1,12 +1,12 @@
-function FolderService({basePath, fileSystemWrapper}){
+function FolderService({articlesDistPath, fileSystemWrapper}){
 
     function createDirStructureByDate({articleDate}){
         let date = splitDate({date: articleDate});
-        createDirIfNotExist({path: basePath});
-        createDirIfNotExist({path: `${basePath}/${date.year}`});
-        createDirIfNotExist({path: `${basePath}/${date.year}/${date.month}`});
-        createDirIfNotExist({path: `${basePath}/${date.year}/${date.month}/${date.day}`});
-        return `${basePath}/${date.year}/${date.month}/${date.day}`;
+        createDirIfNotExist({path: articlesDistPath});
+        createDirIfNotExist({path: `${articlesDistPath}/${date.year}`});
+        createDirIfNotExist({path: `${articlesDistPath}/${date.year}/${date.month}`});
+        createDirIfNotExist({path: `${articlesDistPath}/${date.year}/${date.month}/${date.day}`});
+        return `${articlesDistPath}/${date.year}/${date.month}/${date.day}`;
 
         function createDirIfNotExist({path}){
             if(!fileSystemWrapper.existPath({path: path})){
