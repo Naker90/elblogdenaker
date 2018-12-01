@@ -1,23 +1,19 @@
-jest.mock("../../src/NotFound/Views/notFoundView", () => {
-   return {
-       render: jest.fn()
-   }
-});
-
-const notFoundController = require("../../src/NotFound/Controllers/notFoundController");
-const notFoundView = require("../../src/NotFound/Views/notFoundView");
+const NotFoundController = require("../../src/NotFound/Controllers/notFoundController");
+const NotFoundView = require("../../src/NotFound/Views/notFoundView");
+const JestUtils = require("../utils/JestUtils");
 
 describe("not found controller tests", () => {
 
-    let controller;
+    let controller, view;
 
     beforeEach(() => {
-        controller = notFoundController(notFoundView);
+        view = JestUtils.mockAllMethods({obj: NotFoundView()});
+        controller = NotFoundController(view);
     });
 
     it("renders not found view", () => {
         controller.execute();
 
-        expect(notFoundView.render).toHaveBeenCalled();
+        expect(view.render).toHaveBeenCalled();
     });
 });

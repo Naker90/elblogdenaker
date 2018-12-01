@@ -4,8 +4,8 @@ jest.mock("../../src/Home/Views/homeView", () => {
    }
 });
 
-const homeController = require("../../src/Home/Controllers/homeController");
-const homeView = require("../../src/Home/Views/homeView");
+const HomeController = require("../../src/Home/Controllers/homeController");
+const HomeView = require("../../src/Home/Views/homeView");
 
 describe("home controller tests", () => {
 
@@ -21,8 +21,8 @@ describe("home controller tests", () => {
                 "route": "anyRoute"
             }
         ];
-        view = homeView;
-        controller = homeController(view, articles);
+        view = HomeView;
+        controller = HomeController(view, articles);
     });
 
     it("shows all Articles", () => {
