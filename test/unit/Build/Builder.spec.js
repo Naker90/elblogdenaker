@@ -1,29 +1,12 @@
-jest.mock("../../../src/Build/Services/FolderService", () => {
-    return {
-        createDirStructureByDate: jest.fn()
-    }
-});
-
-jest.mock("../../../src/Build/Services/MarkdownService", () => {
-    return {
-        convertToHtmlFromMarkdownFile: jest.fn()
-    }
-});
-
-jest.mock("../../../src/Build/LibsWrappers/FileSystemWrapper", () => {
-    return {
-        write: jest.fn()
-    }
-});
-
 const Builder = require("../../../src/Build/Builder");
 const FolderService = require("../../../src/Build/Services/FolderService");
 const MarkdownService = require("../../../src/Build/Services/MarkdownService");
 const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
+const JestUtils = require("../../utils/JestUtils");
 
 describe('builder', () => {
 
-    let articles, builder;
+    let articles, builder, folderService, markdownService, fileSystemWrapper;
 
     beforeEach(() => {
         articles = [
@@ -33,21 +16,24 @@ describe('builder', () => {
                 markdownFilePath: "~/anyRoute/markdown.md"
             }
         ];
+        folderService = JestUtils.mockAllMethods({obj: FolderService({})});
+        markdownService = JestUtils.mockAllMethods({obj: MarkdownService({})});
+        fileSystemWrapper = JestUtils.mockAllMethods({obj: FileSystemWrapper()});
         builder = Builder({
             articles: articles,
-            folderService: FolderService,
-            markdownService: MarkdownService,
-            fileSystemWrapper: FileSystemWrapper
+            folderService: folderService,
+            markdownService: markdownService,
+            fileSystemWrapper: fileSystemWrapper
         });
     });
     
     it("creates html file from markdown file in dir structure created by date", async () => {
-        FolderService.createDirStructureByDate
+        folderService.createDirStructureByDate
             .mockImplementation((articleDate) => {
                 expect(articleDate).toEqual({articleDate: articles[0].date});
                 return "/dir/structure/by/date"
             });
-        MarkdownService.convertToHtmlFromMarkdownFile
+        markdownService.convertToHtmlFromMarkdownFile
             .mockImplementation((markdownFilePath) => {
                 expect(markdownFilePath).toEqual({markdownFilePath: articles[0].markdownFilePath});
                 return "some html";
@@ -55,7 +41,7 @@ describe('builder', () => {
 
         await builder.build();
 
-        expect(FileSystemWrapper.write).toHaveBeenCalledWith({
+        expect(fileSystemWrapper.write).toHaveBeenCalledWith({
             content: "some html",
             outputPath: "/dir/structure/by/date/" + articles[0].htmlFileName
         })
