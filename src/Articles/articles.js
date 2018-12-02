@@ -6,7 +6,7 @@ const articles = [
         date: "05/10/2018",
         htmlFileName: "patron-mvp.html",
         author: "Antonio Sánchez",
-        route: "/patron-modelo-vista-presentador",
+        route: "2018/10/05/patron-mvp",
         markdownFilePath: path.join(__dirname, "patron-mvp.md")
     },
     {
@@ -14,7 +14,7 @@ const articles = [
         description: "Un patrón de comportamiento en el que un objeto se utiliza para encapsular toda la información necesaria para realizar una acción.",
         date: "05/08/2018",
         author: "Antonio Sánchez",
-        route: "/patron-command",
+        route: "2018/08/05/patron-command",
         htmlFileName: "patron-command.html",
         markdownFilePath: path.join(__dirname, "patron-command.md")
     },
@@ -23,7 +23,7 @@ const articles = [
         description: "Introducción a un simple motor de reglas y como podemos implementar uno en java.",
         date: "25/10/2017",
         author: "Antonio Sánchez",
-        route: "/implementando-nuestro-propio-motor-de-reglas",
+        route: "2017/10/25/implementando-motor-de-reglas",
         htmlFileName: "implementando-motor-de-reglas.html",
         markdownFilePath: path.join(__dirname, "implementando-motor-de-reglas.md")
     }
