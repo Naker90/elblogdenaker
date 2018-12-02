@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest",
     "watch:test": "watch 'npm run test' src test",
-    "build": "webpack",
+    "build": "node build.js",
     "dev": "npm run build && webpack-dev-server",
-    "deploy": "npm run build && node ./src/Scripts/deploy.js"
+    "deploy": "npm run build && node deploy.js"
   },
   "repository": {
     "type": "git",
