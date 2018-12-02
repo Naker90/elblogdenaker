@@ -24,8 +24,8 @@ const articles = [
         date: "25/10/2017",
         author: "Antonio Sánchez",
         route: "/implementando-nuestro-propio-motor-de-reglas",
-        htmlFileName: "html-file-name.html",
-        markdownFilePath: path.join(__dirname, "patron-mvp.md")
+        htmlFileName: "implementando-motor-de-reglas.html",
+        markdownFilePath: path.join(__dirname, "implementando-motor-de-reglas.md")
     }
 ];
 
