@@ -7,7 +7,7 @@ const articles = [
         htmlFileName: "patron-mvp.html",
         author: "Antonio Sánchez",
         route: "/patron-modelo-vista-presentador",
-        markdownFilePath: path.join(__dirname, "test.md")
+        markdownFilePath: path.join(__dirname, "patron-mvp.md")
     },
     {
         name: "Patrón Command.",
@@ -15,8 +15,8 @@ const articles = [
         date: "05/08/2018",
         author: "Antonio Sánchez",
         route: "/patron-command",
-        htmlFileName: "html-file-name.html",
-        markdownFilePath: path.join(__dirname, "test.md")
+        htmlFileName: "patron-command.html",
+        markdownFilePath: path.join(__dirname, "patron-command.md")
     },
     {
         name: "Implementando nuestro propio motor de reglas — Java.",
@@ -25,7 +25,7 @@ const articles = [
         author: "Antonio Sánchez",
         route: "/implementando-nuestro-propio-motor-de-reglas",
         htmlFileName: "html-file-name.html",
-        markdownFilePath: path.join(__dirname, "test.md")
+        markdownFilePath: path.join(__dirname, "patron-mvp.md")
     }
 ];
 

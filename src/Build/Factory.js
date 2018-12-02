@@ -3,6 +3,7 @@ const FileSystemWrapper = require("./LibsWrappers/FileSystemWrapper");
 const MarkdownService = require("./Services/MarkdownService");
 const FolderService = require("./Services/FolderService");
 const Builder = require("./Builder");
+const PrintService = require("./Services/PrinterService");
 const articles = require("../Articles/articles");
 
 function BuilderFactory(){
@@ -25,7 +26,8 @@ function BuilderFactory(){
         function createMarkdownService(){
             return MarkdownService({
                 fileSystemWrapper: FileSystemWrapper(),
-                showdownWrapper: ShowdownWrapper()})
+                showdownWrapper: ShowdownWrapper(),
+                printerService: PrintService()})
         }
     }
 
