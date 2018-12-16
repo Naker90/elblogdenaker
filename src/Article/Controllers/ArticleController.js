@@ -1,26 +1,29 @@
-const fs = require("fs");
-
 function ArticleController({view}){
 
     function execute(ctx){
         let path = `./articles/${ctx.params.year}/${ctx.params.month}/${ctx.params.day}/${ctx.params.articleName}.html`;
-        read({
-            filePath: path,
-            successCallback: html => view.render(html),
-            errorCallback: () => view.render("Articulo no encontrado.")
-        })
+        read2({
+            file: path,
+            successCallback: html => view.render({content: html}),
+            errorCallback: () => view.render({content: "Articulo no encontrado."})
+        });
     }
 
-    function read({filePath, successCallback, errorCallback}){
-        fs.readFile(filePath, {encoding: "utf-8"}, (error, data) => {
-            if(!error) {
-                console.log(data);
-                successCallback(data);
-            } else {
-                console.log(error);
-                errorCallback();
+    function read2({file, successCallback, errorCallback})
+    {
+        let rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    return successCallback(rawFile.responseText);
+                }
             }
-        });
+        };
+        rawFile.send();
     }
 
     return {

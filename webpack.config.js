@@ -52,8 +52,5 @@ module.exports = {
                 to:'images'
             }
         ])
-    ],
-    node: {
-        fs: 'empty'
-    }
+    ]
 };
