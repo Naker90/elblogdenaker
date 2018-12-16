@@ -1,11 +1,6 @@
-jest.mock("../../src/App/Home/Views/HomeView", () => {
-   return {
-       render: jest.fn()
-   }
-});
-
 import HomeController from "../../src/App/Home/Controllers/HomeController";
 import HomeView from "../../src/App/Home/Views/HomeView";
+import JestUtils from "../utils/JestUtils";
 
 describe("home controller tests", () => {
 
@@ -21,7 +16,7 @@ describe("home controller tests", () => {
                 "route": "anyRoute"
             }
         ];
-        view = HomeView;
+        view = JestUtils.mockAllMethods({obj: HomeView({})});
         controller = HomeController({view: view, articles: articles});
     });
 
