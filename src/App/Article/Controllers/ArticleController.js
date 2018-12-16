@@ -1,12 +1,15 @@
 function ArticleController({view, fileReaderService}){
 
     function execute(ctx){
-        let path = `./articles/${ctx.params.year}/${ctx.params.month}/${ctx.params.day}/${ctx.params.articleName}.html`;
         fileReaderService.read({
-            file: path,
+            file: buildPath({context: ctx}),
             successCallback: html => view.render({content: html}),
             errorCallback: () => view.render({content: "Articulo no encontrado."})
         });
+
+        function buildPath({context}){
+            return `./articles/${context.params.year}/${context.params.month}/${context.params.day}/${context.params.articleName}.html`;
+        }
     }
 
     return {
