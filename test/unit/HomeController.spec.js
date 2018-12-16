@@ -4,8 +4,8 @@ jest.mock("../../src/App/Home/Views/HomeView", () => {
    }
 });
 
-const HomeController = require("../../src/App/Home/Controllers/HomeController");
-const HomeView = require("../../src/App/Home/Views/HomeView");
+import HomeController from "../../src/App/Home/Controllers/HomeController";
+import HomeView from "../../src/App/Home/Views/HomeView";
 
 describe("home controller tests", () => {
 

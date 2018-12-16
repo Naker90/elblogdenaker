@@ -1,8 +1,8 @@
-const Builder = require("../../../src/Build/Builder");
-const FolderService = require("../../../src/Build/Services/FolderService");
-const MarkdownService = require("../../../src/Build/Services/MarkdownService");
-const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
-const JestUtils = require("../../utils/JestUtils");
+import Builder from "../../../src/Build/Builder";
+import FolderService from "../../../src/Build/Services/FolderService";
+import MarkdownService from "../../../src/Build/Services/MarkdownService";
+import FileSystemWrapper from "../../../src/Build/LibsWrappers/FileSystemWrapper";
+import JestUtils from "../../utils/JestUtils";
 
 describe('builder', () => {
 

@@ -1,7 +1,7 @@
-const ArticleController = require("../../src/App/Article/Controllers/ArticleController");
-const ArticleView = require("../../src/App/Article/Views/ArticleView");
-const FileReaderService = require("../../src/App/Services/FileReaderService");
-const JestUtils = require("../utils/JestUtils");
+import ArticleController from "../../src/App/Article/Controllers/ArticleController";
+import ArticleView from "../../src/App/Article/Views/ArticleView";
+import FileReaderService from "../../src/App/Services/FileReaderService";
+import JestUtils from "../utils/JestUtils";
 
 describe("not found controller tests", () => {
 

@@ -1,8 +1,8 @@
-const MarkdownService = require("../../../src/Build/Services/MarkdownService");
-const ShowdownWrapper = require("../../../src/Build/LibsWrappers/ShowdownWrapper");
-const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
-const PrinterService = require("../../../src/Build/Services/PrinterService");
-const JestUtils = require("../../utils/JestUtils");
+import MarkdownService from "../../../src/Build/Services/MarkdownService";
+import ShowdownWrapper from "../../../src/Build/LibsWrappers/ShowdownWrapper";
+import FileSystemWrapper from "../../../src/Build/LibsWrappers/FileSystemWrapper";
+import PrinterService from "../../../src/Build/Services/PrinterService";
+import JestUtils from "../../utils/JestUtils";
 
 describe("markdown service", () => {
 

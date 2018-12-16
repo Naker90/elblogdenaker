@@ -1,6 +1,6 @@
-const FolderService = require("../../../src/Build/Services/FolderService");
-const FileSystemWrapper = require("../../../src/Build/LibsWrappers/FileSystemWrapper");
-const JestUtils = require("../../utils/JestUtils");
+import FolderService from "../../../src/Build/Services/FolderService";
+import FileSystemWrapper from "../../../src/Build/LibsWrappers/FileSystemWrapper";
+import JestUtils from "../../utils/JestUtils";
 
 describe("folder service", () => {
 
