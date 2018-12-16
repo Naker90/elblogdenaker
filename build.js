@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
 const webpackConfig = require("./webpack.config");
-const BuilderFactory = require("./src/Build/Factory");
+const BuilderFactory = require("./src/App/Build/Factory");
 
 console.log("[+] Run Webpack");
 webpack(webpackConfig, (error) => {
@@ -17,7 +17,6 @@ webpack(webpackConfig, (error) => {
 function transformArticles(){
     console.log("[+] Transforms articles");
 
-    //Por el momento dejo aqui la creacion de la carpeta 'dist/articles'
     let articlesDistPath = path.join(__dirname, "dist/articles");
     createPathIfNotExist({path: articlesDistPath});
 
