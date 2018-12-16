@@ -1,5 +1,5 @@
-const NotFoundController = require("../../src/NotFound/Controllers/NotFoundController");
-const NotFoundView = require("../../src/NotFound/Views/NotFoundView");
+const NotFoundController = require("../../src/App/NotFound/Controllers/NotFoundController");
+const NotFoundView = require("../../src/App/NotFound/Views/NotFoundView");
 const JestUtils = require("../utils/JestUtils");
 
 describe("not found controller tests", () => {
