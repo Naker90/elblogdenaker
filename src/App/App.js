@@ -3,7 +3,7 @@ require("./Content/styles/responsive-style.css");
 require("./Content/styles/fullscreen-style.css");
 require("./Content/styles/articles.css");
 require("./Content/styles/normalize.css");
-const RouterFactory = require("./Router/RouterFactory");
+import * as RouterFactory from "./Router/RouterFactory";
 
 function start(){
     let routesResolver = RouterFactory.createRoutesResolver();

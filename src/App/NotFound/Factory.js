@@ -1,6 +1,6 @@
-const RenderService = require("../Services/RenderService");
-const NotFoundController = require("./Controllers/NotFoundController");
-const NotFoundView = require("./Views/NotFoundView");
+import RenderService from "../Services/RenderService";
+import NotFoundController from "./Controllers/NotFoundController";
+import NotFoundView from "./Views/NotFoundView";
 
 export const createNotFoundController = () => {
     let view = NotFoundView({renderService: RenderService()});

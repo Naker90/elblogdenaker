@@ -1,7 +1,7 @@
-const RenderService = require("../Services/RenderService");
-const ArticleController = require("./Controllers/ArticleController");
-const ArticleView = require("./Views/ArticleView");
-const FileReaderService = require("../Services/FileReaderService");
+import RenderService from "../Services/RenderService";
+import ArticleController from "./Controllers/ArticleController";
+import ArticleView from "./Views/ArticleView";
+import FileReaderService from "../Services/FileReaderService";
 
 export const createArticleController = () => {
     let view = ArticleView({renderService: RenderService()});

@@ -1,7 +1,7 @@
-const RenderService = require("../Services/RenderService");
-const HomeController = require("./Controllers/HomeController");
-const HomeView = require("./Views/HomeView.jsx");
-const articles = require("../../Articles/articles");
+import RenderService from "../Services/RenderService";
+import HomeController from "./Controllers/HomeController";
+import HomeView from "./Views/HomeView.jsx";
+import articles from "../../Articles/articles";
 
 export const createHomeController = () => {
     let view = HomeView({renderService: RenderService()});

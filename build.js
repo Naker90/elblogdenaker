@@ -1,8 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const webpack = require("webpack");
-const webpackConfig = require("./webpack.config");
-const BuilderFactory = require("./src/Build/Factory");
+import fs from "fs";
+import path from "path";
+import webpack from "webpack";
+import webpackConfig from "./webpack.config";
+import BuilderFactory from "./src/Build/Factory";
 
 console.log("[+] Run Webpack");
 webpack(webpackConfig, (error) => {

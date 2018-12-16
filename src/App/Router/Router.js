@@ -1,13 +1,13 @@
-const page = require("page");
+import Page from "page";
 
 function Router(){
 
     function registerRoute({route, resolver}){
-        page(route, resolver);
+        Page(route, resolver);
     }
 
     function finish(){
-        page();
+        Page();
     }
 
     return {

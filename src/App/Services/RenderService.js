@@ -1,4 +1,4 @@
-const ReactDom = require("react-dom");
+import ReactDom from "react-dom";
 
 function RenderService(){
 

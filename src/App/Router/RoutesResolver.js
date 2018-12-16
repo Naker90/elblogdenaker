@@ -1,6 +1,6 @@
-const HomeFactory = require("../Home/Factory");
-const NotFoundFactory = require("../NotFound/Factory");
-const ArticleFactory = require("../Article/Factory");
+import * as HomeFactory from "../Home/Factory";
+import * as NotFoundFactory from "../NotFound/Factory";
+import * as ArticleFactory from "../Article/Factory";
 
 function RoutesResolver({router: router}){
 
