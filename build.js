@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
 const webpackConfig = require("./webpack.config");
-const BuilderFactory = require("./src/App/Build/Factory");
+const BuilderFactory = require("./src/Build/Factory");
 
 console.log("[+] Run Webpack");
 webpack(webpackConfig, (error) => {
