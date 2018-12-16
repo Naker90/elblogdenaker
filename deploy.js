@@ -1,4 +1,4 @@
-import ghPages from "gh-pages";
+const ghPages = require("gh-pages");
 const branch = 'dist';
 const config = {
     branch: 'master',
