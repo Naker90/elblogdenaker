@@ -10,7 +10,7 @@ describe("folder service", () => {
     beforeEach(() => {
         fileSystemWrapper = JestUtils.mockAllMethods({obj: FileSystemWrapper()});
         folderService = FolderService({
-            basePath: BASE_PATH,
+            articlesDistPath: BASE_PATH,
             fileSystemWrapper: fileSystemWrapper
         });
     });

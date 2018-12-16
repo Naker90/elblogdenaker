@@ -2,7 +2,7 @@ function ArticleController({view, fileReaderService}){
 
     function execute(ctx){
         fileReaderService.read({
-            file: buildPath({context: ctx}),
+            filePath: buildPath({context: ctx}),
             successCallback: html => view.render({content: html}),
             errorCallback: () => view.render({content: "Articulo no encontrado."})
         });

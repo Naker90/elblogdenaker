@@ -1,4 +1,4 @@
-jest.mock("../../src/Home/Views/HomeView", () => {
+jest.mock("../../src/App/Home/Views/HomeView", () => {
    return {
        render: jest.fn()
    }
@@ -28,6 +28,6 @@ describe("home controller tests", () => {
     it("shows all Articles", () => {
         controller.execute();
 
-        expect(view.render).toHaveBeenCalledWith(articles);
+        expect(view.render).toHaveBeenCalledWith({articles: articles});
     });
 });

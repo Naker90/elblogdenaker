@@ -4,7 +4,7 @@ const path = require("path");
 describe("index",() => {
 
     beforeEach(done => {
-        loadTemplate("../../src/index.html", html => {
+        loadTemplate("../../src/App/index.html", html => {
             document.body.innerHTML = html;
             done();
         });

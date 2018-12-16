@@ -1,6 +1,6 @@
 function FileReaderService(){
 
-    function read({file: filePath, successCallback, errorCallback}){
+    function read({filePath, successCallback, errorCallback}){
         let xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", filePath, false);
         xmlHttp.onreadystatechange = onReadyStateChangeHandler;
