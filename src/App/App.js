@@ -1,8 +1,8 @@
-require("./Content/styles/main-style.css");
-require("./Content/styles/responsive-style.css");
-require("./Content/styles/fullscreen-style.css");
-require("./Content/styles/articles.css");
-require("./Content/styles/normalize.css");
+import "./Content/styles/main-style.css";
+import "./Content/styles/responsive-style.css";
+import "./Content/styles/fullscreen-style.css";
+import "./Content/styles/articles.css";
+import "./Content/styles/normalize.css";
 import * as RouterFactory from "./Router/RouterFactory";
 
 function start(){

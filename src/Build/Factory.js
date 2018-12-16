@@ -1,10 +1,10 @@
-import ShowdownWrapper from "./LibsWrappers/ShowdownWrapper";
-import FileSystemWrapper from "./LibsWrappers/FileSystemWrapper";
-import MarkdownService from "./Services/MarkdownService";
-import FolderService from "./Services/FolderService";
-import Builder from "./Builder";
-import PrintService from "./Services/PrinterService";
-import articles from "../Articles/articles";
+const ShowdownWrapper = require("./LibsWrappers/ShowdownWrapper");
+const FileSystemWrapper = require("./LibsWrappers/FileSystemWrapper");
+const MarkdownService = require("./Services/MarkdownService");
+const FolderService = require("./Services/FolderService");
+const Builder = require("./Builder");
+const PrintService = require("./Services/PrinterService");
+const articles = require("../Articles/articles");
 
 function BuilderFactory(){
 

@@ -1,4 +1,4 @@
-import showdown from "showdown";
+const showdown = require("showdown");
 
 function ShowdownWrapper(){
 
