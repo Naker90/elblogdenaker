@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve('./src/App.js'),
+    entry: path.resolve('./src/App/App.js'),
     output: {
         filename: 'bundle.js'
     },
@@ -44,11 +44,11 @@ module.exports = {
         new ExtractTextPlugin("style/style.min.css"),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/index.html'
+            template: 'src/App/index.html'
         }),
         new CopyWebpackPlugin([
             {
-                from:'src/Content/images',
+                from:'src/App/Content/images',
                 to:'images'
             }
         ])
