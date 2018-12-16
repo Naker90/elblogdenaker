@@ -4,7 +4,7 @@ const MarkdownService = require("./Services/MarkdownService");
 const FolderService = require("./Services/FolderService");
 const Builder = require("./Builder");
 const PrintService = require("./Services/PrinterService");
-const articles = require("../App/Articles/articles");
+const articles = require("../Articles/articles");
 
 function BuilderFactory(){
 
