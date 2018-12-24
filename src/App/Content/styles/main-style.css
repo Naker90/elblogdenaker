@@ -21,10 +21,6 @@ footer{
     bottom: 0;
 }
 
-code{
-    overflow: no-content;
-}
-
 .main-container{
     display: flex;
     justify-content: space-around;
@@ -104,3 +100,8 @@ code{
     width: 100%;
     height: auto;
 }
+
+#app pre{
+    overflow: scroll;
+}
+
