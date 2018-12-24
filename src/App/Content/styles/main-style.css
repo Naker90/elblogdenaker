@@ -21,6 +21,10 @@ footer{
     bottom: 0;
 }
 
+code{
+    overflow: no-content;
+}
+
 .main-container{
     display: flex;
     justify-content: space-around;
@@ -90,4 +94,13 @@ footer{
 
 .color-red{
     color: red;
+}
+
+#app {
+    color: black;
+}
+
+#app img{
+    width: 100%;
+    height: auto;
 }
