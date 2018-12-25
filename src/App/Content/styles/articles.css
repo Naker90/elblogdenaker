@@ -10,12 +10,16 @@ article{
 
 .article-title {
     font-size: 2.5em;
+    line-height: 1;
 }
 
 .article-subtitle {
     font-size: 2em;
+    border-bottom: 1px solid black;
+    padding-bottom: 3px;
 }
 
 .article-paragraph {
     font-size: 1.2em;
+    line-height: 1.5;
 }
