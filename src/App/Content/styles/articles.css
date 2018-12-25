@@ -7,3 +7,11 @@ article{
     box-shadow: 5px 5px 10px 0px #575757;
     margin-bottom: 15px;
 }
+
+.article-title {
+    font-size: 2.5em;
+}
+
+.article-paragraph {
+    font-size: 1.2em;
+}
