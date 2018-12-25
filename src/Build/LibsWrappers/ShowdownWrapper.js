@@ -3,7 +3,8 @@ const showdown = require("showdown");
 function ShowdownWrapper(){
 
     const classMap = {
-      h2: "article-title"
+        h2: "article-title",
+        p: "article-paragraph"
     };
 
     const bindings = Object.keys(classMap)

@@ -16,6 +16,15 @@ describe("showdown wrapper", () => {
         });
 
         expect(html).toBe("<h2 class='article-title' id=\"test\">Test</h2>")
-    })
+    });
 
+    it("put on p tag article paragraph class name", () => {
+        let markdown = "Test";
+
+        let html = converter.convertToHtml({
+            markdown: markdown
+        });
+
+        expect(html).toBe("<p class='article-paragraph'>Test</p>")
+    });
 });
