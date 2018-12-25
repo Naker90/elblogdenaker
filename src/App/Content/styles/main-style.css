@@ -93,6 +93,7 @@ footer{
 }
 
 #app {
+    max-width: 880px;
     color: black;
 }
 
