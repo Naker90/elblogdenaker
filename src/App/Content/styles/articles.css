@@ -26,6 +26,6 @@ article p {
     font-size: 2em;
 }
 
-#article-code {
+.article-code {
     overflow: scroll;
 }
