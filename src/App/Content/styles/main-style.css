@@ -97,7 +97,7 @@ footer{
     color: black;
 }
 
-#app img{
+#app img {
     width: 100%;
     height: auto;
     box-shadow: 3px 3px 10px 0px #575757;
@@ -105,8 +105,3 @@ footer{
     margin: 0 auto;
     max-width: 700px;
 }
-
-#app pre{
-    overflow: scroll;
-}
-

@@ -5,7 +5,7 @@ function ShowdownWrapper(){
     const classMap = {
         h2: "article-title",
         h3: "article-subtitle",
-        p: "article-paragraph"
+        pre: "article-code"
     };
 
     const bindings = Object.keys(classMap)
@@ -16,7 +16,8 @@ function ShowdownWrapper(){
         }));
 
     const converter = new showdown.Converter({
-        extensions: [...bindings]
+        extensions: [...bindings],
+        omitExtraWLInCodeBlocks: true
     });
 
     function convertToHtml({markdown}){

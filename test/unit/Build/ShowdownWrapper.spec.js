@@ -28,13 +28,13 @@ describe("showdown wrapper", () => {
         expect(html).toBe("<h3 class='article-subtitle' id=\"test\">Test</h3>")
     });
 
-    it("put on p tag article paragraph class name", () => {
-        let markdown = "Test";
+    it("put on pre tag article code class name", () => {
+        let markdown = "```\nTest\n```";
 
         let html = converter.convertToHtml({
             markdown: markdown
         });
 
-        expect(html).toBe("<p class='article-paragraph'>Test</p>")
+        expect(html).toBe("<pre class='article-code'><code>Test</code></pre>")
     });
 });
