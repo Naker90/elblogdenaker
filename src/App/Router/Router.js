@@ -7,7 +7,7 @@ function Router(){
     }
 
     function finish(){
-        Page();
+        Page({hashbang : true});
     }
 
     return {
