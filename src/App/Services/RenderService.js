@@ -2,16 +2,18 @@ import ReactDom from "react-dom";
 
 function RenderService(){
 
-    const APP_CONTAINER = "app";
+    const APP_CONTAINER_ID = "app";
 
     function render({content}){
-        document.getElementById(APP_CONTAINER).innerHTML = content;
+        let appContainer = document.getElementById(APP_CONTAINER_ID);
+        ReactDom.unmountComponentAtNode(appContainer);
+        appContainer.innerHTML = content;
     }
 
     function reactRender({component}){
         ReactDom.render(
             component,
-            document.getElementById(APP_CONTAINER))
+            document.getElementById(APP_CONTAINER_ID))
     }
 
     return {
