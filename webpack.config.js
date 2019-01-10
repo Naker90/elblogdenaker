@@ -54,5 +54,8 @@ module.exports = {
             }
         ]),
         new ImageminPlugin({ test: /\.(jpg|jpeg|png|gif|svg)$/i })
-    ]
+    ],
+    performance: {
+        hints: false
+    }
 };
