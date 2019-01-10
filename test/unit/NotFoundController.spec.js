@@ -1,5 +1,5 @@
-import NotFoundController from "../../src/App/NotFound/Controllers/NotFoundController";
-import NotFoundView from "../../src/App/NotFound/Views/NotFoundView";
+import NotFoundController from "../../src/App/NotFound/NotFoundController";
+import NotFoundView from "../../src/App/NotFound/NotFoundView";
 import JestUtils from "../utils/JestUtils";
 
 describe("not found controller tests", () => {

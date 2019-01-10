@@ -1,5 +1,5 @@
-import HomeController from "../../src/App/Home/Controllers/HomeController";
-import HomeView from "../../src/App/Home/Views/HomeView";
+import HomeController from "../../src/App/Home/HomeController";
+import HomeView from "../../src/App/Home/HomeView";
 import JestUtils from "../utils/JestUtils";
 
 describe("home controller tests", () => {

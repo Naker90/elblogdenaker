@@ -1,5 +1,5 @@
-import ArticleController from "../../src/App/Article/Controllers/ArticleController";
-import ArticleView from "../../src/App/Article/Views/ArticleView";
+import ArticleController from "../../src/App/Article/ArticleController";
+import ArticleView from "../../src/App/Article/ArticleView";
 import FileReaderService from "../../src/App/Services/FileReaderService";
 import JestUtils from "../utils/JestUtils";
 
