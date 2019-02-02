@@ -9,11 +9,11 @@ module.exports = {
     output: {
         filename: 'bundle.js'
     },
-    mode: 'production',
+    mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        port: 8004
+        port: 8000
     },
     module: {
         rules: [
