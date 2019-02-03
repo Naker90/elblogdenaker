@@ -1,6 +1,4 @@
-import HangmanPlay from "./Hangman/Game";
-
-function NotFoundController({view}){
+function NotFoundController({view, hangmanGame}){
 
     const hangmanPlayMarkup = `<div class="container">
             <canvas id="canvas" width="500" height="250"></canvas>
@@ -17,7 +15,7 @@ function NotFoundController({view}){
 
     function execute(){
         view.render({content: hangmanPlayMarkup});
-        HangmanPlay().startGame();
+        hangmanGame.start();
     }
 
     return {

@@ -1,3 +1,18 @@
+jest.mock("../../../src/App/NotFound/Hangman/View", () => {
+    return {
+        showWord: jest.fn(),
+        showLives: jest.fn(),
+        endGameAsWinner: jest.fn(),
+        endGameAsLoser: jest.fn(),
+        reloadPage: jest.fn(),
+        showHint: jest.fn(),
+        subscribeToStartGameRequested: jest.fn(),
+        subscribeToPlayAgainRequested: jest.fn(),
+        subscribeToGuessLetterRequested: jest.fn(),
+        subscribeToGetHintRequested: jest.fn()
+    }
+});
+
 import Hangman from '../../../src/App/NotFound/Hangman/Hangman';
 import MoviesAndHintsRepository from '../../../src/App/NotFound/Hangman/MoviesAndHintsRepository';
 import View from '../../../src/App/NotFound/Hangman/View';
@@ -10,7 +25,7 @@ describe("hangman play", () => {
 
     beforeEach(() => {
         moviesAndHintsRepository = JestUtils.mockAllMethods({obj: MoviesAndHintsRepository({})});
-        view = JestUtils.mockAllMethods({obj: View()});
+        view = View;
         stickman = JestUtils.mockAllMethods({obj: Stickman()});
     });
 
@@ -49,14 +64,13 @@ describe("hangman play", () => {
         it("shows encoded word on game start", () => {
             let encodedMovieTitle = ["-","-","-","-","_","-"];
             moviesAndHintsRepository.getMovieAndHints
-                .mockImplementation(({encodeCharacter}) => {
-                    expect(encodeCharacter).toBe("-");
+                .mockImplementation(() => {
                     return {movieTitle: "casa a", hints: ["Una pista"]};
                 });
 
             startGameRequestedHandler();
 
-            expect(view.showWord).toHaveBeenCalledWith({word: encodedMovieTitle});
+            expect(view.showWord).toHaveBeenCalledWith({movieTitle: encodedMovieTitle});
             expect(view.showLives).toHaveBeenCalledWith({numberOfLives: 10});
             expect(view.subscribeToGuessLetterRequested).toHaveBeenCalled();
             expect(view.subscribeToGetHintRequested).toHaveBeenCalled();
@@ -100,7 +114,7 @@ describe("hangman play", () => {
                 guessLetterRequestedHandler({letter: "a"});
 
                 expect(view.showWord).toHaveBeenCalledWith({
-                    word: ["-","a","-","a"]});
+                    movieTitle: ["-","a","-","a"]});
             });
 
             it("decrement lives if guessed letter is wrong and draw next stickman body part", () => {

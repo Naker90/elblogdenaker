@@ -4,13 +4,13 @@ import MoviesAndHintsRepository from "./MoviesAndHintsRepository";
 import MoviesAndHints from "./MoviesAndHints";
 import Stickman from "./Stickman";
 
-function HangmanPlay(){
+function Game(){
 
     return {
-        startGame: startGame
+        start: start
     };
 
-    function startGame(){
+    function start(){
         Hangman({
             view: View(),
             moviesAndHintsRepository: MoviesAndHintsRepository({moviesAndHints: MoviesAndHints}),
@@ -19,4 +19,4 @@ function HangmanPlay(){
     }
 }
 
-module.exports = HangmanPlay;
+module.exports = Game;
