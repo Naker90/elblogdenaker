@@ -1,6 +1,9 @@
 function NotFoundController({view, hangmanGame}){
 
-    const hangmanPlayMarkup = `<div class="container">
+    const hangmanPlayMarkup = `
+        <h1>404 - Page has not been found but you can play a little bit</h1>
+        <div class="hangmanContainer">
+            <h2>Hangman play - movie titles</h2>
             <canvas id="canvas" width="500" height="250"></canvas>
             <br>
             <h2 id="lives">You have 10 lives.</h2>
