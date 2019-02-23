@@ -1,15 +1,19 @@
 function HomeView({renderService}){
 
-    const HangmanMarkup = `<div class="container">
-        <canvas id="canvas"></canvas>
+    const HangmanMarkup = `
+        <h2>404 - Página no encontrada</h2>
+        <h2>Si te aburres puedes jugar al ahorcado ;)</h2>
+        <input id="start" class="btn" type="button" value="¡Jugar!">
+        <div class="container">
+            <canvas id="canvas"></canvas>
             <br>
-            <h2 id="lives">You have 10 lives.</h2>
+            <h2 id="lives">Tienes 10 vidas.</h2>
             <h3 id="hint-text"></h3>
             <div id="movie-title"></div>
             <div id="alphabet"></div>
             <div>
-                <input id="hint" class="btn" type="button" value="Give me a hint!">
-                <input id="play" class="btn" type="button" value="Play again!">
+                <input id="hint" class="btn" type="button" value="¡Dame una pista!">
+                <input id="play" class="btn" type="button" value="Jugar">
             </div>
         </div>`;
 
