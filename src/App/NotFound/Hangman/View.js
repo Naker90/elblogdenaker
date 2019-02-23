@@ -7,21 +7,26 @@ function View(){
 
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-    let container = document.getElementById("alphabet");
+    let gameContainer = document.getElementById("gameContainer");
+    let alphabetContainer = document.getElementById("alphabet");
     let movieContainer = document.getElementById("movie-title");
     let livesText = document.getElementById("lives");
     let hintBtn = document.getElementById("hint");
+    let startBtn = document.getElementById("start");
     let playBtn = document.getElementById("play");
     let hintText = document.getElementById("hint-text");
 
-    document.addEventListener("DOMContentLoaded", () => {
+    startBtn.addEventListener("click", () => {
         startGameRequestedHandler();
-    });
-    playBtn.addEventListener("click", () => {
-        playAgainRequestedHandler();
-    });
-    hintBtn.addEventListener("click", () => {
-        getHintRequestedHandler()
+        gameContainer.style.display = "block";
+        startBtn.style.display = "none";
+
+        playBtn.addEventListener("click", () => {
+            playAgainRequestedHandler();
+        });
+        hintBtn.addEventListener("click", () => {
+            getHintRequestedHandler()
+        });
     });
 
     generateBtnAlphabet();
@@ -105,7 +110,7 @@ function View(){
                 deleteEventListenerTo(btn)
             });
 
-            container.appendChild(btn);
+            alphabetContainer.appendChild(btn);
         });
 
         function setStyleDisabled(btn){
@@ -116,7 +121,7 @@ function View(){
     }
 
     function deleteAllButtonEventLister(){
-        let buttons = container.getElementsByTagName("button");
+        let buttons = alphabetContainer.getElementsByTagName("button");
         Array.prototype.map.call(buttons, (btn) => {
             deleteEventListenerTo(btn);
         });
