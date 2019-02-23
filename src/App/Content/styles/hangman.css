@@ -23,6 +23,18 @@ canvas {
     margin-bottom: 15px;
 }
 
+#gameContainer span {
+    font-size: 2.5em
+}
+
+#gameContainer h2 {
+    font-size: 2em
+}
+
+#gameContainer h3 {
+    font-size: 1.7em
+}
+
 .btn {
     width: 250px;
     height: 70px;
