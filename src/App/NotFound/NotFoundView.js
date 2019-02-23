@@ -3,7 +3,7 @@ function HomeView({renderService}){
     const HangmanMarkup = `
         <h2 class="text-big">404 - Página no encontrada</h2>
         <input id="start" class="btn btn-big" type="button" value="¡Jugar al ahorcado!">
-        <div id="gameContainer" class="container" style="display: none;">
+        <div id="gameContainer" style="display: none;">
             <h2 class="text-big">¡Adivina el titulo de las peliculas!</h2>
             <canvas id="canvas"></canvas>
             <br>

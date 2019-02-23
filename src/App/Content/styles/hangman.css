@@ -16,7 +16,7 @@ canvas {
     max-width: 500px;
 }
 
-.hangmanContainer{
+#gameContainer{
     display: flex;
     flex-direction: column;
     align-items: center;

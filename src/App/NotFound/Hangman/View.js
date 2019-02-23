@@ -18,7 +18,7 @@ function View(){
 
     startBtn.addEventListener("click", () => {
         startGameRequestedHandler();
-        gameContainer.style.display = "block";
+        gameContainer.removeAttribute("style");
         startBtn.style.display = "none";
 
         playBtn.addEventListener("click", () => {
