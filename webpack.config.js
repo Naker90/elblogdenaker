@@ -2,7 +2,6 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 module.exports = {
     entry: path.resolve('./src/App/App.js'),
@@ -53,7 +52,6 @@ module.exports = {
                 to:'images'
             }
         ]),
-        new ImageminPlugin({ test: /\.(jpg|jpeg|png|gif|svg)$/i })
     ],
     performance: {
         hints: false
