@@ -1,10 +1,10 @@
-function ArticleController({view, fileReaderService}){
+function ArticleController({notFoundController, view, fileReaderService}){
 
     function execute(ctx){
         fileReaderService.read({
             filePath: buildPath({context: ctx}),
             successCallback: html => view.render({content: html}),
-            errorCallback: () => view.render({content: "Articulo no encontrado."})
+            errorCallback: () => notFoundController.execute()
         });
 
         function buildPath({context}){

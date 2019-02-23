@@ -1,11 +1,12 @@
 import ArticleController from "../../src/App/Article/ArticleController";
+import NotFoundController from "../../src/App/NotFound/NotFoundController";
 import ArticleView from "../../src/App/Article/ArticleView";
 import FileReaderService from "../../src/App/Services/FileReaderService";
 import JestUtils from "../utils/JestUtils";
 
 describe("not found controller tests", () => {
 
-    let controller, view, fileReaderService, context;
+    let controller, notFoundController,  view, fileReaderService, context;
 
     beforeEach(() => {
         context = {
@@ -16,9 +17,13 @@ describe("not found controller tests", () => {
                 articleName: "anyArticleName"
             }
         };
+        notFoundController = JestUtils.mockAllMethods({obj: NotFoundController({})});
         view = JestUtils.mockAllMethods({obj: ArticleView({})});
         fileReaderService = JestUtils.mockAllMethods({obj: FileReaderService({})});
-        controller = ArticleController({view: view, fileReaderService: fileReaderService});
+        controller = ArticleController({
+            notFoundController: notFoundController,
+            view: view,
+            fileReaderService: fileReaderService});
     });
 
     it("renders not found", () => {
@@ -30,7 +35,7 @@ describe("not found controller tests", () => {
 
         controller.execute(context);
 
-        expect(view.render).toHaveBeenCalledWith({content: "Articulo no encontrado."});
+        expect(notFoundController.execute).toHaveBeenCalled();
     });
 
     it("renders article", () => {
