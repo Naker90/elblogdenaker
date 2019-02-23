@@ -21,10 +21,10 @@ function Hangman({view, moviesAndHintsRepository, stickman}){
         function guessLetterRequestedHandler({letter}){
             if(!isWordContainsLetter({letter: letter})) {
                 lives--;
+                stickman.drawNext();
                 if(lives === 0){
                     view.endGameAsLoser();
                 }else{
-                    stickman.drawNext();
                     view.showLives({numberOfLives: lives});
                 }
             }else{
