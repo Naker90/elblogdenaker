@@ -7,7 +7,7 @@ const articles = [
         htmlFileName: "esquema-bd-sql-injection.html",
         author: "Antonio Sánchez",
         route: "2018/10/05/esquema-bd-sql-injection",
-        markdownFilePath: path.join(__dirname, "esquema-bd-sql-injection.html.md")
+        markdownFilePath: path.join(__dirname, "esquema-bd-sql-injection.md")
     },
     {
         name: "Patrón Modelo-Vista-Presentador con vista pasiva.",
