@@ -9,7 +9,9 @@ function LibraryRepository({boardRepository, listRepository, cardRepository}){
         let libraryLists = await listRepository.getListsBy({
             boardId: libraryBoardId
         });
-        return await BuildLibraryFrom({lists: libraryLists});
+        return libraryLists
+            ? await BuildLibraryFrom({lists: libraryLists})
+            : [];
 
         async function BuildLibraryFrom({lists}){
             let library = [];

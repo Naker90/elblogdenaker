@@ -59,4 +59,20 @@ describe("library controller tests", () => {
             },
         ]);
     });
+
+        it("get empty library when not found elements", async () => {
+        boardRepository.getLibraryBoardId
+            .mockImplementation(() => {
+                return "boardId"
+            });
+        listRepository.getListsBy
+            .mockImplementation(() => {
+                return undefined;
+            });
+
+        let library = await libraryRepository.getAll();
+
+        expect(library.length).toBe(0);
+        expect(cardRepository.getCardsBy).not.toHaveBeenCalled();
+    });
 });
