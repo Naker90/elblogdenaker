@@ -1,6 +1,6 @@
 function LibraryView({renderService}){
 
-    const TRELLO_LINK_MARKUP = `<a href="https://trello.com/b/IeYtjCoV">Trello</a></p>`;
+    const TRELLO_LINK_MARKUP = `<a href="https://trello.com/b/IeYtjCoV" target="_blank">Trello</a></p>`;
 
     function renderLibrary({library}){
         let markup = `
