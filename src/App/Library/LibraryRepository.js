@@ -9,12 +9,16 @@ function LibraryRepository({boardRepository, listRepository, cardRepository}){
         let libraryLists = await listRepository.getListsBy({
             boardId: libraryBoardId
         });
-        let library = [];
-        await libraryLists.forEach((list) => {
-            let cards = cardRepository.getCardsBy({listId: list.id});
-            library.push({bookcase: list.name, books: cards});
-        });
-        return library;
+        return await BuildLibraryFrom({lists: libraryLists});
+
+        async function BuildLibraryFrom({lists}){
+            let library = [];
+            await lists.forEach((list) => {
+                let cards = cardRepository.getCardsBy({listId: list.id});
+                library.push({bookcase: list.name, books: cards});
+            });
+            return library;
+        }
     }
 }
 
