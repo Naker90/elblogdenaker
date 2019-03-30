@@ -13,10 +13,10 @@ function LibraryRepository({boardRepository, listRepository, cardRepository}){
             ? await BuildLibraryFrom({lists: libraryLists})
             : [];
 
-        async function BuildLibraryFrom({lists}){
+        function BuildLibraryFrom({lists}){
             let library = [];
-            await lists.forEach((list) => {
-                let cards = cardRepository.getCardsBy({listId: list.id});
+            lists.forEach(async (list) => {
+                let cards = await cardRepository.getCardsBy({listId: list.id});
                 library.push({bookcase: list.name, books: cards});
             });
             return library;
