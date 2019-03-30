@@ -4,8 +4,13 @@ function LibraryView({renderService}){
         throw new Error("not implemented");
     }
 
+    function renderEmptyLibrary(){
+        throw new Error("not implemented");
+    }
+
     return {
-        renderLibrary: renderLibrary
+        renderLibrary: renderLibrary,
+        renderEmptyLibrary: renderEmptyLibrary
     }
 }
 

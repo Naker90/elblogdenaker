@@ -16,7 +16,7 @@ describe("library controller tests", () => {
         })
     });
 
-    it("renders view with books", async () => {
+    it("renders library", async () => {
         let library = [
             {
                 bookcase: "Leidos",
@@ -34,5 +34,15 @@ describe("library controller tests", () => {
         await controller.execute();
 
         expect(view.renderLibrary).toHaveBeenCalledWith({library: library})
+    });
+
+    it("renders empty library", async () => {
+        libraryRepository.getAll.mockImplementation(() => {
+            return [];
+        });
+
+        await controller.execute();
+
+        expect(view.renderEmptyLibrary).toHaveBeenCalled()
     });
 });
