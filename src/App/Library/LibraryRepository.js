@@ -1,10 +1,20 @@
-function LibraryRepository({}){
+function LibraryRepository({boardRepository, listRepository, cardRepository}){
+
     return {
         getAll: getAll
     };
 
-    function getAll(){
-        throw new Error("not implemented");
+    async function getAll(){
+        let libraryBoardId = await boardRepository.getLibraryBoardId();
+        let libraryLists = await listRepository.getListsBy({
+            boardId: libraryBoardId
+        });
+        let library = [];
+        await libraryLists.forEach((list) => {
+            let cards = cardRepository.getCardsBy({listId: list.id});
+            library.push({bookcase: list.name, books: cards});
+        });
+        return library;
     }
 }
 
