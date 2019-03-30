@@ -2,11 +2,11 @@ const path = require("path");
 const articles = [
     {
         name: "El esquema de datos MySQL aplicado a las inyecciones SQL.",
-        description: "El esquma de datos de MySQL y como podemos sacar partido de el para conocer posibles bases de datos, tablas y campos que existan dentro del gestor de base de datos.",
-        date: "03/09/2019",
+        description: "El esquema de datos de MySQL y como podemos sacar partido de el para conocer posibles bases de datos, tablas y campos que existan dentro del gestor de base de datos.",
+        date: "09/03/2019",
         htmlFileName: "esquema-bd-sql-injection.html",
         author: "Antonio Sánchez",
-        route: "2018/10/05/esquema-bd-sql-injection",
+        route: "2019/03/09/esquema-bd-sql-injection",
         markdownFilePath: path.join(__dirname, "esquema-bd-sql-injection.md")
     },
     {
