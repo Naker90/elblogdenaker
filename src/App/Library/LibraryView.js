@@ -12,7 +12,7 @@ function LibraryView({renderService}){
                 <div>
                     <h2>${lib.bookcase}</h2>
                     <ul>
-                        ${lib.books.map((book) => `<li>${book}</li>`)}
+                        ${lib.books.map((book) => `<li>${book}</li>`).join('')}
                     </ul>    
                 </div>`
         });
