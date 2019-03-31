@@ -6,7 +6,8 @@ body{
 
 nav {
     display: flex;
-    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #006a71;
     box-shadow: 0 5px 20px 0 #575757;
 }
@@ -19,6 +20,21 @@ footer{
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-item{;
+    padding: 14px 16px;
+    font-size: 2em;
+}
+
+.menu-item:hover {
+    background-color: #E8E8E8;
+    color: black;
 }
 
 .text-big {
