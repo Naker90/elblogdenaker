@@ -5,7 +5,7 @@ import BoardRepository from './Repositories/BoardRepository';
 import ListRepository from './Repositories/ListRepository';
 import CardRepository from './Repositories/CardRepository';
 import AjaxClientService from '../Services/AjaxClientService';
-import TrelloAuthenticationRepository from '../Repositories/TrelloAuthenticationService';
+import TrelloAuthenticationRepository from '../Repositories/TrelloAuthenticationRepository';
 import RenderService from '../Services/RenderService';
 
 export const createLibraryController = () => {

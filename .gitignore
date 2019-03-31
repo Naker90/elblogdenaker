@@ -2,4 +2,4 @@
 package-lock\.json
 node_modules/
 dist/
-/src/App/Repositories/TrelloAuthenticationService.js
+/src/App/Repositories/TrelloAuthenticationRepository.js
