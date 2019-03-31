@@ -5,13 +5,13 @@ function LibraryView({renderService}){
     function renderLibrary({library}){
         let markup = `
         <div>
-            <p>Tambien puedes ver la lista de libros en ${TRELLO_LINK_MARKUP}</p>
+            <p class='article-paragraph'>Tambien puedes ver la lista de libros en ${TRELLO_LINK_MARKUP}</p>
         </div>`;
         library.forEach((lib) => {
             markup += `
                 <div>
-                    <h2>${lib.bookcase}</h2>
-                    <ul>
+                    <h2 class='article-title'>${lib.bookcase}</h2>
+                    <ul class='article-paragraph'>
                         ${lib.books.map((book) => `<li>${book}</li>`).join('')}
                     </ul>    
                 </div>`
