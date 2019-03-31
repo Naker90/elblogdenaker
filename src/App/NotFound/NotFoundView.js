@@ -2,7 +2,7 @@ function HomeView({renderService}){
 
     const HangmanMarkup = `
         <div id="notFoundContainer">
-            <h2 class="text-big">404 - Page not found.</h2>
+            <h2 class="text-big error">404 - Page not found.</h2>
             <input id="start" class="btn btn-big" type="button" value="¡Play to Hangman!">
             <div id="gameContainer" style="display: none;">
                 <h2 class="text-big">Guess the title of the movies!</h2>
