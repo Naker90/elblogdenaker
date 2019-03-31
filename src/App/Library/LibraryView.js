@@ -22,8 +22,8 @@ function LibraryView({renderService}){
     function renderEmptyLibrary(){
         let markup = `
             <div>
-                <h2>Hubo un problema, 
-                si quieres puedes ver directamente la lista de libros en ${TRELLO_LINK_MARKUP}</h2>
+                <h2 class='error'>Hubo un problema, 
+                si quieres, puedes ver directamente la lista de libros en ${TRELLO_LINK_MARKUP}</h2>
             </div>
         `;
         renderService.render({content: markup});
