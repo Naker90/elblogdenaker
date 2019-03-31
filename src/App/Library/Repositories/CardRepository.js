@@ -1,4 +1,4 @@
-function CardRepository({ajaxClientRepository}){
+function CardRepository({ajaxClientRepository, trelloAuthenticationRepository}){
 
     return {
         getCardsBy: getCardsBy
@@ -6,7 +6,7 @@ function CardRepository({ajaxClientRepository}){
 
     async function getCardsBy({listId}){
         let serializedCards = await ajaxClientRepository.get({
-            url: `https://api.trello.com/1/lists/${listId}/cards?fields=name&key=08a27147750faeb03030d310b919258c&token=4439c681d1629b22c8c14a8f80052c9b950cf524e10b7c8d83a9a38150982eca`
+            url: `https://api.trello.com/1/lists/${listId}/cards?fields=name&key=${trelloAuthenticationRepository.apiKey}&token=${trelloAuthenticationRepository.apiToken}`
         });
         let cards = JSON.parse(serializedCards);
         return cards.map((card) => card.name);
