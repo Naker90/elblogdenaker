@@ -5,7 +5,7 @@ function LibraryController({view, libraryRepository}){
     };
 
     async function execute(){
-        let library = await libraryRepository.getAll();
+        let library = await libraryRepository.getAll();;
         library.length > 0
             ? view.renderLibrary({library: library})
             : view.renderEmptyLibrary();

@@ -4,7 +4,7 @@ import CardRepository from "../../../src/App/Library/Repositories/CardRepository
 import LibraryRepository from "../../../src/App/Library/LibraryRepository"
 import JestUtils from "../../utils/JestUtils";
 
-describe("library controller tests", () => {
+describe("library repository tests", () => {
 
     let libraryRepository, boardRepository, listRepository, cardRepository;
 
@@ -29,21 +29,21 @@ describe("library controller tests", () => {
         let cards2 = ["Libro 3", "Libro 4"];
         boardRepository.getLibraryBoardId
             .mockImplementation(() => {
-                return libraryBoardId
+                return new Promise((resolve) => resolve(libraryBoardId));
             });
         listRepository.getListsBy
             .mockImplementation(({boardId}) => {
                 expect(boardId).toBe(libraryBoardId);
-                return lists
+                return new Promise((resolve) => resolve(lists));
             });
         cardRepository.getCardsBy
             .mockImplementationOnce(({listId}) => {
                 expect(listId).toBe(lists[0].id);
-                return cards1
+                return new Promise((resolve) => resolve(cards1));
             })
             .mockImplementationOnce(({listId}) => {
                 expect(listId).toBe(lists[1].id);
-                return cards2
+                return new Promise((resolve) => resolve(cards2));
         });
 
         let library = await libraryRepository.getAll();
@@ -63,11 +63,11 @@ describe("library controller tests", () => {
         it("get empty library when not found elements", async () => {
         boardRepository.getLibraryBoardId
             .mockImplementation(() => {
-                return "boardId"
+                return new Promise((resolve) => resolve("boardId"));
             });
         listRepository.getListsBy
             .mockImplementation(() => {
-                return undefined;
+                return new Promise((resolve, reject) => reject());
             });
 
         let library = await libraryRepository.getAll();
