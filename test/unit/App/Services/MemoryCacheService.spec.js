@@ -1,4 +1,4 @@
-import MemoryCacheService from "../../../src/App/Services/MemoryCacheService";
+import MemoryCacheService from "../../../../src/App/Services/MemoryCacheService";
 
 describe("not found controller tests", () => {
 

@@ -1,8 +1,8 @@
-import ArticleController from "../../../src/App/Article/ArticleController";
-import NotFoundController from "../../../src/App/NotFound/NotFoundController";
-import ArticleView from "../../../src/App/Article/ArticleView";
-import FileReaderService from "../../../src/App/Services/FileReaderService";
-import JestUtils from "../../utils/JestUtils";
+import ArticleController from "../../../../src/App/Article/ArticleController";
+import NotFoundController from "../../../../src/App/NotFound/NotFoundController";
+import ArticleView from "../../../../src/App/Article/ArticleView";
+import FileReaderService from "../../../../src/App/Services/FileReaderService";
+import JestUtils from "../../../utils/JestUtils";
 
 describe("not found controller tests", () => {
 
