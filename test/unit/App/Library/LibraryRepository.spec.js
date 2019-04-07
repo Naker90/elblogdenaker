@@ -79,4 +79,21 @@ describe("library repository tests", () => {
         expect(library.length).toBe(0);
         expect(cardRepository.getCardsBy).not.toHaveBeenCalled();
     });
+
+    it("returns cached library if exist", async () => {
+        memoryCacheService.exist
+            .mockImplementation(({key}) => {
+                expect(key).toBe("library");
+                return true;
+            });
+        memoryCacheService.get
+            .mockImplementation(({key}) => {
+                expect(key).toBe("library");
+                return "CachedLibrary";
+            });
+
+        let library = await libraryRepository.getAll();
+
+        expect(library).toBe("CachedLibrary");
+    });
 });
