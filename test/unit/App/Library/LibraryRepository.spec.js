@@ -95,5 +95,8 @@ describe("library repository tests", () => {
         let library = await libraryRepository.getAll();
 
         expect(library).toBe("CachedLibrary");
+        expect(boardRepository.getLibraryBoardId).not.toHaveBeenCalled();
+        expect(listRepository.getListsBy).not.toHaveBeenCalled();
+        expect(cardRepository.getCardsBy).not.toHaveBeenCalled();
     });
 });
