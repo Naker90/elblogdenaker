@@ -1,8 +1,8 @@
-import BoardRepository from "../../../src/App/Library/Repositories/BoardRepository"
-import ListRepository from "../../../src/App/Library/Repositories/ListRepository"
-import CardRepository from "../../../src/App/Library/Repositories/CardRepository"
-import LibraryRepository from "../../../src/App/Library/LibraryRepository"
-import JestUtils from "../../utils/JestUtils";
+import BoardRepository from "../../../../src/App/Library/Repositories/BoardRepository"
+import ListRepository from "../../../../src/App/Library/Repositories/ListRepository"
+import CardRepository from "../../../../src/App/Library/Repositories/CardRepository"
+import LibraryRepository from "../../../../src/App/Library/LibraryRepository"
+import JestUtils from "../../../utils/JestUtils";
 
 describe("library repository tests", () => {
 

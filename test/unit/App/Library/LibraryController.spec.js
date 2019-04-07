@@ -1,7 +1,7 @@
-import LibraryController from "../../../src/App/Library/LibraryController"
-import LibraryRepository from "../../../src/App/Library/LibraryRepository"
-import LibraryView from "../../../src/App/Library/LibraryView"
-import JestUtils from "../../utils/JestUtils";
+import LibraryController from "../../../../src/App/Library/LibraryController"
+import LibraryRepository from "../../../../src/App/Library/LibraryRepository"
+import LibraryView from "../../../../src/App/Library/LibraryView"
+import JestUtils from "../../../utils/JestUtils";
 
 describe("library controller tests", () => {
 

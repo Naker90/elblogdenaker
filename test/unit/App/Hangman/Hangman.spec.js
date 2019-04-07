@@ -1,4 +1,4 @@
-jest.mock("../../../src/App/NotFound/Hangman/View", () => {
+jest.mock("../../../../src/App/NotFound/Hangman/View", () => {
     return {
         showWord: jest.fn(),
         showLives: jest.fn(),
@@ -13,11 +13,11 @@ jest.mock("../../../src/App/NotFound/Hangman/View", () => {
     }
 });
 
-import Hangman from '../../../src/App/NotFound/Hangman/Hangman';
-import MoviesAndHintsRepository from '../../../src/App/NotFound/Hangman/MoviesAndHintsRepository';
-import View from '../../../src/App/NotFound/Hangman/View';
-import Stickman from '../../../src/App/NotFound/Hangman/Stickman';
-import JestUtils from "./../../utils/JestUtils";
+import Hangman from '../../../../src/App/NotFound/Hangman/Hangman';
+import MoviesAndHintsRepository from '../../../../src/App/NotFound/Hangman/MoviesAndHintsRepository';
+import View from '../../../../src/App/NotFound/Hangman/View';
+import Stickman from '../../../../src/App/NotFound/Hangman/Stickman';
+import JestUtils from "./../../../utils/JestUtils";
 
 describe("hangman play", () => {
 
