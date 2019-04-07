@@ -6,6 +6,7 @@ import ListRepository from './Repositories/ListRepository';
 import CardRepository from './Repositories/CardRepository';
 import AjaxClientService from '../Services/AjaxClientService';
 import TrelloAuthenticationRepository from '../Repositories/TrelloAuthenticationRepository';
+import * as ServiceFactory from '../Services/Factory';
 import RenderService from '../Services/RenderService';
 
 export const createLibraryController = () => {
@@ -23,7 +24,8 @@ export const createLibraryController = () => {
             cardRepository: CardRepository({
                 ajaxClientRepository: AjaxClientService(),
                 trelloAuthenticationRepository: TrelloAuthenticationRepository()
-            })
+            }),
+            memoryCacheService: ServiceFactory.GetMemoryCacheService()
         })
     });
 };

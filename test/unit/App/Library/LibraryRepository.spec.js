@@ -1,21 +1,25 @@
 import BoardRepository from "../../../../src/App/Library/Repositories/BoardRepository"
 import ListRepository from "../../../../src/App/Library/Repositories/ListRepository"
 import CardRepository from "../../../../src/App/Library/Repositories/CardRepository"
+import MemoryCacheService from "../../../../src/App/Services/MemoryCacheService"
 import LibraryRepository from "../../../../src/App/Library/LibraryRepository"
 import JestUtils from "../../../utils/JestUtils";
 
 describe("library repository tests", () => {
 
-    let libraryRepository, boardRepository, listRepository, cardRepository;
+    let libraryRepository, boardRepository, listRepository, cardRepository,
+    memoryCacheService;
 
     beforeEach(() => {
         boardRepository = JestUtils.mockAllMethods({obj: BoardRepository({})});
         listRepository = JestUtils.mockAllMethods({obj: ListRepository({})});
         cardRepository = JestUtils.mockAllMethods({obj: CardRepository({})});
+        memoryCacheService = JestUtils.mockAllMethods({obj: MemoryCacheService()});
         libraryRepository = LibraryRepository({
             boardRepository: boardRepository,
             listRepository: listRepository,
-            cardRepository: cardRepository
+            cardRepository: cardRepository,
+            memoryCacheService: memoryCacheService
         });
     });
 

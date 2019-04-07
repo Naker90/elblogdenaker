@@ -1,4 +1,4 @@
-function LibraryRepository({boardRepository, listRepository, cardRepository}){
+function LibraryRepository({boardRepository, listRepository, cardRepository, memoryCacheService}){
 
     return {
         getAll: getAll
