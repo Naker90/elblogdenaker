@@ -64,7 +64,7 @@ describe("library repository tests", () => {
         ]);
     });
 
-        it("get empty library when not found elements", async () => {
+    it("get empty library when not found elements", async () => {
         boardRepository.getLibraryBoardId
             .mockImplementation(() => {
                 return new Promise((resolve) => resolve("boardId"));
