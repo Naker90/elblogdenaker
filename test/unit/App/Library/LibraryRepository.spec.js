@@ -62,6 +62,19 @@ describe("library repository tests", () => {
                 books: cards2
             },
         ]);
+        expect(memoryCacheService.add).toHaveBeenCalledWith({
+            key: "library",
+            data: [
+                {
+                    bookcase: lists[0].name,
+                    books: cards1
+                },
+                {
+                    bookcase: lists[1].name,
+                    books: cards2
+                },
+            ]
+        });
     });
 
     it("get empty library when not found elements", async () => {

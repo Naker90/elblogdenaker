@@ -21,6 +21,7 @@ function LibraryRepository({boardRepository, listRepository, cardRepository, mem
                 });
                 return library;
             })
+            .then(() => memoryCacheService.add({key: LIBRARY_CACHE_KEY, data: library}))
             .then(() => library))
             .catch(() => []);
     }
