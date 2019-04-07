@@ -17,4 +17,15 @@ describe("not found controller tests", () => {
 
         expect(cacheService.get({key: "element"})).toBe(data);
     });
+
+    it("checks if cached element exist", () => {
+        let data = {
+            cache: true
+        };
+
+        cacheService.add({key: "element", data: data});
+
+        expect(cacheService.exist({key: "element"})).toBe(true);
+        expect(cacheService.exist({key: "any"})).toBe(false);
+    });
 });

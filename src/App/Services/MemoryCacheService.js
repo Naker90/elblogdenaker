@@ -4,7 +4,8 @@ function MemoryCacheService(){
 
     return {
         add: add,
-        get: get
+        get: get,
+        exist: exist
     };
 
     function add({key, data}){
@@ -13,6 +14,10 @@ function MemoryCacheService(){
 
     function get({key}){
         return cache[key];
+    }
+
+    function exist({key}){
+        return cache.hasOwnProperty(key);
     }
 }
 
