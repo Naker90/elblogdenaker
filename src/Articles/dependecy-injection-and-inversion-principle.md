@@ -44,7 +44,7 @@ A primera vista podríamos decir que esta todo correcto, tenemos una clase llama
 
 Actualmente el diagrama de dependencias entre clases es el siguiente:
 
-[Diagrama clases acopladas](./images/dip-1.png )
+![Diagrama clases acopladas](./images/dip-1.png )
 
 La flecha continua indica una dependencia directa entre clases.
 
@@ -147,11 +147,11 @@ Con este simple paso, hemos empezado a depender de una abstracción.
 
 Vemos el diagrama de dependencias en este momento:
 
-[Diagrama clases no acompladas](./images/dip-2.png )
+![Diagrama clases no acompladas](./images/dip-2.png )
 
 La dependencia directa ahora es con la interfaz que representa nuestro contrato y no con la implementación concreta. Por lo que podríamos tener N implementaciones de repositorios de usuario y cambiarlas en la factoría de la clase UserSignUpCase sin ningún coste y sin romper nada.
 
-[Diagrama clases no acompladas](./images/dip-3.png )
+![Diagrama clases no acompladas](./images/dip-3.png )
 
 Con estos simples pasos hemos pasado de un código altamente acoplado y con poca testablidad a un código fácil de cambiar y complementamente testable.
 
