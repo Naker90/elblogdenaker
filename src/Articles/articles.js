@@ -1,6 +1,15 @@
 const path = require("path");
 const articles = [
     {
+        name: "Inyección de dependencias + Principio de inversión de dependencias.",
+        description: "cómo en combinación con la inyección de dependencias podemos pasar de un código altamente acoplado y con poca facilidad de testear a un código desacoplado y altamente testable.",
+        date: "02/05/2019",
+        htmlFileName: "dependecy-injection-and-inversion-principle.html",
+        author: "Antonio Sánchez",
+        route: "2019/05/02/dependecy-injection-and-inversion-principle",
+        markdownFilePath: path.join(__dirname, "dependecy-injection-and-inversion-principle.md")
+    },
+    {
         name: "El esquema de datos MySQL aplicado a las inyecciones SQL.",
         description: "El esquema de datos de MySQL y como podemos sacar partido de el para conocer posibles bases de datos, tablas y campos que existan dentro del gestor de base de datos.",
         date: "09/03/2019",
