@@ -5,8 +5,7 @@ function ShowdownWrapper(){
     const classMap = {
         h2: "article-title",
         h3: "article-subtitle",
-        p: "article-paragraph",
-        pre: "article-code"
+        p: "article-paragraph"
     };
 
     const bindings = Object.keys(classMap)
