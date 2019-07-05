@@ -36,6 +36,7 @@
     "webpack-cli": "^2.0.15"
   },
   "dependencies": {
+    "highlight.js": "^9.15.8",
     "page": "^1.10.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

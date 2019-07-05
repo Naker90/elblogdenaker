@@ -17,7 +17,7 @@ Para explicar el principio de inversión de dependencias vamos a imaginar que he
 
 Todos los ejemplos expuestos en este artículo están escritos en C# pero el lenguaje de programación es completamente agnóstico en este caso.
 
-```typescript
+```csharp
 public class UserSignUpUseCase
 {
    private readonly MySqlUserRepository userRepository;
@@ -72,7 +72,7 @@ La inyección de dependencias consiste simplemente en pasar las dependencias de 
 
 Es tan sencillo como suena, la clase quedaría de la siguiente forma:
 
-```typescript
+```csharp
 private readonly MySqlUserRepository userRepository;
 
 public  UserSignUpUseCase(MySqlUserRepository userRepository)
@@ -87,7 +87,7 @@ Cierto, al **inyectar la dependencia** podemos crear nuestros test unitarios sob
 
 El uso de la clase quedaría de la siguiente forma:
 
-```typescript
+```csharp
 public static class Factory
 {
    public static UserSignUpUseCase UserSignUpUseCase()
@@ -115,7 +115,7 @@ Una interfaz no es más que un contrato que establecemos entre la clase que util
 Por lo que una vez creada nuestra nuestra interfaz y adaptando ambas partes para que la usen el código luce así.
 
 Nuestra interfaz:
-```typescript
+```csharp
 public interface UserRepository
 {
   User Save(User user);
@@ -123,7 +123,7 @@ public interface UserRepository
 ```
 
 Nuestro repositorio MySql:
-```typescript
+```csharp
 public class MySqlUserRepository : UserRepository
 {
    public User Save(User user)
@@ -135,7 +135,7 @@ public class MySqlUserRepository : UserRepository
 ```
 
 Nuestra clase _UserSignUpUseCase_:
-```typescript
+```csharp
 private readonly UserRepository userRepository;
 
 public  UserSignUpUseCase(UserRepository userRepository){
