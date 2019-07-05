@@ -18,7 +18,7 @@ Los actores son:
 
 Si imaginamos la orden para la funcionalidad de guardar un comentario podría ser a
 
-```
+```csharp
 public class SaveCommentaryCommnad
 {
   public int UserId { get; private set; }
@@ -67,7 +67,7 @@ Todos los manejadores que tengamos deberían de mostrar la misma API, estos sól
 
 Así quedaría a nivel de código el manejador de la orden para el ejemplo de la funcionalidad anterior:
 
-```
+```csharp
 public class SaveCommentaryHandler
 {
  private readonly UserRepository userRepository;
@@ -109,7 +109,7 @@ Para el ejemplo actual no simulare estar utilIzando un bus de comando y haré qu
 
 En código un controlador quedaría de esta manera:
 
-```
+```csharp
 public class SaveCommentaryController : Controller
 {
     private SaveCommentaryHandler saveCommentaryHandler;

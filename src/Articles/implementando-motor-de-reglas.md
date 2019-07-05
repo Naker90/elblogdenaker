@@ -4,7 +4,7 @@ Un motor de reglas es una estrategia en programación para ejecutar acciones aco
 
 Supongamos que tenemos este ejemplo:
 
-```
+```java
 class FizzBuzz{
     String generate(int number){
         if(isFizz(number) && isBuzz(number)){
@@ -45,7 +45,7 @@ _You can build a simple rules engine yourself. All you need is to create a bunch
 
 Lo primero que haremos es crear una interfaz para definir los métodos que tendrán en común todas nuestras en regla.
 
-```
+```java
 package rules;
 
 public interface RulesInterface {
@@ -58,7 +58,7 @@ El método condition almacenará la condición de la regla y el método action l
 
 Ahora crearemos 3 clases (porque nosotros tenemos 3 reglas, en caso de tener más crearemos tantas clases como reglas existan) que implementen esta interfaz, cada clase tendrá su propia condición y su propia acción:
 
-```
+```java
 package rules;
 
 public class FizzBuzzRule implements RulesInterface {
@@ -74,7 +74,7 @@ public class FizzBuzzRule implements RulesInterface {
 }
 ```
 
-```
+```java
 package rules;
 
 public class BuzzRule implements RulesInterface {
@@ -90,7 +90,7 @@ public class BuzzRule implements RulesInterface {
 }
 ```
 
-```
+```java
 package rules;
 
 public class FizzRule implements RulesInterface {
@@ -108,7 +108,7 @@ public class FizzRule implements RulesInterface {
 
 ¡Ya tenemos nuestras reglas implementadas!, solo faltaría crear el motor de reglas que será el encargado de almacenar las reglas en una lista y ejecutarlas todas cuando se le diga. Nuestro motor de reglas quedaría de esta forma:
 
-```
+```java
 import rules.RulesInterface;
 import java.utils.ArrayList;
 
@@ -139,7 +139,7 @@ En la clase _RulesEngine_ tenemos un Array que almacena objetos del tipo de nues
 
 Ya solo nos queda refactorizar nuestra clase FizzBuzz para que utilice nuestro motor de reglas.
 
-```
+```java
 import rules.FizzRule;
 import rules.BuzzRule;
 import rules.FizzBuzzRule;
