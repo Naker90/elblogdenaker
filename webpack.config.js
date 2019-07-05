@@ -47,8 +47,5 @@ module.exports = {
                 to:'images'
             }
         ]),
-    ],
-    performance: {
-        hints: false
-    }
+    ]
 };
