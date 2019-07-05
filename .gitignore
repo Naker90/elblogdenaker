@@ -1,4 +1,5 @@
 \.idea/
+.Dockerfile.swp
 package-lock\.json
 node_modules/
 dist/
