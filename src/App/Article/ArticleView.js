@@ -1,7 +1,7 @@
 function ArticleView({renderService}){
 
     function render({content}){
-        renderService.render({content: content});
+        renderService.renderWithCodeBlockHighlighting({content: content});
     }
 
     return {
