@@ -37,14 +37,4 @@ describe("showdown wrapper", () => {
 
         expect(html).toBe("<p class='article-paragraph'>Test</p>")
     });
-
-    it("put on pre tag article code class name", () => {
-        let markdown = "```\nTest\n```";
-
-        let html = converter.convertToHtml({
-            markdown: markdown
-        });
-
-        expect(html).toBe("<pre class='article-code'><code>Test</code></pre>")
-    });
 });
