@@ -13,10 +13,10 @@ import Java from 'highlight.js/lib/languages/java';
 import * as RouterFactory from "./Router/RouterFactory";
 
 function start(){
-    registerCodeLanguagesHighlightingStylesClases();
+    registerCodeLanguagesHighlightingStylesClasses();
     initRouter();
 
-    function registerCodeLanguagesHighlightingStylesClases(){
+    function registerCodeLanguagesHighlightingStylesClasses(){
         Highlight.registerLanguage('javascript', Javascript);
         Highlight.registerLanguage('csharp', CSharp);
         Highlight.registerLanguage('sql', Sql);

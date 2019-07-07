@@ -7,7 +7,7 @@ function RenderService(){
     const CODE_BLOCKS_TAG_NAME = "code";
 
     function render({content}){
-        let appContainer = document.getElementById(APP_CONTAINER_ID);
+        const appContainer = document.getElementById(APP_CONTAINER_ID);
         ReactDom.unmountComponentAtNode(appContainer);
         appContainer.innerHTML = content;
     }
@@ -15,7 +15,7 @@ function RenderService(){
     function renderWithCodeBlockHighlighting({content}){
         render({content: content});
         const codeBlocks = document.getElementsByTagName(CODE_BLOCKS_TAG_NAME);
-        codeBlocks.forEach((codeBlock) => Highlight.highlightBlock(codeBlock));
+        Array.prototype.forEach.call(codeBlocks, codeBlock => Highlight.highlightBlock(codeBlock));
     }
 
     function reactRender({component}){
