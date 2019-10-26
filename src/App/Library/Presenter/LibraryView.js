@@ -31,7 +31,7 @@ class EmptyLibrary extends React.Component{
                 <div>
                     <h2 className='error text-medium'>Ha ocurrido un error buscando los libros</h2>
                     <p className='article-paragraph'>Tambien puedes ver la lista de libros en <a href="https://trello.com/b/IeYtjCoV" target="_blank">Trello</a></p>
-                </div>`
+                </div>
             </div>
         )
     }
