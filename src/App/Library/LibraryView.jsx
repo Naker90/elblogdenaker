@@ -1,6 +1,11 @@
 import React from "react";
+import {createLibraryPresenter} from './Factory.js';
 
 class Loading extends React.Component{
+    componentDidMount(){
+        let presenter = createLibraryPresenter();
+        presenter.loadLibrary();
+    }
     render(){
         return (
             <div>
