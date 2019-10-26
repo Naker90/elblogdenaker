@@ -45,7 +45,8 @@ module.exports = {
             {
                 from:'src/App/Content/images',
                 to:'images'
-            }
+            },
+            'CNAME'
         ]),
     ]
 };
