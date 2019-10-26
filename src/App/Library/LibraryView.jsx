@@ -30,7 +30,7 @@ class Library extends React.Component{
     render(){
         return (
             <div>
-                <img src='/images/loading.svg' className='loading' alt='Spinner'/>
+                <img src='/images/loading.svg' className='loading-img' alt='Spinner'/>
                 <p>Cargando los libros desde ${TRELLO_LINK_MARKUP}...</p>
             </div>
         )
