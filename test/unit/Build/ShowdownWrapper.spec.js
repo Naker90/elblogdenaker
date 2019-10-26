@@ -37,4 +37,14 @@ describe("showdown wrapper", () => {
 
         expect(html).toBe("<p class='article-paragraph'>Test</p>")
     });
+
+    it("puts on img tag article img class name", () => {
+        let markdown = "![test](./images/test-1.png)";
+
+        let html = converter.convertToHtml({
+            markdown: markdown
+        });
+
+        expect(html).toBe(`<p class='article-paragraph'><img class='article-img' src="./images/test-1.png\" alt="test" /></p>`)
+    });
 });

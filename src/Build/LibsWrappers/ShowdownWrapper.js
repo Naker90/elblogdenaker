@@ -5,18 +5,26 @@ function ShowdownWrapper(){
     const classMap = {
         h2: "article-title",
         h3: "article-subtitle",
-        p: "article-paragraph"
+        p: "article-paragraph",
+        img: "article-img"
     };
 
-    const bindings = Object.keys(classMap)
+    const globalHtmlTagsCssClasses = Object.keys(classMap)
         .map(key => ({
            type: "output",
-           regex: new RegExp(`<${key}\/?>(.*)`, "g"),
+           regex: new RegExp(`<${key}/?>(.*)`, "g"),
            replace: `<${key} class='${classMap[key]}'>$1`
         }));
 
+    const imagesHtmlTagCssClasses = Object.keys(classMap)
+        .map(key => ({
+            type: "output",
+            regex: new RegExp(`<p class='article-paragraph'><${key}(.*)`, "g"),
+            replace: `<p class='article-paragraph'><${key} class='${classMap[key]}'$1`
+        }));
+
     const converter = new showdown.Converter({
-        extensions: [...bindings],
+        extensions: [...globalHtmlTagsCssClasses, ...imagesHtmlTagCssClasses],
         omitExtraWLInCodeBlocks: true,
         noHeaderId: true
     });

@@ -1,5 +1,6 @@
 import LibraryController from './LibraryController';
-import LibraryView from './LibraryView';
+import LibraryView from './LibraryView.js';
+import LibraryReactView from './LibraryView.jsx';
 import LibraryRepository from './LibraryRepository';
 import BoardRepository from './Repositories/BoardRepository';
 import ListRepository from './Repositories/ListRepository';
@@ -11,7 +12,7 @@ import RenderService from '../Services/RenderService';
 
 export const createLibraryController = () => {
     return LibraryController({
-        view: LibraryView({renderService: RenderService()}),
+        view: LibraryReactView({renderService: RenderService()}),
         libraryRepository: LibraryRepository({
             boardRepository: BoardRepository({
                 ajaxClientRepository: AjaxClientService(),
