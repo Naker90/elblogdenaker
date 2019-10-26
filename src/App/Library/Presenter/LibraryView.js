@@ -6,7 +6,7 @@ class Library extends React.Component{
             <div>
                 <div>
                     <p className='article-paragraph'>Tambien puedes ver la lista de libros en <a href="https://trello.com/b/IeYtjCoV" target="_blank">Trello</a></p>
-                </div>`
+                </div>
                 {
                     this.props.library.map((bookshelf) => {
                         return (
