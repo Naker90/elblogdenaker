@@ -11,9 +11,9 @@ class Library extends React.Component{
                     this.props.library.map((bookshelf) => {
                         return (
                             <div>
-                                <h2 className='article-title'>${bookshelf.bookcase}</h2>
+                                <h2 className='article-title'>{bookshelf.bookcase}</h2>
                                 <ul className='article-paragraph'>
-                                    ${bookshelf.books.map((book) => `<li>${book}</li>`).join('')}
+                                    {bookshelf.books.map((book) => <li>{book}</li>)}
                                 </ul>
                             </div>
                         )
