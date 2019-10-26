@@ -1,6 +1,6 @@
 import LibraryController from "../../../../src/App/Library/LibraryController"
 import LibraryRepository from "../../../../src/App/Library/LibraryRepository"
-import LibraryView from "../../../../src/App/Library/LibraryView"
+import LibraryView from "../../../../src/App/Library/LibraryView.jsx"
 import JestUtils from "../../../utils/JestUtils";
 
 describe("library controller tests", () => {
@@ -16,33 +16,9 @@ describe("library controller tests", () => {
         })
     });
 
-    it("renders library", async () => {
-        let library = [
-            {
-                bookcase: "Leidos",
-                books:["Libro 1", "Libro 2"]
-            },
-            {
-                bookcase: "Por leer",
-                books:["Libro 3", "Libro 4"]
-            },
-        ];
-        libraryRepository.getAll.mockImplementation(() => {
-            return library;
-        });
+    it("renders library view", () => {
+        controller.execute();
 
-        await controller.execute();
-
-        expect(view.renderLibrary).toHaveBeenCalledWith({library: library})
-    });
-
-    it("renders empty library", async () => {
-        libraryRepository.getAll.mockImplementation(() => {
-            return [];
-        });
-
-        await controller.execute();
-
-        expect(view.renderEmptyLibrary).toHaveBeenCalled()
+        expect(view.render).toHaveBeenCalledWith()
     });
 });
