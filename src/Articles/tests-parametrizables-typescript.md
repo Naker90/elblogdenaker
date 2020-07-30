@@ -1,4 +1,4 @@
-df# Tests parametrizables — Ejemplo en TypeScript.
+# Tests parametrizables — Ejemplo en TypeScript.
 
 El ejemplo propuesto en este artículo se ha escrito en TypeScript con la librería de testing Jest. No obstante, los concepto son extrapolables a cualquier leguaje/librería de tests.
 

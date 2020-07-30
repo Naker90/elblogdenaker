@@ -1,6 +1,15 @@
 const path = require("path");
 const articles = [
     {
+        name: "Tests parametrizables — Ejemplo en TypeScript.",
+        description: "Intentamos escribir código limpio y simple para que sea etendible y fácil de mantener pero es común no tratar el código de nuestros tests de la misma forma, cuando en realidad, son igual de importantes que el código de la funcionalidad que prueban. Parametrizar un tests nos ayudará a simplificar un conjunto de tests grande donde hemos encontrado un patrón que se repite.",
+        date: "30/07/2020",
+        htmlFileName: "tests-parametrizables-typescript.html",
+        author: "Antonio Sánchez",
+        route: "2020/07/30/tests-parametrizables-typescript",
+        markdownFilePath: path.join(__dirname, "tests-parametrizables-typescript.md")
+    },
+    {
         name: "Inyección de dependencias + Principio de inversión de dependencias.",
         description: "cómo en combinación con la inyección de dependencias podemos pasar de un código altamente acoplado y con poca facilidad de testear a un código desacoplado y altamente testable.",
         date: "02/05/2019",
